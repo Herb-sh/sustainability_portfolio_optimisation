@@ -1,0 +1,6 @@
+# pip install -r requirements.txt
+# conda install -c conda-forge package_name
+
+yfinance~=0.2.40
+requests~=2.31.0
+beautifulsoup4~=4.12.2
