@@ -50,10 +50,19 @@ def parse_html_to_dict(html, industry: str):
     return dict_list
 
 def create_csv(data, filename = 'output.csv'):
+    fileDir = '../data/'
+    fileFormat = '.csv'
+
+
+    if fileFormat not in filename:
+        filename += fileFormat
+
+    filePath = fileDir + filename + fileFormat
+
     # Get the header from the keys of the first dictionary
     header = data[0].keys()
     # Write to a CSV file
-    with open(filename, 'w', newline='') as file:
+    with open(filePath, 'w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=header)
         writer.writeheader()  # Write the header
         writer.writerows(data)  # Write the data

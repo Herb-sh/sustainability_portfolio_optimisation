@@ -3,16 +3,41 @@ import utilities.variables as variables
 import utilities.parser as parser
 importlib.reload(parser)
 
-def generate_esg_files():
+'''
+Create only one file containing all industries
+'''
+def generate_esg_data():
+    data = []
     try:
         for i, industry in enumerate(variables.industries):
             if len(industry) != 0:
-                generate_esg_file_from_industry(industry)
+                industry_data = get_esg_data_by_industry(industry)
+                data = data + industry_data
+        if len(data) > 0:
+            parser.create_csv(data, filename='esg_data_raw.csv')
     except RuntimeError:
         print('A runtime error occurred while generating csv files')
 
 
-def generate_esg_file_from_industry(industry: str):
+'''
+Create a file for each industry (automobile.csv, banks.csv)
+'''
+def generate_esg_data_for_each_industry():
+    try:
+        for i, industry in enumerate(variables.industries):
+            if len(industry) != 0:
+                data = get_esg_data_by_industry(industry)
+                filename = industry.replace(" ", "").replace("&", "").lower() + ".csv"
+                #
+                parser.create_csv(data, filename)
+                print('Filename {} was created for industry "{}" '.format(filename + '.csv', industry))
+    except RuntimeError:
+        print('A runtime error occurred while generating csv files')
+
+'''
+Get ESG(Negligible Risk, Low Risk) rated companies of a given industry.
+'''
+def get_esg_data_by_industry(industry: str):
     url = 'https://www.sustainalytics.com/sustapi/companyratings/getcompanyratings'  # Replace with your actual URL
 
     # Negligible ESG risk companies
@@ -26,16 +51,8 @@ def generate_esg_file_from_industry(industry: str):
     parsed_data_r1 = parser.parse_html_to_dict(html_content_r1, industry=industry)
 
     parsed_data_merged = parsed_data + parsed_data_r1
-    #
-    filename = industry.replace(" ", "").replace("&", "").lower()
-    #
-    fileDir = '../data/'
-    fileFormat = '.csv'
-    parser.create_csv(parsed_data_merged, filename=fileDir + filename + fileFormat)
-    print('Filename {} was created for industry "{}" '.format(filename + '.csv', industry))
 
     return parsed_data_merged
-
 def get_payload(industry: str, rating=0, pagesize=100):
     return {
         'resourcePackage': 'Sustainalytics',
