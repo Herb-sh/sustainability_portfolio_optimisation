@@ -18,7 +18,9 @@ def get_html_from_api(url, form_data):
     response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
     # Check if the request was successful
     if response.status_code == 200:
-        print("Request was successful!")
+        print(f"Request was successful for {form_data['industry']} and {'Negligible ESG Risk' if form_data['rating'] == 0 else 'Low ESG Risk'}!")
+        if form_data['rating'] == 1:
+            print("----------------------------------------------------------------------")
         return response.content
     else:
         print(f"Request failed with status code: {response.status_code}")
@@ -57,7 +59,7 @@ def create_csv(data, filename = 'output.csv'):
     if fileFormat not in filename:
         filename += fileFormat
 
-    filePath = fileDir + filename + fileFormat
+    filePath = fileDir + filename
 
     # Get the header from the keys of the first dictionary
     header = data[0].keys()

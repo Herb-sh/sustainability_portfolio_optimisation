@@ -18,4 +18,6 @@ industries = [
     'Technology Hardware', 'Telecommunication Services', 'Textiles & Apparel', 'Traders & Distributors', 'Transportation', 'Transportation Infrastructure',
     'Utilities'
 ]
-allowed_ratings = [0, 1]  # Only Negligible ESG Risk & Low ESG Risk are included
+selected_stock_exchange = ['NYS', 'NAS', 'TKS', 'LON',  'ETR']
+
+selected_ratings = [0, 1]  # Only Negligible ESG Risk & Low ESG Risk are included
