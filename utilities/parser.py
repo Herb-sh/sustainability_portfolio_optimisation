@@ -25,6 +25,7 @@ def get_html_from_api(url, form_data):
     else:
         print(f"Request failed with status code: {response.status_code}")
         print(response.text)
+        return ""
 
 
 """

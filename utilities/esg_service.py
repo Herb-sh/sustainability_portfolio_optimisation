@@ -4,7 +4,7 @@ import utilities.parser as parser
 importlib.reload(parser)
 
 '''
-Create only one file containing all industries data_esg_raw.csv
+Create only one file containing all industries data_1_esg_raw.csv
 '''
 def generate_esg_file():
     data = []
@@ -14,7 +14,7 @@ def generate_esg_file():
                 industry_data = get_esg_data_by_industry(industry)
                 data = data + industry_data
         if len(data) > 0:
-            parser.create_csv(data, filename='data_esg_raw.csv')
+            parser.create_csv(data, filename='data_1_esg_raw.csv')
     except RuntimeError:
         print('A runtime error occurred while generating csv files')
 
@@ -57,12 +57,12 @@ def get_esg_data_by_industry(industry: str):
 '''
 Generate payload for Sustainalytics used in get_esg_data_by_industry
 '''
-def get_payload(industry: str, rating=0, pagesize=100):
+def get_payload(industry: str, rating=0):
     return {
         'resourcePackage': 'Sustainalytics',
         'industry': industry,
         'rating': rating,
         'filter': '',
         'page': 1,
-        'pageSize': pagesize
+        'pageSize': 1000  # get all items, works similar to no limit
     }
