@@ -1,0 +1,960 @@
+,company_name,company_esg_score,company_esg_score_group,industry,stock_exchange,stock_ticker_symbol,market_capital,market_capital_euro
+0,"Kimball Electronics, Inc.",4.5,Negligible ESG Risk,Technology Hardware,NAS,KE,595865984.0,548196705.28
+1,"Steelcase, Inc.",5.3,Negligible ESG Risk,Commercial Services,NYS,SCS,1588731392.0,1461632880.64
+2,HNI Corp.,5.4,Negligible ESG Risk,Commercial Services,NYS,HNI,2324179456.0,2138245099.52
+3,"Avnet, Inc.",5.6,Negligible ESG Risk,Technology Hardware,NAS,AVT,4910356480.0,4517527961.6
+4,ACCO Brands Corp.,5.7,Negligible ESG Risk,Commercial Services,NYS,ACCO,478198464.0,439942586.88
+5,"Keysight Technologies, Inc.",6.2,Negligible ESG Risk,Technology Hardware,NYS,KEYS,25412880384.0,23379849953.280003
+6,"CBRE Group, Inc.",6.3,Negligible ESG Risk,Real Estate,NYS,CBRE,30044205056.0,27640668651.52
+7,Brady Corp.,6.4,Negligible ESG Risk,Commercial Services,NYS,BRC,3316973824.0,3051615918.08
+8,"Paramount Group, Inc.",6.4,Negligible ESG Risk,Real Estate,NYS,PGRE,1260408064.0,1159575418.88
+9,"Benchmark Electronics, Inc.",7.1,Negligible ESG Risk,Technology Hardware,NYS,BHE,1508877184.0,1388167009.28
+10,Plexus Corp.,7.2,Negligible ESG Risk,Technology Hardware,NAS,PLXS,3269281792.0,3007739248.6400003
+11,"Hasbro, Inc.",7.3,Negligible ESG Risk,Consumer Durables,NAS,HAS,8446234624.0,7770535854.08
+12,"Chegg, Inc.",7.4,Negligible ESG Risk,Consumer Services,NYS,CHGG,361848192.0,332900336.64
+13,"Jones Lang LaSalle, Inc.",7.4,Negligible ESG Risk,Real Estate,NYS,JLL,10937013248.0,10062052188.16
+14,Universal Display Corp.,7.4,Negligible ESG Risk,Technology Hardware,NAS,OLED,10669143040.0,9815611596.800001
+15,CDW Corp.,7.5,Negligible ESG Risk,Technology Hardware,NAS,CDW,31849637888.0,29301666856.960003
+16,Flex Ltd.,7.5,Negligible ESG Risk,Technology Hardware,NAS,FLEX,12374888448.0,11384897372.16
+17,"Resideo Technologies, Inc.",7.5,Negligible ESG Risk,Retailing,NYS,REZI,3218721792.0,2961224048.6400003
+18,Texas Pacific Land Corp.,7.6,Negligible ESG Risk,Oil & Gas Producers,NYS,TPL,18817611776.0,17312202833.920002
+19,"Arrow Electronics, Inc.",7.7,Negligible ESG Risk,Technology Hardware,NYS,ARW,6705903104.0,6169430855.68
+20,Fabrinet,7.7,Negligible ESG Risk,Technology Hardware,NYS,FN,9135338496.0,8404511416.320001
+21,"Novanta, Inc.",7.7,Negligible ESG Risk,Technology Hardware,NAS,NOVT,6537356288.0,6014367784.96
+22,"Rayonier, Inc.",7.7,Negligible ESG Risk,Real Estate,NYS,RYN,4468653056.0,4111160811.52
+23,TD SYNNEX Corp.,7.8,Negligible ESG Risk,Technology Hardware,NYS,SNX,10059460608.0,9254703759.36
+24,Cimpress Plc,7.8,Negligible ESG Risk,Commercial Services,NAS,CMPR,2445576960.0,2249930803.2000003
+25,"TTM Technologies, Inc.",7.9,Negligible ESG Risk,Technology Hardware,NAS,TTMI,2189201664.0,2014065530.88
+26,"Pitney Bowes, Inc.",7.9,Negligible ESG Risk,Commercial Services,NYS,PBI,1266435072.0,1165120266.24
+27,ASGN Incorporated,8.0,Negligible ESG Risk,Commercial Services,NYS,ASGN,4752027136.0,4371864965.12
+28,"Anywhere Real Estate, Inc.",8.0,Negligible ESG Risk,Real Estate,NYS,HOUS,514425408.0,473271375.36
+29,"Valvoline, Inc.",8.0,Negligible ESG Risk,Retailing,NYS,VVV,6074224640.0,5588286668.8
+30,"AvalonBay Communities, Inc.",8.1,Negligible ESG Risk,Real Estate,NYS,AVB,29576110080.0,27210021273.600002
+31,"Starwood Property Trust, Inc.",8.2,Negligible ESG Risk,Real Estate,NYS,STWD,6635771904.0,6104910151.68
+32,Korn Ferry,8.3,Negligible ESG Risk,Commercial Services,NYS,KFY,3712043264.0,3415079802.88
+33,"Methode Electronics, Inc.",8.3,Negligible ESG Risk,Technology Hardware,NYS,MEI,492068896.0,452703384.32
+34,"Royal Gold, Inc.",8.5,Negligible ESG Risk,Precious Metals,NAS,RGLD,9175026688.0,8441024552.96
+35,"Kforce, Inc.",8.6,Negligible ESG Risk,Commercial Services,NYS,KFRC,1313108736.0,1208060037.1200001
+36,Sanmina Corp.,8.6,Negligible ESG Risk,Technology Hardware,NAS,SANM,4024267776.0,3702326353.92
+37,"YETI Holdings, Inc.",8.6,Negligible ESG Risk,Consumer Durables,NYS,YETI,3395049472.0,3123445514.2400002
+38,Accenture Plc,8.6,Negligible ESG Risk,Software & Services,NYS,ACN,203950637056.0,187634586091.52002
+39,"Hudson Pacific Properties, Inc.",8.6,Negligible ESG Risk,Real Estate,NYS,HPP,1576596096.0,1450468408.3200002
+40,AGNC Investment Corp.,8.7,Negligible ESG Risk,Real Estate,NAS,AGNC,7545523200.0,6941881344.0
+41,CTS Corp.,8.7,Negligible ESG Risk,Technology Hardware,NYS,CTS,1640370048.0,1509140444.16
+42,"Interpublic Group of Cos., Inc.",8.7,Negligible ESG Risk,Media,NYS,IPG,11398205440.0,10486349004.800001
+43,"Badger Meter, Inc.",8.8,Negligible ESG Risk,Technology Hardware,NYS,BMI,5786443776.0,5323528273.92
+44,"ScanSource, Inc.",8.8,Negligible ESG Risk,Technology Hardware,NAS,SCSC,1169486464.0,1075927546.88
+45,"ManpowerGroup, Inc.",8.8,Negligible ESG Risk,Commercial Services,NYS,MAN,3539107840.0,3255979212.8
+46,"Piedmont Office Realty Trust, Inc.",8.9,Negligible ESG Risk,Real Estate,NYS,PDM,1038206592.0,955150064.64
+47,"Kelly Services, Inc.",9.0,Negligible ESG Risk,Commercial Services,NAS,KELYA,798385984.0,734515105.2800001
+48,Sensata Technologies Holding Plc,9.1,Negligible ESG Risk,Technology Hardware,NYS,ST,6287323648.0,5784337756.16
+49,"Crown Holdings, Inc.",9.1,Negligible ESG Risk,Containers & Packaging,NYS,CCK,9423876096.0,8669966008.32
+50,Aptiv Plc,9.1,Negligible ESG Risk,Auto Components,NYS,APTV,19700011008.0,18124010127.36
+51,"Itron, Inc.",9.2,Negligible ESG Risk,Technology Hardware,NAS,ITRI,4721796096.0,4344052408.320001
+52,Western Digital Corp.,9.3,Negligible ESG Risk,Technology Hardware,NAS,WDC,23441229824.0,21565931438.08
+53,"Ennis, Inc.",9.4,Negligible ESG Risk,Commercial Services,NYS,EBF,614781440.0,565598924.8000001
+54,"TriNet Group, Inc.",9.4,Negligible ESG Risk,Commercial Services,NYS,TNET,5545837568.0,5102170562.56
+55,"MillerKnoll, Inc.",9.4,Negligible ESG Risk,Commercial Services,NAS,MLKN,2106897152.0,1938345379.8400002
+56,"Jabil, Inc.",9.5,Negligible ESG Risk,Technology Hardware,NYS,JBL,13037099008.0,11994131087.36
+57,LXP Industrial Trust,9.5,Negligible ESG Risk,Real Estate,NYS,LXP,2989778176.0,2750595921.92
+58,"Trimble, Inc.",9.5,Negligible ESG Risk,Technology Hardware,NAS,TRMB,14200695808.0,13064640143.36
+59,"Annaly Capital Management, Inc.",9.6,Negligible ESG Risk,Real Estate,NYS,NLY,10218984448.0,9401465692.16
+60,"RE/MAX Holdings, Inc.",9.7,Negligible ESG Risk,Real Estate,NYS,RMAX,310041376.0,285238065.92
+61,SBA Communications Corp.,9.7,Negligible ESG Risk,Real Estate,NAS,SBAC,23016439808.0,21175124623.36
+62,Kite Realty Group Trust,9.8,Negligible ESG Risk,Real Estate,NYS,KRG,5307057152.0,4882492579.84
+63,"AptarGroup, Inc.",9.8,Negligible ESG Risk,Containers & Packaging,NYS,ATR,9598945280.0,8831029657.6
+64,Elme Communities,9.8,Negligible ESG Risk,Real Estate,NYS,ELME,1436226816.0,1321328670.72
+65,"Empire State Realty Trust, Inc.",9.9,Negligible ESG Risk,Real Estate,NYS,ESRT,3041242624.0,2797943214.08
+66,Cognex Corp.,9.9,Negligible ESG Risk,Technology Hardware,NAS,CGNX,8880074752.0,8169668771.84
+67,Zebra Technologies Corp.,9.9,Negligible ESG Risk,Technology Hardware,NAS,ZBRA,16757068800.0,15416503296.0
+68,Deluxe Corp.,10.0,Low ESG Risk,Commercial Services,NYS,DLX,1062825088.0,977799080.96
+69,"BorgWarner, Inc.",10.0,Negligible ESG Risk,Auto Components,NYS,BWA,7787503104.0,7164502855.68
+70,"Elevance Health, Inc.",10.0,Negligible ESG Risk,Healthcare,NYS,ELV,121073508352.0,111387627683.84001
+71,The New York Times Co.,10.0,Negligible ESG Risk,Media,NYS,NYT,8756133888.0,8055643176.96
+72,News Corp.,10.0,Negligible ESG Risk,Media,NAS,NWSA,16082940928.0,14796305653.76
+73,"MKS Instruments, Inc.",10.1,Low ESG Risk,Technology Hardware,NAS,MKSI,8908924928.0,8196210933.76
+74,"Marcus & Millichap, Inc.",10.1,Low ESG Risk,Real Estate,NYS,MMI,1461554688.0,1344630312.96
+75,Sleep Number Corp.,10.2,Low ESG Risk,Consumer Durables,NAS,SNBR,243805376.0,224300945.92000002
+76,"Ingersoll Rand, Inc.",10.2,Low ESG Risk,Machinery,NYS,IR,39565279232.0,36400056893.44
+77,"Lithia Motors, Inc.",10.2,Low ESG Risk,Retailing,NYS,LAD,7383037440.0,6792394444.8
+78,"Heidrick & Struggles International, Inc.",10.3,Low ESG Risk,Commercial Services,NAS,HSII,702217984.0,646040545.28
+79,"Cousins Properties, Inc.",10.3,Low ESG Risk,Real Estate,NYS,CUZ,3791778048.0,3488435804.1600003
+80,Linde Plc,10.3,Low ESG Risk,Chemicals,NAS,LIN,215980900352.0,198702428323.84
+81,"NL Industries, Inc.",10.3,Low ESG Risk,Commercial Services,NYS,NL,325719456.0,299661899.52000004
+82,Ball Corp.,10.3,Low ESG Risk,Containers & Packaging,NYS,BALL,19218604032.0,17681115709.440002
+83,Danaher Corp.,10.4,Low ESG Risk,Pharmaceuticals,NYS,DHR,186097598464.0,171209790586.88
+84,Kimco Realty Corp.,10.4,Low ESG Risk,Real Estate,NYS,KIM,14540681216.0,13377426718.720001
+85,Macerich Co.,10.5,Low ESG Risk,Real Estate,NYS,MAC,3617888000.0,3328456960.0
+86,"Smith & Wesson Brands, Inc.",10.5,Low ESG Risk,Consumer Durables,NAS,SWBI,708905856.0,652193387.52
+87,"Cannae Holdings, Inc.",10.5,Low ESG Risk,Diversified Financials,NYS,CNNE,1211507328.0,1114586741.76
+88,"Prologis, Inc.",10.6,Low ESG Risk,Real Estate,NYS,PLD,114073231360.0,104947372851.2
+89,"Rexford Industrial Realty, Inc.",10.7,Low ESG Risk,Real Estate,NYS,REXR,11097714688.0,10209897512.960001
+90,IPG Photonics Corp.,10.7,Low ESG Risk,Technology Hardware,NAS,IPGP,4121643520.0,3791912038.4
+91,"Robert Half, Inc.",10.7,Low ESG Risk,Commercial Services,NYS,RHI,7072484352.0,6506685603.84
+92,COPT Defense Properties,10.7,Low ESG Risk,Real Estate,NYS,CDP,3063115776.0,2818066513.92
+93,"Advance Auto Parts, Inc.",10.7,Low ESG Risk,Retailing,NYS,AAP,3842061056.0,3534696171.52
+94,Acushnet Holdings Corp.,10.7,Low ESG Risk,Consumer Durables,NYS,GOLF,4280534016.0,3938091294.7200003
+95,"Adtalem Global Education, Inc.",10.9,Low ESG Risk,Consumer Services,NYS,ATGE,2934435072.0,2699680266.2400002
+96,Pool Corp.,10.9,Low ESG Risk,Retailing,NAS,POOL,12894957568.0,11863360962.560001
+97,"AutoZone, Inc.",11.0,Low ESG Risk,Retailing,NYS,AZO,50976956416.0,46898799902.72
+98,Zurn Elkay Water Solutions Corp.,11.0,Low ESG Risk,Building Products,NYS,ZWS,5431320576.0,4996814929.92
+99,"Garrett Motion, Inc.",11.0,Low ESG Risk,Auto Components,NAS,GTX,2201142528.0,2025051125.76
+100,LKQ Corp.,11.0,Low ESG Risk,Retailing,NAS,LKQ,12279699456.0,11297323499.52
+101,"HP, Inc.",11.0,Low ESG Risk,Technology Hardware,NYS,HPQ,37292920832.0,34309487165.440002
+102,"The AZEK Co., Inc.",11.1,Low ESG Risk,Consumer Durables,NYS,AZEK,6420298240.0,5906674380.8
+103,"Veris Residential, Inc.",11.1,Low ESG Risk,Real Estate,NYS,VRE,1605078400.0,1476672128.0
+104,"Insight Enterprises, Inc.",11.1,Low ESG Risk,Technology Hardware,NAS,NSIT,7186367488.0,6611458088.96
+105,"CarMax, Inc.",11.1,Low ESG Risk,Retailing,NYS,KMX,12938949632.0,11903833661.44
+106,"Cadence Design Systems, Inc.",11.2,Low ESG Risk,Software & Services,NAS,CDNS,78490517504.0,72211276103.68001
+107,"Cardinal Health, Inc.",11.2,Low ESG Risk,Healthcare,NYS,CAH,23375126528.0,21505116405.760002
+108,Vontier Corp.,11.2,Low ESG Risk,Technology Hardware,NYS,VNT,6313415680.0,5808342425.6
+109,"Ventas, Inc.",11.2,Low ESG Risk,Real Estate,NYS,VTR,21627076608.0,19896910479.36
+110,"Quad/Graphics, Inc.",11.3,Low ESG Risk,Commercial Services,NYS,QUAD,323574976.0,297688977.92
+111,"Cencora, Inc.",11.3,Low ESG Risk,Healthcare,NYS,COR,44340531200.0,40793288704.0
+112,Regency Centers Corp.,11.3,Low ESG Risk,Real Estate,NAS,REG,12334930944.0,11348136468.48
+113,STAAR Surgical Co.,11.3,Low ESG Risk,Healthcare,NAS,STAA,2173068544.0,1999223060.48
+114,"Johnson Outdoors, Inc.",11.3,Low ESG Risk,Consumer Durables,NAS,JOUT,399072384.0,367146593.28000003
+115,"Williams-Sonoma, Inc.",11.3,Low ESG Risk,Retailing,NYS,WSM,19302688768.0,17758473666.56
+116,"Agilent Technologies, Inc.",11.4,Low ESG Risk,Pharmaceuticals,NYS,A,38950092800.0,35834085376.0
+117,Equity Residential,11.4,Low ESG Risk,Real Estate,NYS,EQR,26402977792.0,24290739568.64
+118,"Principal Financial Group, Inc.",11.4,Low ESG Risk,Insurance,NAS,PFG,20499224576.0,18859286609.920002
+119,"S&P Global, Inc.",11.5,Low ESG Risk,Diversified Financials,NYS,SPGI,153280315392.0,141017890160.64
+120,Hewlett Packard Enterprise Co.,11.5,Low ESG Risk,Technology Hardware,NYS,HPE,27046131712.0,24882441175.04
+121,"La-Z-Boy, Inc.",11.6,Low ESG Risk,Consumer Durables,NYS,LZB,1789150464.0,1646018426.88
+122,Seagate Technology Holdings Plc,11.6,Low ESG Risk,Technology Hardware,NAS,STX,22029946880.0,20267551129.600002
+123,"Essex Property Trust, Inc.",11.6,Low ESG Risk,Real Estate,NYS,ESS,18875555840.0,17365511372.8
+124,"Applied Materials, Inc.",11.6,Low ESG Risk,Semiconductors,NAS,AMAT,182212460544.0,167635463700.48
+125,American Homes 4 Rent,11.6,Low ESG Risk,Real Estate,NYS,AMH,15166651392.0,13953319280.640001
+126,Lear Corp.,11.6,Low ESG Risk,Auto Components,NYS,LEA,7038847488.0,6475739688.96
+127,"Anika Therapeutics, Inc.",11.7,Low ESG Risk,Healthcare,NAS,ANIK,419387744.0,385836724.48
+128,Park Aerospace Corp.,11.7,Low ESG Risk,Technology Hardware,NYS,PKE,288408416.0,265335742.72
+129,"Highwoods Properties, Inc.",11.7,Low ESG Risk,Real Estate,NYS,HIW,3100574464.0,2852528506.88
+130,"Mid-America Apartment Communities, Inc.",11.7,Low ESG Risk,Real Estate,NYS,MAA,17307684864.0,15923070074.880001
+131,Redfin Corporation,11.7,Low ESG Risk,Real Estate,NAS,RDFN,1009529920.0,928767526.4000001
+132,Richardson Electronics Ltd.,11.7,Low ESG Risk,Technology Hardware,NAS,RELL,177766080.0,163544793.6
+133,Public Storage,11.7,Low ESG Risk,Real Estate,NYS,PSA,54471233536.0,50113534853.12
+134,Atlantica Sustainable Infrastructure Plc,11.8,Low ESG Risk,Utilities,NAS,AY,2558982912.0,2354264279.04
+135,"O'Reilly Automotive, Inc.",11.8,Low ESG Risk,Retailing,NAS,ORLY,61463650304.0,56546558279.68
+136,"Lowe's Companies, Inc.",11.8,Low ESG Risk,Retailing,NYS,LOW,138492690432.0,127413275197.44
+137,"Barrett Business Services, Inc.",11.9,Low ESG Risk,Commercial Services,NAS,BBSI,899322688.0,827376872.96
+138,"Dolby Laboratories, Inc.",11.9,Low ESG Risk,Media,NYS,DLB,7788542464.0,7165459066.88
+139,"Opendoor Technologies, Inc.",11.9,Low ESG Risk,Real Estate,NAS,OPEN,1881086720.0,1730599782.4
+140,"Crown Castle, Inc.",12.0,Low ESG Risk,Real Estate,NYS,CCI,45898665984.0,42226772705.28
+141,"Autoliv, Inc.",12.0,Low ESG Risk,Auto Components,NYS,ALV,8688658432.0,7993565757.440001
+142,"Lumentum Holdings, Inc.",12.0,Low ESG Risk,Technology Hardware,NAS,LITE,3880915968.0,3570442690.56
+143,Ardagh Metal Packaging SA,12.0,Low ESG Risk,Containers & Packaging,NYS,AMBP,2151543552.0,1979420067.8400002
+144,"Boston Properties, Inc.",12.0,Low ESG Risk,Real Estate,NYS,BXP,12079675392.0,11113301360.640001
+145,"ExlService Holdings, Inc.",12.0,Low ESG Risk,Software & Services,NAS,EXLS,5594364416.0,5146815262.72
+146,Brandywine Realty Trust,12.0,Low ESG Risk,Real Estate,NYS,BDN,824189248.0,758254108.1600001
+147,Meritage Homes Corp.,12.1,Low ESG Risk,Homebuilders,NYS,MTH,6901336576.0,6349229649.92
+148,"Dentsply Sirona, Inc.",12.1,Low ESG Risk,Healthcare,NAS,XRAY,5718158336.0,5260705669.12
+149,"Foot Locker, Inc.",12.1,Low ESG Risk,Retailing,NYS,FL,2505291264.0,2304867962.88
+150,Haemonetics Corp.,12.1,Low ESG Risk,Healthcare,NYS,HAE,4605650432.0,4237198397.44
+151,"Brixmor Property Group, Inc.",12.1,Low ESG Risk,Real Estate,NYS,BRX,7384838656.0,6794051563.52
+152,"Mettler-Toledo International, Inc.",12.1,Low ESG Risk,Pharmaceuticals,NYS,MTD,29435623424.0,27080773550.08
+153,"Motorola Solutions, Inc.",12.2,Low ESG Risk,Technology Hardware,NYS,MSI,65665712128.0,60412455157.76
+154,"Digital Realty Trust, Inc.",12.2,Low ESG Risk,Real Estate,NYS,DLR,51924844544.0,47770856980.48
+155,Lam Research Corp.,12.2,Low ESG Risk,Semiconductors,NAS,LRCX,126515453952.0,116394217635.84001
+156,Fox Corp.,12.2,Low ESG Risk,Media,NAS,FOXA,16876169216.0,15526075678.720001
+157,"Leggett & Platt, Inc.",12.3,Low ESG Risk,Consumer Durables,NYS,LEG,1723702912.0,1585806679.04
+158,"FARO Technologies, Inc.",12.3,Low ESG Risk,Technology Hardware,NAS,FARO,340328544.0,313102260.48
+159,"Iron Mountain, Inc.",12.4,Low ESG Risk,Real Estate,NYS,IRM,29084655616.0,26757883166.72
+160,"Insperity, Inc.",12.4,Low ESG Risk,Commercial Services,NYS,NSP,3826928384.0,3520774113.28
+161,ReNew Energy Global Plc,12.4,Low ESG Risk,Utilities,NAS,RNW,2034771200.0,1871989504.0
+162,Federal Realty Investment Trust,12.4,Low ESG Risk,Real Estate,NYS,FRT,9181691904.0,8447156551.68
+163,Topgolf Callaway Brands Corp.,12.5,Low ESG Risk,Consumer Durables,NYS,MODG,2889391872.0,2658240522.2400002
+164,"Simon Property Group, Inc.",12.5,Low ESG Risk,Real Estate,NYS,SPG,58054660096.0,53410287288.32
+165,Marine Products Corp.,12.5,Low ESG Risk,Consumer Durables,NYS,MPX,362089472.0,333122314.24
+166,InvenTrust Properties Corp.,12.6,Low ESG Risk,Real Estate,NYS,IVT,1810212864.0,1665395834.88
+167,"Penske Automotive Group, Inc.",12.6,Low ESG Risk,Retailing,NYS,PAG,10766899200.0,9905547264.0
+168,American Tower Corp.,12.6,Low ESG Risk,Real Estate,NYS,AMT,99521708032.0,91559971389.44
+169,"Escalade, Inc.",12.6,Low ESG Risk,Consumer Durables,NAS,ESCA,204597216.0,188229438.72
+170,International Game Technology PLC,12.6,Low ESG Risk,Consumer Services,NYS,IGT,4351261696.0,4003160760.32
+171,"America's Car-Mart, Inc.",12.7,Low ESG Risk,Retailing,NAS,CRMT,437730304.0,402711879.68
+172,Bicycle Therapeutics Plc,12.7,Low ESG Risk,Pharmaceuticals,NAS,BCYC,1609634432.0,1480863677.44
+173,"Tempur Sealy International, Inc.",12.7,Low ESG Risk,Consumer Durables,NYS,TPX,9297617920.0,8553808486.400001
+174,"Thermo Fisher Scientific, Inc.",12.7,Low ESG Risk,Pharmaceuticals,NYS,TMO,211875282944.0,194925260308.48
+175,Waters Corp.,12.8,Low ESG Risk,Pharmaceuticals,NYS,WAT,18648928256.0,17157013995.52
+176,"AutoNation, Inc.",12.8,Low ESG Risk,Retailing,NYS,AN,7207703552.0,6631087267.84
+177,"Gentherm, Inc.",12.8,Low ESG Risk,Auto Components,NAS,THRM,1671483648.0,1537764956.16
+178,Genuine Parts Co.,12.8,Low ESG Risk,Retailing,NYS,GPC,20067414016.0,18462020894.72
+179,"Monro, Inc.",12.8,Low ESG Risk,Retailing,NAS,MNRO,755801920.0,695337766.4
+180,"Udemy, Inc.",12.8,Low ESG Risk,Software & Services,NAS,UDMY,1330473728.0,1224035829.76
+181,"The Home Depot, Inc.",12.8,Low ESG Risk,Retailing,NYS,HD,368771366912.0,339269657559.04004
+182,"EastGroup Properties, Inc.",12.8,Low ESG Risk,Real Estate,NYS,EGP,8934619136.0,8219849605.12
+183,"Newell Brands, Inc.",12.8,Low ESG Risk,Consumer Durables,NAS,NWL,2798184960.0,2574330163.2000003
+184,"Cisco Systems, Inc.",12.9,Low ESG Risk,Technology Hardware,NAS,CSCO,195477864448.0,179839635292.16
+185,"Hannon Armstrong Sustainable Infrastructure Capital, Inc.",12.9,Low ESG Risk,Real Estate,NYS,HASI,3730990592.0,3432511344.6400003
+186,"Okta, Inc.",12.9,Low ESG Risk,Software & Services,NAS,OKTA,16181659648.0,14887126876.16
+187,"Movado Group, Inc.",12.9,Low ESG Risk,Textiles & Apparel,NYS,MOV,577676928.0,531462773.76000005
+188,"UDR, Inc.",12.9,Low ESG Risk,Real Estate,NYS,UDR,15707839488.0,14451212328.960001
+189,PennyMac Mortgage Investment Trust,12.9,Low ESG Risk,Real Estate,NYS,PMT,1293245568.0,1189785922.56
+190,"Cumulus Media, Inc.",12.9,Low ESG Risk,Media,NAS,CMLS,36135612.0,33244763.040000003
+191,"Juniper Networks, Inc.",12.9,Low ESG Risk,Technology Hardware,NYS,JNPR,12089553920.0,11122389606.4
+192,Radware Ltd.,12.9,Low ESG Risk,Software & Services,NAS,RDWR,757178688.0,696604392.96
+193,"Host Hotels & Resorts, Inc.",12.9,Low ESG Risk,Real Estate,NAS,HST,13480147968.0,12401736130.560001
+194,"Sabra Health Care REIT, Inc.",13.0,Low ESG Risk,Real Estate,NAS,SBRA,3840518656.0,3533277163.52
+195,"Equinix, Inc.",13.0,Low ESG Risk,Real Estate,NAS,EQIX,76222562304.0,70124757319.68001
+196,Adient plc,13.0,Low ESG Risk,Auto Components,NYS,ADNT,2285112320.0,2102303334.4
+197,TE Connectivity Ltd.,13.0,Low ESG Risk,Technology Hardware,NYS,TEL,48093110272.0,44245661450.240005
+198,The Cigna Group,13.0,Low ESG Risk,Healthcare,NYS,CI,97937350656.0,90102362603.52
+199,"TrueBlue, Inc.",13.0,Low ESG Risk,Commercial Services,NYS,TBI,346659264.0,318926522.88
+200,"Harley-Davidson, Inc.",13.1,Low ESG Risk,Automobiles,NYS,HOG,4865081856.0,4475875307.52
+201,"Utah Medical Products, Inc.",13.1,Low ESG Risk,Healthcare,NAS,UTMD,256481584.0,235963057.28
+202,DiamondRock Hospitality Co.,13.1,Low ESG Risk,Real Estate,NYS,DRH,1831618944.0,1685089428.48
+203,"Frontdoor, Inc.",13.1,Low ESG Risk,Consumer Services,NAS,FTDR,2924915200.0,2690921984.0
+204,"John Wiley & Sons, Inc.",13.1,Low ESG Risk,Media,NYS,WLY,2624977920.0,2414979686.4
+205,JBG SMITH Properties,13.1,Low ESG Risk,Real Estate,NYS,JBGS,1478174848.0,1359920860.16
+206,"Group 1 Automotive, Inc.",13.1,Low ESG Risk,Retailing,NYS,GPI,4242148096.0,3902776248.32
+207,"Climb Global Solutions, Inc.",13.1,Low ESG Risk,Technology Hardware,NAS,CLMB,305369664.0,280940090.88
+208,Booz Allen Hamilton Holding Corp.,13.1,Low ESG Risk,Software & Services,NYS,BAH,20228169728.0,18609916149.760002
+209,"Ethan Allen Interiors, Inc.",13.1,Low ESG Risk,Consumer Durables,NYS,ETD,789547712.0,726383895.0400001
+210,"Alexandria Real Estate Equities, Inc.",13.1,Low ESG Risk,Real Estate,NYS,ARE,22573899776.0,20767987793.920002
+211,"LiveWire Group, Inc.",13.1,Low ESG Risk,Consumer Durables,NYS,LVWR,1720943104.0,1583267655.68
+212,The E.W. Scripps Co.,13.2,Low ESG Risk,Media,NAS,SSP,298011104.0,274170215.68
+213,Semtech Corp.,13.2,Low ESG Risk,Semiconductors,NAS,SMTC,2136148352.0,1965256483.8400002
+214,"Agilysys, Inc.",13.2,Low ESG Risk,Technology Hardware,NAS,AGYS,2949404672.0,2713452298.2400002
+215,Sealed Air Corp.,13.2,Low ESG Risk,Containers & Packaging,NYS,SEE,5365912576.0,4936639569.92
+216,SL Green Realty Corp.,13.2,Low ESG Risk,Real Estate,NYS,SLG,4016101888.0,3694813736.96
+217,NVIDIA Corp.,13.2,Low ESG Risk,Semiconductors,NAS,NVDA,2902353510400.0,2670165229568.0
+218,"Watts Water Technologies, Inc.",13.2,Low ESG Risk,Machinery,NYS,WTS,6558343680.0,6033676185.6
+219,"Akamai Technologies, Inc.",13.3,Low ESG Risk,Software & Services,NAS,AKAM,14803688448.0,13619393372.16
+220,"Tanger, Inc.",13.3,Low ESG Risk,Real Estate,NYS,SKT,3075006464.0,2829005946.88
+221,International Business Machines Corp.,13.3,Low ESG Risk,Software & Services,NYS,IBM,172192137216.0,158416766238.72
+222,"Electronic Arts, Inc.",13.3,Low ESG Risk,Software & Services,NAS,EA,39063048192.0,35938004336.64
+223,Tractor Supply Co.,13.3,Low ESG Risk,Retailing,NAS,TSCO,30059585536.0,27654818693.120003
+224,Ares Commercial Real Estate Corp.,13.3,Low ESG Risk,Real Estate,NYS,ACRE,414251680.0,381111545.6
+225,"Palo Alto Networks, Inc.",13.4,Low ESG Risk,Software & Services,NAS,PANW,107546935296.0,98943180472.32
+226,McKesson Corp.,13.4,Low ESG Risk,Healthcare,NYS,MCK,75499585536.0,69459618693.12001
+227,Air Lease Corp.,13.4,Low ESG Risk,Traders & Distributors,NYS,AL,5561667584.0,5116734177.280001
+228,"QUALCOMM, Inc.",13.4,Low ESG Risk,Semiconductors,NAS,QCOM,213825601536.0,196719553413.12
+229,"Guidewire Software, Inc.",13.4,Low ESG Risk,Software & Services,NYS,GWRE,11636512768.0,10705591746.560001
+230,Levi Strauss & Co.,13.4,Low ESG Risk,Textiles & Apparel,NYS,LEVI,7353805824.0,6765501358.08
+231,"Nasdaq, Inc.",13.4,Low ESG Risk,Diversified Financials,NAS,NDAQ,36604080128.0,33675753717.760002
+232,QIAGEN NV,13.5,Low ESG Risk,Pharmaceuticals,NYS,QGEN,9424060416.0,8670135582.720001
+233,Kilroy Realty Corp.,13.5,Low ESG Risk,Real Estate,NYS,KRC,4254832384.0,3914445793.28
+234,Birkenstock Holding Plc,13.5,Low ESG Risk,Textiles & Apparel,NYS,BIRK,10172818432.0,9358992957.44
+235,"Carter's, Inc.",13.5,Low ESG Risk,Retailing,NYS,CRI,2300141824.0,2116130478.0800002
+236,"Tapestry, Inc.",13.5,Low ESG Risk,Textiles & Apparel,NYS,TPR,9786032128.0,9003149557.76
+237,"Fossil Group, Inc.",13.5,Low ESG Risk,Textiles & Apparel,NAS,FOSL,68813160.0,63308107.2
+238,Coca-Cola Europacific Partners plc,13.6,Low ESG Risk,Food Products,NAS,CCEP,33989265408.0,31270124175.36
+239,"Axcelis Technologies, Inc.",13.6,Low ESG Risk,Semiconductors,NAS,ACLS,4383429120.0,4032754790.4
+240,"CommScope Holding Co., Inc.",13.6,Low ESG Risk,Technology Hardware,NAS,COMM,362993664.0,333954170.88
+241,"JAKKS Pacific, Inc.",13.6,Low ESG Risk,Consumer Durables,NAS,JAKK,208025344.0,191383316.48000002
+242,"HireQuest, Inc.",13.6,Low ESG Risk,Commercial Services,NAS,HQI,185920000.0,171046400.0
+243,"Avis Budget Group, Inc.",13.6,Low ESG Risk,Transportation,NAS,CAR,3997120512.0,3677350871.04
+244,"Hayward Holdings, Inc.",13.7,Low ESG Risk,Consumer Durables,NYS,HAYW,2902731520.0,2670512998.4
+245,Hooker Furnishings Corp.,13.7,Low ESG Risk,Consumer Durables,NAS,HOFT,165253632.0,152033341.44
+246,CNH Industrial NV,13.7,Low ESG Risk,Machinery,NYS,CNH,13404735488.0,12332356648.960001
+247,"Arista Networks, Inc.",13.7,Low ESG Risk,Technology Hardware,NYS,ANET,105503055872.0,97062811402.24
+248,"Grand Canyon Education, Inc.",13.8,Low ESG Risk,Consumer Services,NAS,LOPE,4527671296.0,4165457592.32
+249,"STAG Industrial, Inc.",13.8,Low ESG Risk,Real Estate,NYS,STAG,7193551872.0,6618067722.240001
+250,Genpact Ltd.,13.8,Low ESG Risk,Software & Services,NYS,G,6121085952.0,5631399075.84
+251,Vornado Realty Trust,13.8,Low ESG Risk,Real Estate,NYS,VNO,6126276096.0,5636174008.320001
+252,"Recursion Pharmaceuticals, Inc.",13.9,Low ESG Risk,Pharmaceuticals,NAS,RXRX,2241415680.0,2062102425.6000001
+253,"PC Connection, Inc.",13.9,Low ESG Risk,Technology Hardware,NAS,CNXN,1768720384.0,1627222753.28
+254,"MarketAxess Holdings, Inc.",13.9,Low ESG Risk,Diversified Financials,NAS,MKTX,8512022528.0,7831060725.76
+255,"W.P. Carey, Inc.",13.9,Low ESG Risk,Real Estate,NYS,WPC,13138252800.0,12087192576.0
+256,"Advanced Micro Devices, Inc.",13.9,Low ESG Risk,Semiconductors,NAS,AMD,257688289280.0,237073226137.6
+257,"Equity LifeStyle Properties, Inc.",13.9,Low ESG Risk,Real Estate,NYS,ELS,13486688256.0,12407753195.52
+258,Acadia Realty Trust,13.9,Low ESG Risk,Real Estate,NYS,AKR,2209628928.0,2032858613.76
+259,Amdocs Ltd.,13.9,Low ESG Risk,Software & Services,NAS,DOX,9723117568.0,8945268162.56
+260,"TEGNA, Inc.",13.9,Low ESG Risk,Media,NYS,TGNA,2759473408.0,2538715535.36
+261,"Synopsys, Inc.",13.9,Low ESG Risk,Software & Services,NAS,SNPS,87391346688.0,80400038952.96
+262,"VICI Properties, Inc.",13.9,Low ESG Risk,Real Estate,NYS,VICI,32202969088.0,29626731560.960003
+263,"Best Buy Co., Inc.",14.0,Low ESG Risk,Retailing,NYS,BBY,19233060864.0,17694415994.88
+264,"Mohawk Industries, Inc.",14.0,Low ESG Risk,Consumer Durables,NYS,MHK,8428013568.0,7753772482.56
+265,"Granite Point Mortgage Trust, Inc.",14.0,Low ESG Risk,Real Estate,NYS,GPMT,162290672.0,149307418.24
+266,Ferguson Plc,14.0,Low ESG Risk,Traders & Distributors,NYS,FERG,42486013952.0,39087132835.840004
+267,US Foods Holding Corp.,14.0,Low ESG Risk,Food Retailers,NYS,USFD,13134215168.0,12083477954.560001
+268,Ralph Lauren Corp.,14.0,Low ESG Risk,Textiles & Apparel,NYS,RL,10633823232.0,9783117373.44
+269,"Americold Realty Trust, Inc.",14.1,Low ESG Risk,Real Estate,NYS,COLD,8100922368.0,7452848578.56
+270,"Adobe, Inc.",14.1,Low ESG Risk,Software & Services,NAS,ADBE,249674121216.0,229700191518.72
+271,Paramount Global,14.1,Low ESG Risk,Media,NAS,PARA,8317237760.0,7651858739.200001
+272,"Thryv Holdings, Inc.",14.1,Low ESG Risk,Media,NAS,THRY,673619008.0,619729487.36
+273,"E2open Parent Holdings, Inc.",14.1,Low ESG Risk,Software & Services,NYS,ETWO,1428980736.0,1314662277.1200001
+274,"Tetra Tech, Inc.",14.1,Low ESG Risk,Commercial Services,NAS,TTEK,10749747200.0,9889767424.0
+275,Central Garden & Pet Co.,14.1,Low ESG Risk,Retailing,NAS,CENT,2420799744.0,2227135764.48
+276,The Lovesac Co.,14.1,Low ESG Risk,Consumer Durables,NAS,LOVE,458895264.0,422183642.88
+277,"Park Hotels & Resorts, Inc.",14.1,Low ESG Risk,Real Estate,NYS,PK,3205301504.0,2948877383.6800003
+278,"American Assets Trust, Inc.",14.2,Low ESG Risk,Real Estate,NYS,AAT,1891437696.0,1740122680.3200002
+279,Deckers Outdoor Corp.,14.2,Low ESG Risk,Textiles & Apparel,NYS,DECK,22634156032.0,20823423549.440002
+280,"Iteris, Inc.",14.2,Low ESG Risk,Technology Hardware,NAS,ITI,209718976.0,192941457.92000002
+281,KB Home,14.2,Low ESG Risk,Homebuilders,NYS,KBH,6070450688.0,5584814632.96
+282,Microsoft Corp.,14.2,Low ESG Risk,Software & Services,NAS,MSFT,3296377962496.0,3032667725496.3203
+283,Camden Property Trust,14.2,Low ESG Risk,Real Estate,NYS,CPT,12034193408.0,11071457935.36
+284,"Extra Space Storage, Inc.",14.2,Low ESG Risk,Real Estate,NYS,EXR,36994887680.0,34035296665.600002
+285,"The Children's Place, Inc.",14.2,Low ESG Risk,Retailing,NAS,PLCE,102301016.0,94116934.72
+286,"J.B. Hunt Transport Services, Inc.",14.3,Low ESG Risk,Transportation,NAS,JBHT,16913987584.0,15560868577.28
+287,"NetApp, Inc.",14.3,Low ESG Risk,Technology Hardware,NAS,NTAP,26223290368.0,24125427138.56
+288,"ABM Industries, Inc.",14.3,Low ESG Risk,Commercial Services,NYS,ABM,3374171136.0,3104237445.1200004
+289,Concentrix Corp.,14.3,Low ESG Risk,Commercial Services,NAS,CNXC,4532526080.0,4169923993.6000004
+290,"Franklin BSP Realty Trust, Inc.",14.3,Low ESG Risk,Real Estate,NYS,FBRT,1114252032.0,1025111869.44
+291,Helen of Troy Ltd.,14.4,Low ESG Risk,Consumer Durables,NAS,HELE,1412371456.0,1299381739.52
+292,"Fidelity National Information Services, Inc.",14.4,Low ESG Risk,Software & Services,NYS,FIS,42975952896.0,39537876664.32
+293,"Asbury Automotive Group, Inc.",14.4,Low ESG Risk,Retailing,NYS,ABG,5160855552.0,4747987107.84
+294,VF Corp.,14.4,Low ESG Risk,Textiles & Apparel,NYS,VFC,6282850816.0,5780222750.72
+295,SITE Centers Corp.,14.4,Low ESG Risk,Real Estate,NYS,SITC,3268973568.0,3007455682.56
+296,"MSCI, Inc.",14.4,Low ESG Risk,Diversified Financials,NYS,MSCI,39928995840.0,36734676172.8
+297,"FIGS, Inc.",14.4,Low ESG Risk,Textiles & Apparel,NYS,FIGS,1043497664.0,960017850.88
+298,"Kulicke & Soffa Industries, Inc.",14.4,Low ESG Risk,Semiconductors,NAS,KLIC,2808127232.0,2583477053.44
+299,"lululemon athletica, Inc.",14.4,Low ESG Risk,Retailing,NAS,LULU,36585582592.0,33658735984.640003
+300,"Cable One, Inc.",14.4,Low ESG Risk,Media,NYS,CABO,2118168320.0,1948714854.4
+301,"ANSYS, Inc.",14.5,Low ESG Risk,Software & Services,NAS,ANSS,27956080640.0,25719594188.8
+302,"Ormat Technologies, Inc.",14.5,Low ESG Risk,Utilities,NYS,ORA,4556400640.0,4191888588.8
+303,"NETGEAR, Inc.",14.5,Low ESG Risk,Technology Hardware,NAS,NTGR,459615680.0,422846425.6
+304,"Sun Communities, Inc.",14.5,Low ESG Risk,Real Estate,NYS,SUI,16730613760.0,15392164659.2
+305,Signet Jewelers Ltd.,14.5,Low ESG Risk,Retailing,NYS,SIG,3907958016.0,3595321374.7200003
+306,"Henry Schein, Inc.",14.5,Low ESG Risk,Healthcare,NAS,HSIC,9119792128.0,8390208757.76
+307,"Cirrus Logic, Inc.",14.5,Low ESG Risk,Semiconductors,NAS,CRUS,7416284672.0,6822981898.240001
+308,Columbia Sportswear Co.,14.5,Low ESG Risk,Retailing,NAS,COLM,4755934720.0,4375459942.400001
+309,Oracle Corp.,14.5,Low ESG Risk,Software & Services,NYS,ORCL,383781044224.0,353078560686.08
+310,"Omnicom Group, Inc.",14.5,Low ESG Risk,Media,NYS,OMC,17922727936.0,16488909701.12
+311,Ciena Corp.,14.5,Low ESG Risk,Technology Hardware,NYS,CIEN,7245605376.0,6665956945.92
+312,"Kontoor Brands, Inc.",14.6,Low ESG Risk,Textiles & Apparel,NYS,KTB,3881280512.0,3570778071.04
+313,"Standard Motor Products, Inc.",14.6,Low ESG Risk,Auto Components,NYS,SMP,705487424.0,649048430.08
+314,Daily Journal Corp.,14.6,Low ESG Risk,Media,NAS,DJCO,607476800.0,558878656.0
+315,"Allegro MicroSystems, Inc.",14.6,Low ESG Risk,Semiconductors,NAS,ALGM,6158455808.0,5665779343.360001
+316,"CareTrust REIT, Inc.",14.6,Low ESG Risk,Real Estate,NYS,CTRE,3831465984.0,3524948705.28
+317,"Salesforce, Inc.",14.6,Low ESG Risk,Software & Services,NYS,CRM,243432177664.0,223957603450.88
+318,Moody's Corp.,14.6,Low ESG Risk,Diversified Financials,NYS,MCO,83278831616.0,76616525086.72
+319,"HubSpot, Inc.",14.6,Low ESG Risk,Software & Services,NYS,HUBS,24480296960.0,22521873203.2
+320,"Veeva Systems, Inc.",14.7,Low ESG Risk,Healthcare,NYS,VEEV,29409347584.0,27056599777.280003
+321,Amcor Plc,14.7,Low ESG Risk,Containers & Packaging,NYS,AMCR,14930362368.0,13735933378.560001
+322,"Four Corners Property Trust, Inc.",14.7,Low ESG Risk,Real Estate,NYS,FCPT,2493174016.0,2293720094.7200003
+323,"Funko, Inc.",14.7,Low ESG Risk,Retailing,NAS,FNKO,498201792.0,458345648.64000005
+324,Terreno Realty Corp.,14.7,Low ESG Risk,Real Estate,NYS,TRNO,6388272128.0,5877210357.76
+325,"Safehold, Inc.",14.7,Low ESG Risk,Real Estate,NYS,SAFE,1622291200.0,1492507904.0
+326,Rithm Capital Corp.,14.7,Low ESG Risk,Real Estate,NYS,RITM,5608345088.0,5159677480.96
+327,"Gannett Co., Inc.",14.8,Low ESG Risk,Media,NYS,GCI,718558720.0,661074022.4
+328,"Gaming & Leisure Properties, Inc.",14.8,Low ESG Risk,Real Estate,NAS,GLPI,13363278848.0,12294216540.16
+329,"Dana, Inc.",14.8,Low ESG Risk,Auto Components,NYS,DAN,1803339776.0,1659072593.92
+330,"Air Products & Chemicals, Inc.",14.8,Low ESG Risk,Chemicals,NYS,APD,60127105024.0,55316936622.08
+331,"Radius Recycling, Inc.",14.8,Low ESG Risk,Commercial Services,NAS,RDUS,503589408.0,463302255.36
+332,"Arlo Technologies, Inc.",14.8,Low ESG Risk,Consumer Durables,NYS,ARLO,1668605952.0,1535117475.8400002
+333,"Zoom Video Communications, Inc.",14.8,Low ESG Risk,Software & Services,NAS,ZM,18278268928.0,16816007413.76
+334,"OneMain Holdings, Inc.",14.8,Low ESG Risk,Diversified Financials,NYS,OMF,6295962624.0,5792285614.08
+335,"O-I Glass, Inc.",14.8,Low ESG Risk,Containers & Packaging,NYS,OI,1818833024.0,1673326382.0800002
+336,Gen Digital Inc.,14.8,Low ESG Risk,Software & Services,NAS,GEN,16142044160.0,14850680627.2
+337,"Apollo Commercial Real Estate Finance, Inc.",14.9,Low ESG Risk,Real Estate,NYS,ARI,1560938752.0,1436063651.8400002
+338,"Camping World Holdings, Inc.",14.9,Low ESG Risk,Retailing,NYS,CWH,1052884288.0,968653544.96
+339,Pebblebrook Hotel Trust,14.9,Low ESG Risk,Real Estate,NYS,PEB,1705131520.0,1568720998.4
+340,Service Properties Trust,14.9,Low ESG Risk,Real Estate,NAS,SVC,1011136000.0,930245120.0
+341,Regions Financial Corp.,14.9,Low ESG Risk,Banks,NYS,RF,20248936448.0,18629021532.16
+342,"H&R Block, Inc.",14.9,Low ESG Risk,Consumer Services,NYS,HRB,7851353088.0,7223244840.96
+343,"Mattel, Inc.",14.9,Low ESG Risk,Consumer Durables,NAS,MAT,5745785856.0,5286122987.52
+344,"nLIGHT, Inc.",15.0,Low ESG Risk,Technology Hardware,NAS,LASR,617396288.0,568004584.96
+345,"Dynatrace, Inc.",15.0,Low ESG Risk,Software & Services,NYS,DT,12918717440.0,11885220044.800001
+346,"First Industrial Realty Trust, Inc.",15.0,Low ESG Risk,Real Estate,NYS,FR,6994760192.0,6435179376.64
+347,"ServiceNow, Inc.",15.0,Low ESG Risk,Software & Services,NYS,NOW,151175528448.0,139081486172.16
+348,"Xperi, Inc.",15.0,Low ESG Risk,Software & Services,NYS,XPER,377438112.0,347243063.04
+349,"Visa, Inc.",15.0,Low ESG Risk,Software & Services,NYS,V,557971472384.0,513333754593.28
+350,The Walt Disney Co.,15.0,Low ESG Risk,Media,NYS,DIS,177400020992.0,163208019312.64
+351,Scholastic Corp.,15.0,Low ESG Risk,Media,NAS,SCHL,1070970432.0,985292797.44
+352,"PlayAGS, Inc.",15.0,Low ESG Risk,Software & Services,NYS,AGS,456582528.0,420055925.76
+353,"MFA Financial, Inc.",15.1,Low ESG Risk,Real Estate,NYS,MFA,1190276096.0,1095054008.32
+354,Intel Corp.,15.1,Low ESG Risk,Semiconductors,NAS,INTC,146691735552.0,134956396707.84001
+355,HollySys Automation Technologies Ltd.,15.1,Low ESG Risk,Technology Hardware,NAS,HOLI,1581116416.0,1454627102.72
+356,"Automatic Data Processing, Inc.",15.1,Low ESG Risk,Software & Services,NAS,ADP,102015787008.0,93854524047.36
+357,"MetLife, Inc.",15.1,Low ESG Risk,Insurance,NYS,MET,54173351936.0,49839483781.12
+358,"The Hartford Financial Services Group, Inc.",15.1,Low ESG Risk,Insurance,NYS,HIG,31066105856.0,28580817387.52
+359,Chimera Investment Corp.,15.1,Low ESG Risk,Real Estate,NYS,CIM,1257793024.0,1157169582.0800002
+360,"Zoetis, Inc.",15.1,Low ESG Risk,Pharmaceuticals,NYS,ZTS,83068510208.0,76423029391.36
+361,"Calix, Inc.",15.1,Low ESG Risk,Technology Hardware,NYS,CALX,2416562176.0,2223237201.92
+362,"Vishay Precision Group, Inc.",15.1,Low ESG Risk,Technology Hardware,NYS,VPG,449358752.0,413410051.84000003
+363,"Autodesk, Inc.",15.1,Low ESG Risk,Software & Services,NAS,ADSK,53916037120.0,49602754150.4
+364,Trane Technologies Plc,15.1,Low ESG Risk,Building Products,NYS,TT,75927519232.0,69853317693.44
+365,Victoria's Secret & Co.,15.1,Low ESG Risk,Retailing,NYS,VSCO,1491599744.0,1372271764.48
+366,"Mirion Technologies, Inc.",15.1,Low ESG Risk,Technology Hardware,NYS,MIR,2586542848.0,2379619420.1600003
+367,"Floor & Decor Holdings, Inc.",15.1,Low ESG Risk,Retailing,NYS,FND,10059127808.0,9254397583.36
+368,Weyerhaeuser Co.,15.2,Low ESG Risk,Paper & Forestry,NYS,WY,22227728384.0,20449510113.280003
+369,"Kennedy-Wilson Holdings, Inc.",15.2,Low ESG Risk,Real Estate,NYS,KW,1481176576.0,1362682449.92
+370,Cognizant Technology Solutions Corp.,15.2,Low ESG Risk,Software & Services,NAS,CTSH,37140762624.0,34169501614.08
+371,"Sunstone Hotel Investors, Inc.",15.2,Low ESG Risk,Real Estate,NYS,SHO,2197642496.0,2021831096.3200002
+372,Centerspace,15.2,Low ESG Risk,Real Estate,NYS,CSR,1114429056.0,1025274731.5200001
+373,Abercrombie & Fitch Co.,15.2,Low ESG Risk,Retailing,NYS,ANF,7961183744.0,7324289044.4800005
+374,Agree Realty Corp.,15.2,Low ESG Risk,Real Estate,NYS,ADC,6798579712.0,6254693335.04
+375,"Ryder System, Inc.",15.2,Low ESG Risk,Transportation,NYS,R,5901986304.0,5429827399.68
+376,"American Eagle Outfitters, Inc.",15.2,Low ESG Risk,Retailing,NYS,AEO,4026814976.0,3704669777.92
+377,"Zumiez, Inc.",15.3,Low ESG Risk,Retailing,NAS,ZUMZ,456984992.0,420426192.64000005
+378,"American Axle & Manufacturing Holdings, Inc.",15.3,Low ESG Risk,Auto Components,NYS,AXL,873418752.0,803545251.84
+379,Aon Plc,15.3,Low ESG Risk,Insurance,NYS,AON,65327149056.0,60100977131.520004
+380,Sysco Corp.,15.3,Low ESG Risk,Food Retailers,NYS,SYY,37373550592.0,34383666544.64
+381,DXC Technology Co.,15.3,Low ESG Risk,Software & Services,NYS,DXC,3563997184.0,3278877409.28
+382,"Cass Information Systems, Inc.",15.3,Low ESG Risk,Software & Services,NAS,CASS,628428864.0,578154554.88
+383,"Crocs, Inc.",15.3,Low ESG Risk,Textiles & Apparel,NAS,CROX,8072825856.0,7426999787.52
+384,"Xenia Hotels & Resorts, Inc.",15.3,Low ESG Risk,Real Estate,NYS,XHR,1589737088.0,1462558120.96
+385,Chatham Lodging Trust,15.3,Low ESG Risk,Real Estate,NYS,CLDT,459510880.0,422750009.6
+386,ArcBest Corp.,15.3,Low ESG Risk,Transportation,NAS,ARCB,2837801216.0,2610777118.7200003
+387,"Sunnova Energy International, Inc.",15.3,Low ESG Risk,Traders & Distributors,NYS,NOVA,903828800.0,831522496.0
+388,"Teradyne, Inc.",15.3,Low ESG Risk,Semiconductors,NAS,TER,23783663616.0,21880970526.72
+389,"Owens & Minor, Inc.",15.4,Low ESG Risk,Healthcare,NYS,OMI,1132954624.0,1042318254.08
+390,SpartanNash Co.,15.4,Low ESG Risk,Food Retailers,NAS,SPTN,679530560.0,625168115.2
+391,Centene Corp.,15.4,Low ESG Risk,Healthcare,NYS,CNC,36181876736.0,33287326597.120003
+392,"Weyco Group, Inc.",15.4,Low ESG Risk,Retailing,NAS,WEYS,319766304.0,294184999.68
+393,"eBay, Inc.",15.4,Low ESG Risk,Software & Services,NAS,EBAY,27399161856.0,25207228907.52
+394,"Berry Global Group, Inc.",15.4,Low ESG Risk,Containers & Packaging,NYS,BERY,7302152192.0,6717980016.64
+395,"Marvell Technology, Inc.",15.4,Low ESG Risk,Semiconductors,NAS,MRVL,58800209920.0,54096193126.4
+396,Retail Opportunity Investments Corp.,15.4,Low ESG Risk,Real Estate,NAS,ROIC,1716805376.0,1579460945.92
+397,"Mesa Laboratories, Inc.",15.4,Low ESG Risk,Technology Hardware,NAS,MLAB,606942784.0,558387361.28
+398,Avery Dennison Corp.,15.4,Low ESG Risk,Containers & Packaging,NYS,AVY,17951326208.0,16515220111.36
+399,"MAXIMUS, Inc.",15.4,Low ESG Risk,Commercial Services,NYS,MMS,5551191552.0,5107096227.84
+400,Service Corp. International,15.5,Low ESG Risk,Consumer Services,NYS,SCI,10932549632.0,10057945661.44
+401,Teradata Corp.,15.5,Low ESG Risk,Software & Services,NYS,TDC,3381599232.0,3111071293.44
+402,"The TJX Cos., Inc.",15.5,Low ESG Risk,Retailing,NYS,TJX,128803201024.0,118498944942.08
+403,"Ulta Beauty, Inc.",15.5,Low ESG Risk,Retailing,NAS,ULTA,19108986880.0,17580267929.600002
+404,Realty Income Corp.,15.5,Low ESG Risk,Real Estate,NYS,O,50182709248.0,46168092508.16
+405,"Broadstone Net Lease, Inc.",15.5,Low ESG Risk,Real Estate,NYS,BNL,3438294272.0,3163230730.2400002
+406,"OSI Systems, Inc.",15.5,Low ESG Risk,Technology Hardware,NAS,OSIS,2543495680.0,2340016025.6
+407,"Broadridge Financial Solutions, Inc.",15.5,Low ESG Risk,Software & Services,NYS,BR,24574349312.0,22608401367.04
+408,"Commvault Systems, Inc.",15.5,Low ESG Risk,Software & Services,NAS,CVLT,5337896448.0,4910864732.16
+409,"Netflix, Inc.",15.5,Low ESG Risk,Media,NAS,NFLX,278991175680.0,256671881625.6
+410,"Bentley Systems, Inc.",15.5,Low ESG Risk,Software & Services,NAS,BSY,14928000000.0,13733760000.0
+411,"Mastercard, Inc.",15.6,Low ESG Risk,Software & Services,NYS,MA,419405103104.0,385852694855.68
+412,"SolarEdge Technologies, Inc.",15.6,Low ESG Risk,Electrical Equipment,NAS,SEDG,1596465280.0,1468748057.6000001
+413,"Sonos, Inc.",15.6,Low ESG Risk,Consumer Durables,NAS,SONO,1748881152.0,1608970659.8400002
+414,"Etsy, Inc.",15.6,Low ESG Risk,Software & Services,NAS,ETSY,7594798080.0,6987214233.6
+415,"Petco Health & Wellness Company, Inc.",15.6,Low ESG Risk,Retailing,NAS,WOOF,1018260160.0,936799347.2
+416,PVH Corp.,15.6,Low ESG Risk,Textiles & Apparel,NYS,PVH,5856690176.0,5388154961.92
+417,"The Cooper Cos., Inc.",15.6,Low ESG Risk,Healthcare,NAS,COO,18111954944.0,16662998548.480001
+418,"Vera Bradley, Inc.",15.6,Low ESG Risk,Textiles & Apparel,NAS,VRA,203465824.0,187188558.08
+419,ICON plc,15.6,Low ESG Risk,Pharmaceuticals,NAS,ICLR,27640995840.0,25429716172.8
+420,"Nexstar Media Group, Inc.",15.6,Low ESG Risk,Media,NAS,NXST,5963879936.0,5486769541.12
+421,"Nextracker, Inc.",15.6,Low ESG Risk,Technology Hardware,NAS,NXT,7027311616.0,6465126686.72
+422,"United Rentals, Inc.",15.7,Low ESG Risk,Traders & Distributors,NYS,URI,48603762688.0,44715461672.96
+423,"Copart, Inc.",15.7,Low ESG Risk,Commercial Services,NAS,CPRT,50992173056.0,46912799211.520004
+424,CyberArk Software Ltd.,15.7,Low ESG Risk,Software & Services,NAS,CYBR,11547783168.0,10623960514.560001
+425,"Dell Technologies, Inc.",15.7,Low ESG Risk,Technology Hardware,NYS,DELL,88533868544.0,81451159060.48001
+426,"Academy Sports & Outdoors, Inc.",15.7,Low ESG Risk,Retailing,NAS,ASO,4139997952.0,3808798115.84
+427,"Vista Outdoor, Inc.",15.7,Low ESG Risk,Consumer Durables,NYS,VSTO,2215017984.0,2037816545.28
+428,Steven Madden Ltd.,15.7,Low ESG Risk,Textiles & Apparel,NAS,SHOO,3246985472.0,2987226634.2400002
+429,LCI Industries,15.7,Low ESG Risk,Auto Components,NYS,LCII,2942760192.0,2707339376.6400003
+430,Globant SA,15.7,Low ESG Risk,Software & Services,NYS,GLOB,8463323136.0,7786257285.12
+431,"WESCO International, Inc.",15.7,Low ESG Risk,Traders & Distributors,NYS,WCC,8932951040.0,8218314956.8
+432,"Easterly Government Properties, Inc.",15.8,Low ESG Risk,Real Estate,NYS,DEA,1438003712.0,1322963415.04
+433,"Dynex Capital, Inc.",15.8,Low ESG Risk,Real Estate,NYS,DX,936088704.0,861201607.6800001
+434,Goodyear Tire & Rubber Co.,15.8,Low ESG Risk,Auto Components,NAS,GT,3487415808.0,3208422543.36
+435,"UiPath, Inc.",15.8,Low ESG Risk,Software & Services,NYS,PATH,7199819264.0,6623833722.88
+436,"Tradeweb Markets, Inc.",15.8,Low ESG Risk,Diversified Financials,NAS,TW,23539374080.0,21656224153.600002
+437,"Napco Security Technologies, Inc.",15.8,Low ESG Risk,Technology Hardware,NAS,NSSC,1985958272.0,1827081610.24
+438,"Haverty Furniture Cos., Inc.",15.9,Low ESG Risk,Retailing,NYS,HVT,438693760.0,403598259.2
+439,Graham Holdings Co.,15.9,Low ESG Risk,Consumer Services,NYS,GHC,3485372416.0,3206542622.7200003
+440,Repligen Corp.,15.9,Low ESG Risk,Pharmaceuticals,NAS,RGEN,7392940032.0,6801504829.440001
+441,Whitestone REIT,15.9,Low ESG Risk,Real Estate,NYS,WSR,712065792.0,655100528.64
+442,"Merit Medical Systems, Inc.",15.9,Low ESG Risk,Healthcare,NAS,MMSI,5034277888.0,4631535656.96
+443,Elastic NV,15.9,Low ESG Risk,Software & Services,NYS,ESTC,11751134208.0,10811043471.36
+444,"Stride, Inc.",15.9,Low ESG Risk,Consumer Services,NYS,LRN,3080614144.0,2834165012.48
+445,"Old Dominion Freight Line, Inc.",15.9,Low ESG Risk,Transportation,NAS,ODFL,43170181120.0,39716566630.4
+446,"Azenta, Inc.",15.9,Low ESG Risk,Pharmaceuticals,NAS,AZTA,2980097536.0,2741689733.12
+447,"Dorman Products, Inc.",15.9,Low ESG Risk,Auto Components,NAS,DORM,3164182784.0,2911048161.28
+448,EPR Properties,16.0,Low ESG Risk,Real Estate,NYS,EPR,3365160704.0,3095947847.6800003
+449,"Burlington Stores, Inc.",16.0,Low ESG Risk,Retailing,NYS,BURL,15745873920.0,14486204006.400002
+450,"Walgreens Boots Alliance, Inc.",16.0,Low ESG Risk,Food Retailers,NAS,WBA,10229809152.0,9411424419.84
+451,"Boot Barn Holdings, Inc.",16.0,Low ESG Risk,Retailing,NYS,BOOT,3721457664.0,3423741050.88
+452,"W.W. Grainger, Inc.",16.0,Low ESG Risk,Traders & Distributors,NYS,GWW,47896027136.0,44064344965.12
+453,"AMMO, Inc.",16.0,Low ESG Risk,Consumer Durables,NAS,POWW,213333984.0,196267265.28
+454,Deere & Co.,16.0,Low ESG Risk,Machinery,NYS,DE,106130268160.0,97639846707.2
+455,Graphic Packaging Holding Co.,16.0,Low ESG Risk,Containers & Packaging,NYS,GPK,8628815872.0,7938510602.240001
+456,"Cooper-Standard Holdings, Inc.",16.0,Low ESG Risk,Auto Components,NYS,CPS,260561808.0,239716863.36
+457,"Invitation Homes, Inc.",16.0,Low ESG Risk,Real Estate,NYS,INVH,21898162176.0,20146309201.920002
+458,"Bright Horizons Family Solutions, Inc.",16.0,Low ESG Risk,Consumer Services,NYS,BFAM,6918160896.0,6364708024.320001
+459,Viad Corp.,16.0,Low ESG Risk,Commercial Services,NYS,VVI,818295168.0,752831554.5600001
+460,"Sirius XM Holdings, Inc.",16.0,Low ESG Risk,Media,NAS,SIRI,14617193472.0,13447817994.24
+461,"Ribbon Communications, Inc.",16.0,Low ESG Risk,Technology Hardware,NAS,RBBN,671292608.0,617589199.36
+462,"Take-Two Interactive Software, Inc.",16.0,Low ESG Risk,Software & Services,NAS,TTWO,26227849216.0,24129621278.72
+463,G-III Apparel Group Ltd.,16.1,Low ESG Risk,Textiles & Apparel,NAS,GIII,1194428672.0,1098874378.24
+464,"Voya Financial, Inc.",16.1,Low ESG Risk,Diversified Financials,NYS,VOYA,7360235520.0,6771416678.400001
+465,"IQVIA Holdings, Inc.",16.1,Low ESG Risk,Pharmaceuticals,NYS,IQV,41958838272.0,38602131210.24
+466,"Datadog, Inc.",16.1,Low ESG Risk,Software & Services,NAS,DDOG,40527900672.0,37285668618.24
+467,"Clear Channel Outdoor Holdings, Inc.",16.1,Low ESG Risk,Media,NYS,CCO,855237248.0,786818268.1600001
+468,"Maravai Lifesciences Holdings, Inc.",16.1,Low ESG Risk,Pharmaceuticals,NAS,MRVI,2340383232.0,2153152573.44
+469,"CACI International, Inc.",16.1,Low ESG Risk,Software & Services,NYS,CACI,9956011008.0,9159530127.36
+470,Warner Music Group Corp.,16.1,Low ESG Risk,Media,NAS,WMG,16417873920.0,15104444006.400002
+471,"The Aaron's Co., Inc.",16.1,Low ESG Risk,Retailing,NYS,AAN,314277344.0,289135156.48
+472,"Atlanta Braves Holdings, Inc.",16.1,Low ESG Risk,Media,NAS,BATRK,2732671232.0,2514057533.44
+473,Johnson Controls International Plc,16.1,Low ESG Risk,Building Products,NYS,JCI,47056269312.0,43291767767.04
+474,"Gap, Inc.",16.1,Low ESG Risk,Retailing,NYS,GPS,8607788032.0,7919164989.440001
+475,Carvana Co.,16.1,Low ESG Risk,Retailing,NYS,CVNA,15641661440.0,14390328524.800001
+476,Definitive Healthcare Corp.,16.1,Low ESG Risk,Healthcare,NAS,DH,694637120.0,639066150.4
+477,"Expeditors International of Washington, Inc.",16.2,Low ESG Risk,Transportation,NYS,EXPD,17064653824.0,15699481518.08
+478,"CSG Systems International, Inc.",16.2,Low ESG Risk,Software & Services,NAS,CSGS,1319245824.0,1213706158.0800002
+479,"NNN REIT, Inc.",16.2,Low ESG Risk,Real Estate,NYS,NNN,8461556224.0,7784631726.08
+480,"Summit Hotel Properties, Inc.",16.2,Low ESG Risk,Real Estate,NYS,INN,667544640.0,614141068.8000001
+481,"Newmark Group, Inc.",16.2,Low ESG Risk,Real Estate,NAS,NMRK,2870742528.0,2641083125.76
+482,"Paycor HCM, Inc.",16.2,Low ESG Risk,Software & Services,NAS,PYCR,2339897344.0,2152705556.48
+483,"Hanesbrands, Inc.",16.2,Low ESG Risk,Textiles & Apparel,NYS,HBI,1930080896.0,1775674424.3200002
+484,KLA Corp.,16.2,Low ESG Risk,Semiconductors,NAS,KLAC,105254821888.0,96834436136.96
+485,"Genesco, Inc.",16.2,Low ESG Risk,Retailing,NYS,GCO,327393792.0,301202288.64
+486,Clarus Corp.,16.2,Low ESG Risk,Consumer Durables,NAS,CLAR,244342528.0,224795125.76000002
+487,"New York Mortgage Trust, Inc.",16.2,Low ESG Risk,Real Estate,NAS,NYMT,624910400.0,574917568.0
+488,"Procore Technologies, Inc.",16.2,Low ESG Risk,Software & Services,NYS,PCOR,10327618560.0,9501409075.2
+489,"Hibbett, Inc.",16.2,Low ESG Risk,Retailing,NAS,HIBB,1044135744.0,960604884.48
+490,"Revvity, Inc.",16.2,Low ESG Risk,Pharmaceuticals,NYS,RVTY,13990297600.0,12871073792.0
+491,"Hilton Worldwide Holdings, Inc.",16.2,Low ESG Risk,Consumer Services,NYS,HLT,54957608960.0,50561000243.200005
+492,"The Buckle, Inc.",16.3,Low ESG Risk,Retailing,NYS,BKE,2063130496.0,1898080056.3200002
+493,Diversified Healthcare Trust,16.3,Low ESG Risk,Real Estate,NAS,DHC,808533632.0,743850941.44
+494,"Stitch Fix, Inc.",16.3,Low ESG Risk,Retailing,NAS,SFIX,583566592.0,536881264.64
+495,"Aspen Technology, Inc.",16.3,Low ESG Risk,Software & Services,NAS,AZPN,12588319744.0,11581254164.480001
+496,"Ryman Hospitality Properties, Inc.",16.3,Low ESG Risk,Real Estate,NYS,RHP,6360959488.0,5852082728.96
+497,"Verisk Analytics, Inc.",16.3,Low ESG Risk,Commercial Services,NAS,VRSK,39829155840.0,36642823372.8
+498,"Under Armour, Inc.",16.3,Low ESG Risk,Retailing,NYS,UAA,2983238912.0,2744579799.04
+499,"IDEXX Laboratories, Inc.",16.3,Low ESG Risk,Healthcare,NAS,IDXX,41002115072.0,37721945866.24
+500,Criteo SA,16.3,Low ESG Risk,Software & Services,NAS,CRTO,2239156224.0,2060023726.0800002
+501,Capri Holdings Ltd.,16.3,Low ESG Risk,Textiles & Apparel,NYS,CPRI,4072216576.0,3746439249.92
+502,TopBuild Corp.,16.3,Low ESG Risk,Homebuilders,NYS,BLD,14091104256.0,12963815915.52
+503,"City Office REIT, Inc.",16.3,Low ESG Risk,Real Estate,NYS,CIO,235704560.0,216848195.20000002
+504,Endava Plc,16.3,Low ESG Risk,Software & Services,NYS,DAVA,1848032000.0,1700189440.0
+505,"Resources Connection, Inc.",16.3,Low ESG Risk,Commercial Services,NAS,RGP,370868288.0,341198824.96000004
+506,"Fortinet, Inc.",16.3,Low ESG Risk,Software & Services,NAS,FTNT,45156376576.0,41543866449.92
+507,"F5, Inc.",16.3,Low ESG Risk,Software & Services,NAS,FFIV,10574668800.0,9728695296.0
+508,"Strategic Education, Inc.",16.4,Low ESG Risk,Consumer Services,NAS,STRA,2929888000.0,2695496960.0
+509,"Cohu, Inc.",16.4,Low ESG Risk,Semiconductors,NAS,COHU,1601862400.0,1473713408.0
+510,"WW International, Inc.",16.4,Low ESG Risk,Consumer Services,NAS,WW,104550216.0,96186198.72
+511,"Pure Storage, Inc.",16.4,Low ESG Risk,Technology Hardware,NYS,PSTG,19718936576.0,18141421649.920002
+512,Turtle Beach Corp.,16.4,Low ESG Risk,Consumer Durables,NAS,HEAR,339197760.0,312061939.2
+513,"Tri Pointe Homes, Inc.",16.4,Low ESG Risk,Homebuilders,NYS,TPH,4240993792.0,3901714288.6400003
+514,"LTC Properties, Inc.",16.4,Low ESG Risk,Real Estate,NYS,LTC,1591199616.0,1463903646.72
+515,Fox Factory Holding Corp.,16.4,Low ESG Risk,Auto Components,NAS,FOXF,2114498816.0,1945338910.72
+516,"Evolv Technologies Holdings, Inc.",16.4,Low ESG Risk,Technology Hardware,NAS,EVLV,541621952.0,498292195.84000003
+517,"OneSpan, Inc.",16.4,Low ESG Risk,Software & Services,NAS,OSPN,501831328.0,461684821.76
+518,"OraSure Technologies, Inc.",16.4,Low ESG Risk,Healthcare,NAS,OSUR,329118848.0,302789340.16
+519,"Mister Car Wash, Inc.",16.4,Low ESG Risk,Consumer Services,NYS,MCW,2453829120.0,2257522790.4
+520,"PayPal Holdings, Inc.",16.4,Low ESG Risk,Software & Services,NAS,PYPL,64060104704.0,58935296327.68
+521,PAR Technology Corp.,16.5,Low ESG Risk,Technology Hardware,NYS,PAR,1783513088.0,1640832040.96
+522,Cushman & Wakefield Plc,16.5,Low ESG Risk,Real Estate,NYS,CWK,2903431936.0,2671157381.12
+523,"National Vision Holdings, Inc.",16.5,Low ESG Risk,Retailing,NAS,EYE,1113209344.0,1024152596.48
+524,"FactSet Research Systems, Inc.",16.5,Low ESG Risk,Software & Services,NYS,FDS,16772216832.0,15430439485.44
+525,"FRP Holdings, Inc.",16.5,Low ESG Risk,Real Estate,NAS,FRPH,579729600.0,533351232.0
+526,Synchrony Financial,16.5,Low ESG Risk,Diversified Financials,NYS,SYF,20968628224.0,19291137966.08
+527,Performance Food Group Co.,16.5,Low ESG Risk,Food Retailers,NYS,PFGC,10332504064.0,9505903738.880001
+528,PotlatchDeltic Corp.,16.5,Low ESG Risk,Paper & Forestry,NAS,PCH,3402950912.0,3130714839.04
+529,AGCO Corp.,16.5,Low ESG Risk,Machinery,NYS,AGCO,7669392384.0,7055840993.280001
+530,"Redwood Trust, Inc.",16.5,Low ESG Risk,Real Estate,NYS,RWT,989825920.0,910639846.4000001
+531,"Avantor, Inc.",16.5,Low ESG Risk,Pharmaceuticals,NYS,AVTR,14549877760.0,13385887539.2
+532,"Viavi Solutions, Inc.",16.5,Low ESG Risk,Technology Hardware,NAS,VIAV,1741256448.0,1601955932.16
+533,"Zscaler, Inc.",16.5,Low ESG Risk,Software & Services,NAS,ZS,29463472128.0,27106394357.760002
+534,"Tilly's, Inc.",16.5,Low ESG Risk,Retailing,NYS,TLYS,188913088.0,173800040.96
+535,"Omnicell, Inc.",16.5,Low ESG Risk,Healthcare,NAS,OMCL,1316167552.0,1210874147.8400002
+536,"iHeartMedia, Inc.",16.6,Low ESG Risk,Media,NAS,IHRT,183877200.0,169167024.0
+537,"SiteOne Landscape Supply, Inc.",16.6,Low ESG Risk,Traders & Distributors,NYS,SITE,6340092416.0,5832885022.72
+538,"Leslie's, Inc.",16.6,Low ESG Risk,Retailing,NAS,LESL,753751488.0,693451368.96
+539,"Certara, Inc.",16.6,Low ESG Risk,Healthcare,NAS,CERT,2661918208.0,2448964751.36
+540,Equity Commonwealth,16.6,Low ESG Risk,Real Estate,NYS,EQC,2069721472.0,1904143754.24
+541,"Huntington Bancshares, Inc.",16.6,Low ESG Risk,Banks,NAS,HBAN,20927170560.0,19252996915.2
+542,Perdoceo Education Corp.,16.6,Low ESG Risk,Consumer Services,NAS,PRDO,1531164672.0,1408671498.24
+543,OneSpaWorld Holdings Ltd.,16.6,Low ESG Risk,Consumer Services,NAS,OSW,1744535168.0,1604972354.5600002
+544,"Blackstone Mortgage Trust, Inc.",16.6,Low ESG Risk,Real Estate,NYS,BXMT,3426548224.0,3152424366.08
+545,"Independence Realty Trust, Inc.",16.6,Low ESG Risk,Real Estate,NYS,IRT,4449483776.0,4093525073.92
+546,"Kyndryl Holdings, Inc.",16.6,Low ESG Risk,Software & Services,NYS,KD,6242291712.0,5742908375.04
+547,CubeSmart,16.6,Low ESG Risk,Real Estate,NYS,CUBE,11027960832.0,10145723965.44
+548,Taylor Morrison Home Corp.,16.6,Low ESG Risk,Homebuilders,NYS,TMHC,6808029184.0,6263386849.280001
+549,"Smartsheet, Inc.",16.6,Low ESG Risk,Software & Services,NYS,SMAR,6272426496.0,5770632376.320001
+550,Office Properties Income Trust,16.6,Low ESG Risk,Real Estate,NAS,OPI,131233144.0,120734492.48
+551,"Corning, Inc.",16.7,Low ESG Risk,Technology Hardware,NYS,GLW,39267414016.0,36126020894.72
+552,"Paychex, Inc.",16.7,Low ESG Risk,Software & Services,NAS,PAYX,45667704832.0,42014288445.44
+553,Xerox Holdings Corp.,16.7,Low ESG Risk,Technology Hardware,NAS,XRX,1495343872.0,1375716362.24
+554,"GLOBALFOUNDRIES, Inc.",16.7,Low ESG Risk,Semiconductors,NAS,GFS,32074098688.0,29508170792.960003
+555,"Match Group, Inc.",16.7,Low ESG Risk,Software & Services,NAS,MTCH,9444497408.0,8688937615.36
+556,"Guess?, Inc.",16.7,Low ESG Risk,Retailing,NYS,GES,1281417216.0,1178903838.72
+557,"The Duckhorn Portfolio, Inc.",16.7,Low ESG Risk,Food Retailers,NYS,NAPA,1126418304.0,1036304839.6800001
+558,"Oxford Industries, Inc.",16.7,Low ESG Risk,Textiles & Apparel,NYS,OXM,1636459392.0,1505542640.64
+559,Carrier Global Corp.,16.7,Low ESG Risk,Building Products,NYS,CARR,60890390528.0,56019159285.76
+560,"Apple, Inc.",16.8,Low ESG Risk,Technology Hardware,NAS,AAPL,3509668806656.0,3228895302123.52
+561,Janus Henderson Group Plc,16.8,Low ESG Risk,Diversified Financials,NYS,JHG,5710842368.0,5253974978.56
+562,"Tile Shop Holdings, Inc.",16.8,Low ESG Risk,Retailing,NAS,TTSH,320588640.0,294941548.8
+563,"Regeneron Pharmaceuticals, Inc.",16.8,Low ESG Risk,Pharmaceuticals,NAS,REGN,119620124672.0,110050514698.24
+564,"Uniti Group, Inc.",16.8,Low ESG Risk,Real Estate,NAS,UNIT,927391936.0,853200581.12
+565,"Bio-Rad Laboratories, Inc.",16.8,Low ESG Risk,Pharmaceuticals,NYS,BIO,8929281024.0,8214938542.08
+566,"Upbound Group, Inc.",16.8,Low ESG Risk,Retailing,NAS,UPBD,1832816384.0,1686191073.28
+567,"Snowflake, Inc.",16.9,Low ESG Risk,Software & Services,NYS,SNOW,45230809088.0,41612344360.96
+568,"Intuit, Inc.",16.9,Low ESG Risk,Software & Services,NAS,INTU,184196317184.0,169460611809.28
+569,Unum Group,16.9,Low ESG Risk,Insurance,NYS,UNM,10209638400.0,9392867328.0
+570,"Peloton Interactive, Inc.",16.9,Low ESG Risk,Consumer Durables,NAS,PTON,1444320640.0,1328774988.8
+571,Willis Towers Watson Plc,16.9,Low ESG Risk,Insurance,NAS,WTW,27345063936.0,25157458821.120003
+572,"Dick's Sporting Goods, Inc.",16.9,Low ESG Risk,Retailing,NYS,DKS,17420974080.0,16027296153.6
+573,"Roku, Inc.",16.9,Low ESG Risk,Media,NAS,ROKU,9337760768.0,8590739906.56
+574,"Harmonic, Inc.",16.9,Low ESG Risk,Technology Hardware,NAS,HLIT,1468429184.0,1350954849.28
+575,The ODP Corp.,16.9,Low ESG Risk,Retailing,NAS,ODP,1496817408.0,1377072015.3600001
+576,"Yum China Holdings, Inc.",16.9,Low ESG Risk,Consumer Services,NYS,YUMC,12051687424.0,11087552430.08
+577,"ZoomInfo Technologies, Inc.",16.9,Low ESG Risk,Software & Services,NAS,ZI,11390416896.0,10479183544.32
+578,Fifth Third Bancorp,16.9,Low ESG Risk,Banks,NAS,FITB,27901976576.0,25669818449.920002
+579,"Ellington Financial, Inc.",17.0,Low ESG Risk,Real Estate,NYS,EFC,1114049024.0,1024925102.08
+580,"Littelfuse, Inc.",17.0,Low ESG Risk,Technology Hardware,NAS,LFUS,6655354880.0,6122926489.6
+581,"Destination XL Group, Inc.",17.0,Low ESG Risk,Retailing,NAS,DXLG,220711792.0,203054848.64000002
+582,"Unity Software, Inc.",17.0,Low ESG Risk,Software & Services,NYS,U,7070693888.0,6505038376.96
+583,Cintas Corp.,17.0,Low ESG Risk,Commercial Services,NAS,CTAS,73031041024.0,67188557742.08
+584,"UnitedHealth Group, Inc.",17.0,Low ESG Risk,Healthcare,NYS,UNH,527638364160.0,485427295027.2
+585,"Blackbaud, Inc.",17.0,Low ESG Risk,Software & Services,NAS,BLKB,3999473920.0,3679516006.4
+586,"Leidos Holdings, Inc.",17.0,Low ESG Risk,Software & Services,NYS,LDOS,20314251264.0,18689111162.88
+587,"DocuSign, Inc.",17.0,Low ESG Risk,Software & Services,NAS,DOCU,11500945408.0,10580869775.36
+588,"Plymouth Industrial REIT, Inc.",17.0,Low ESG Risk,Real Estate,NYS,PLYM,1090845696.0,1003578040.32
+589,"Essential Properties Realty Trust, Inc.",17.0,Low ESG Risk,Real Estate,NYS,EPRT,5396121088.0,4964431400.96
+590,"Premier, Inc.",17.0,Low ESG Risk,Healthcare,NAS,PINC,2073339648.0,1907472476.16
+591,"Kenvue, Inc.",17.0,Low ESG Risk,Retailing,NYS,KVUE,35309096960.0,32484369203.2
+592,Ichor Holdings Ltd.,17.1,Low ESG Risk,Semiconductors,NAS,ICHR,1281095936.0,1178608261.1200001
+593,"FormFactor, Inc.",17.1,Low ESG Risk,Semiconductors,NAS,FORM,4410265600.0,4057444352.0
+594,Triton International Ltd.,17.1,Low ESG Risk,Commercial Services,NYS,TRTN.PRE,,
+595,"CME Group, Inc.",17.1,Low ESG Risk,Diversified Financials,NAS,CME,72538693632.0,66735598141.44
+596,"Extreme Networks, Inc.",17.1,Low ESG Risk,Technology Hardware,NAS,EXTR,1817972480.0,1672534681.6000001
+597,Target Corp.,17.1,Low ESG Risk,Retailing,NYS,TGT,72138981376.0,66367862865.920006
+598,RLJ Lodging Trust,17.1,Low ESG Risk,Real Estate,NYS,RLJ,1563586432.0,1438499517.44
+599,Alliant Energy Corp.,17.1,Low ESG Risk,Utilities,NAS,LNT,14241853440.0,13102505164.800001
+600,Atrion Corp.,17.1,Low ESG Risk,Healthcare,NAS,ATRI,803329216.0,739062878.72
+601,"Arhaus, Inc.",17.2,Low ESG Risk,Consumer Durables,NAS,ARHS,2303258112.0,2118997463.0400002
+602,"MarineMax, Inc.",17.2,Low ESG Risk,Retailing,NYS,HZO,807310720.0,742725862.4
+603,"Medpace Holdings, Inc.",17.2,Low ESG Risk,Pharmaceuticals,NAS,MEDP,13539435520.0,12456280678.4
+604,"Booking Holdings, Inc.",17.2,Low ESG Risk,Software & Services,NAS,BKNG,135358504960.0,124529824563.20001
+605,"AMN Healthcare Services, Inc.",17.2,Low ESG Risk,Healthcare,NYS,AMN,2166600448.0,1993272412.16
+606,"Ross Stores, Inc.",17.2,Low ESG Risk,Retailing,NAS,ROST,49235673088.0,45296819240.96
+607,"Caleres, Inc.",17.2,Low ESG Risk,Retailing,NYS,CAL,1208110336.0,1111461509.1200001
+608,"Manhattan Associates, Inc.",17.2,Low ESG Risk,Software & Services,NAS,MANH,13784269824.0,12681528238.08
+609,"Equitable Holdings, Inc.",17.2,Low ESG Risk,Insurance,NYS,EQH,13757862912.0,12657233879.04
+610,"European Wax Center, Inc.",17.2,Low ESG Risk,Consumer Services,NAS,EWCZ,601003392.0,552923120.64
+611,"Hertz Global Holdings, Inc.",17.3,Low ESG Risk,Transportation,NAS,HTZ,1391449216.0,1280133278.72
+612,Truist Financial Corp.,17.3,Low ESG Risk,Banks,NYS,TFC,57672105984.0,53058337505.28
+613,"Omega Healthcare Investors, Inc.",17.3,Low ESG Risk,Real Estate,NYS,OHI,9112388608.0,8383397519.360001
+614,"T. Rowe Price Group, Inc.",17.3,Low ESG Risk,Diversified Financials,NAS,TROW,26382895104.0,24272263495.68
+615,"First Solar, Inc.",17.3,Low ESG Risk,Semiconductors,NAS,FSLR,22282725376.0,20500107345.920002
+616,Neogen Corp.,17.3,Low ESG Risk,Healthcare,NAS,NEOG,3805802496.0,3501338296.32
+617,"Dayforce, Inc.",17.3,Low ESG Risk,Software & Services,NYS,DAY,8780819456.0,8078353899.52
+618,"Schneider National, Inc.",17.4,Low ESG Risk,Transportation,NYS,SNDR,4384108032.0,4033379389.44
+619,"MongoDB, Inc.",17.4,Low ESG Risk,Software & Services,NAS,MDB,19273631744.0,17731741204.48
+620,"Montrose Environmental Group, Inc.",17.4,Low ESG Risk,Commercial Services,NYS,MEG,1333938176.0,1227223121.92
+621,"Mercer International, Inc.",17.4,Low ESG Risk,Paper & Forestry,NAS,MERC,559531968.0,514769410.56
+622,"The Shyft Group, Inc.",17.4,Low ESG Risk,Auto Components,NAS,SHYF,420738976.0,387079857.92
+623,"The Chefs' Warehouse, Inc.",17.4,Low ESG Risk,Food Retailers,NAS,CHEF,1686320128.0,1551414517.76
+624,"Healthcare Services Group, Inc.",17.4,Low ESG Risk,Commercial Services,NAS,HCSG,866081664.0,796795130.88
+625,The Western Union Co.,17.4,Low ESG Risk,Software & Services,NYS,WU,4394138112.0,4042607063.04
+626,"Apple Hospitality REIT, Inc.",17.4,Low ESG Risk,Real Estate,NYS,APLE,3707893760.0,3411262259.2000003
+627,Madison Square Garden Sports Corp.,17.4,Low ESG Risk,Media,NYS,MSGS,4747035136.0,4367272325.12
+628,"Designer Brands, Inc.",17.4,Low ESG Risk,Retailing,NYS,DBI,420806592.0,387142064.64000005
+629,"Rockwell Automation, Inc.",17.5,Low ESG Risk,Electrical Equipment,NYS,ROK,32816902144.0,30191549972.48
+630,Gentex Corp.,17.5,Low ESG Risk,Auto Components,NAS,GNTX,8031332352.0,7388825763.84
+631,"Workday, Inc.",17.5,Low ESG Risk,Software & Services,NAS,WDAY,61473214464.0,56555357306.880005
+632,"Century Communities, Inc.",17.5,Low ESG Risk,Homebuilders,NYS,CCS,3063997184.0,2818877409.28
+633,"Informatica, Inc. (California)",17.5,Low ESG Risk,Software & Services,NYS,INFA,7586732544.0,6979793940.4800005
+634,Coherent Corp.,17.5,Low ESG Risk,Technology Hardware,NYS,COHR,11559591936.0,10634824581.12
+635,The Cato Corp.,17.5,Low ESG Risk,Retailing,NYS,CATO,108943624.0,100228134.08
+636,RH,17.5,Low ESG Risk,Retailing,NYS,RH,5278093824.0,4855846318.08
+637,Lattice Semiconductor Corp.,17.5,Low ESG Risk,Semiconductors,NAS,LSCC,8251384832.0,7591274045.440001
+638,"C.H. Robinson Worldwide, Inc.",17.5,Low ESG Risk,Transportation,NAS,CHRW,10417942528.0,9584507125.76
+639,"Invesco Mortgage Capital, Inc.",17.5,Low ESG Risk,Real Estate,NYS,IVR,481908672.0,443355978.24
+640,"Build-A-Bear Workshop, Inc.",17.5,Low ESG Risk,Retailing,NYS,BBW,354514976.0,326153777.92
+641,"ON24, Inc.",17.6,Low ESG Risk,Software & Services,NYS,ONTF,267101264.0,245733162.88000003
+642,"Ziff Davis, Inc.",17.6,Low ESG Risk,Software & Services,NAS,ZD,2336388352.0,2149477283.84
+643,"CrowdStrike Holdings, Inc.",17.6,Low ESG Risk,Software & Services,NAS,CRWD,86378553344.0,79468269076.48001
+644,"Silicon Laboratories, Inc.",17.6,Low ESG Risk,Semiconductors,NAS,SLAB,3803792384.0,3499488993.28
+645,National Rural Utilities Cooperative Finance Corp.,17.6,Low ESG Risk,Banks,NYS,NRUC,,
+646,"Gray Television, Inc.",17.6,Low ESG Risk,Media,NYS,GTN,594911104.0,547318215.6800001
+647,"Saia, Inc.",17.6,Low ESG Risk,Transportation,NAS,SAIA,12828204032.0,11801947709.44
+648,Knowles Corp.,17.6,Low ESG Risk,Technology Hardware,NYS,KN,1740141952.0,1600930595.8400002
+649,Lincoln Educational Services Corp.,17.6,Low ESG Risk,Consumer Services,NAS,LINC,413484640.0,380405868.8
+650,"Daktronics, Inc.",17.6,Low ESG Risk,Technology Hardware,NAS,DAKT,671297792.0,617593968.64
+651,"Community Healthcare Trust, Inc.",17.6,Low ESG Risk,Real Estate,NYS,CHCT,737128960.0,678158643.2
+652,"Primerica, Inc.",17.7,Low ESG Risk,Insurance,NYS,PRI,8622069760.0,7932304179.200001
+653,Check Point Software Technologies Ltd.,17.7,Low ESG Risk,Software & Services,NAS,CHKP,19045380096.0,17521749688.32
+654,"HF Foods Group, Inc.",17.7,Low ESG Risk,Food Retailers,NAS,HFFG,177298384.0,163114513.28
+655,"Alight, Inc.",17.7,Low ESG Risk,Software & Services,NYS,ALIT,4006800384.0,3686256353.28
+656,Atlassian Corp.,17.7,Low ESG Risk,Software & Services,NAS,TEAM,46572519424.0,42846717870.08
+657,"Digi International, Inc.",17.7,Low ESG Risk,Technology Hardware,NAS,DGII,926461056.0,852344171.52
+658,"EVERTEC, Inc.",17.7,Low ESG Risk,Software & Services,NYS,EVTC,2236938496.0,2057983416.3200002
+659,"Aflac, Inc.",17.7,Low ESG Risk,Insurance,NYS,AFL,53446963200.0,49171206144.0
+660,"Sinclair, Inc.",17.7,Low ESG Risk,Media,NAS,SBGI,1030388352.0,947957283.84
+661,"Phillips Edison & Co., Inc.",17.7,Low ESG Risk,Real Estate,NAS,PECO,4789358592.0,4406209904.64
+662,"nCino, Inc.",17.7,Low ESG Risk,Software & Services,NAS,NCNO,3792017920.0,3488656486.4
+663,"Sally Beauty Holdings, Inc.",17.7,Low ESG Risk,Retailing,NYS,SBH,1212148992.0,1115177072.64
+664,"Fiserv, Inc.",17.7,Low ESG Risk,Software & Services,NYS,FI,92422717440.0,85028900044.8
+665,"J.Jill, Inc.",17.7,Low ESG Risk,Retailing,NYS,JILL,450998048.0,414918204.16
+666,"United Natural Foods, Inc.",17.8,Low ESG Risk,Food Retailers,NYS,UNFI,828418496.0,762145016.32
+667,"CBL & Associates Properties, Inc.",17.8,Low ESG Risk,Real Estate,NYS,CBL,831869632.0,765320061.44
+668,"Armada Hoffler Properties, Inc.",17.8,Low ESG Risk,Real Estate,NYS,AHH,1046749184.0,963009249.2800001
+669,"Sprouts Farmers Market, Inc.",17.8,Low ESG Risk,Food Retailers,NAS,SFM,8325524480.0,7659482521.6
+670,"Healthcare Realty Trust, Inc.",17.8,Low ESG Risk,Real Estate,NYS,HR,6833504768.0,6286824386.56
+671,"Kinder Morgan, Inc.",17.8,Low ESG Risk,Refiners & Pipelines,NYS,KMI,45563871232.0,41918761533.44
+672,Two Harbors Investment Corp.,17.8,Low ESG Risk,Real Estate,NYS,TWO,1459265408.0,1342524175.3600001
+673,"Medical Properties Trust, Inc.",17.8,Low ESG Risk,Real Estate,NYS,MPW,2898482688.0,2666604072.96
+674,"Advanced Energy Industries, Inc.",17.8,Low ESG Risk,Semiconductors,NAS,AEIS,4295052288.0,3951448104.96
+675,"Amkor Technology, Inc.",17.8,Low ESG Risk,Semiconductors,NAS,AMKR,10147127296.0,9335357112.32
+676,KKR Real Estate Finance Trust Inc.,17.8,Low ESG Risk,Real Estate,NYS,KREF,689673344.0,634499476.48
+677,AerCap Holdings NV,17.8,Low ESG Risk,Traders & Distributors,NYS,AER,19009193984.0,17488458465.280003
+678,Pfizer Inc.,17.8,Low ESG Risk,Pharmaceuticals,NYS,PFE,170167713792.0,156554296688.64
+679,Nova Ltd.,17.9,Low ESG Risk,Semiconductors,NAS,NVMI,6094639616.0,5607068446.72
+680,Ladder Capital Corp.,17.9,Low ESG Risk,Real Estate,NYS,LADR,1548723584.0,1424825697.28
+681,"ICF International, Inc.",17.9,Low ESG Risk,Commercial Services,NAS,ICFI,2616191488.0,2406896168.96
+682,Infinera Corp.,17.9,Low ESG Risk,Technology Hardware,NAS,INFN,1424857472.0,1310868874.24
+683,"Huron Consulting Group, Inc.",17.9,Low ESG Risk,Commercial Services,NAS,HURN,1930401792.0,1775969648.64
+684,"Simulations Plus, Inc.",17.9,Low ESG Risk,Healthcare,NAS,SLP,859930944.0,791136468.48
+685,"Ultra Clean Holdings, Inc.",17.9,Low ESG Risk,Semiconductors,NAS,UCTT,2279423488.0,2097069608.96
+686,"ChargePoint Holdings, Inc.",17.9,Low ESG Risk,Retailing,NYS,CHPT,918656704.0,845164167.6800001
+687,"Confluent, Inc.",17.9,Low ESG Risk,Software & Services,NAS,CFLT,8282780160.0,7620157747.200001
+688,"OneWater Marine, Inc.",17.9,Low ESG Risk,Retailing,NAS,ONEW,488390176.0,449318961.92
+689,NCR Voyix Corp.,17.9,Low ESG Risk,Technology Hardware,NYS,VYX,2160723456.0,1987865579.52
+690,"Xylem, Inc.",18.0,Low ESG Risk,Machinery,NYS,XYL,33700134912.0,31004124119.04
+691,Roblox Corp.,18.0,Low ESG Risk,Software & Services,NYS,RBLX,25599119360.0,23551189811.2
+692,"Acuity Brands, Inc.",18.0,Low ESG Risk,Electrical Equipment,NYS,AYI,7967930880.0,7330496409.6
+693,"West Pharmaceutical Services, Inc.",18.0,Low ESG Risk,Healthcare,NYS,WST,23941095424.0,22025807790.08
+694,"Ultragenyx Pharmaceutical, Inc.",18.0,Low ESG Risk,Pharmaceuticals,NAS,RARE,3975082240.0,3657075660.8
+695,"Rent the Runway, Inc.",18.0,Low ESG Risk,Consumer Services,NAS,RENT,68555000.0,63070600.0
+696,Urban Edge Properties,18.0,Low ESG Risk,Real Estate,NYS,UE,2517294336.0,2315910789.12
+697,"Bread Financial Holdings, Inc.",18.0,Low ESG Risk,Diversified Financials,NYS,BFH,2557563392.0,2352958320.64
+698,"OPENLANE, Inc.",18.0,Low ESG Risk,Commercial Services,NYS,KAR,2004670080.0,1844296473.6000001
+699,Eaton Corp. Plc,18.1,Low ESG Risk,Electrical Equipment,NYS,ETN,124566355968.0,114601047490.56
+700,"AMC Entertainment Holdings, Inc.",18.1,Low ESG Risk,Media,NYS,AMC,1602087040.0,1473920076.8
+701,Forward Air Corp.,18.1,Low ESG Risk,Transportation,NAS,FWRD,660166848.0,607353500.1600001
+702,"Warner Bros. Discovery, Inc.",18.1,Low ESG Risk,Media,NAS,WBD,20386578432.0,18755652157.440002
+703,"Charles River Laboratories International, Inc.",18.1,Low ESG Risk,Pharmaceuticals,NYS,CRL,11494835200.0,10575248384.0
+704,"Analog Devices, Inc.",18.1,Low ESG Risk,Semiconductors,NAS,ADI,116913684480.0,107560589721.6
+705,National Storage Affiliates Trust,18.1,Low ESG Risk,Real Estate,NYS,NSA,5854272512.0,5385930711.04
+706,Eversource Energy,18.1,Low ESG Risk,Utilities,NYS,ES,21681295360.0,19946791731.2
+707,Lions Gate Entertainment Corp.,18.1,Low ESG Risk,Media,NYS,LGF.A,,
+708,"Emerald Expositions Events, Inc.",18.1,Low ESG Risk,Media,NYS,EEX,1233213824.0,1134556718.0800002
+709,Kohl's Corp.,18.1,Low ESG Risk,Retailing,NYS,KSS,2525488128.0,2323449077.76
+710,"Knight-Swift Transportation Holdings, Inc.",18.1,Low ESG Risk,Transportation,NYS,KNX,8266403328.0,7605091061.76
+711,"TPG RE Finance Trust, Inc.",18.1,Low ESG Risk,Real Estate,NYS,TRTX,757424960.0,696830963.2
+712,Lamar Advertising Co.,18.2,Low ESG Risk,Media,NAS,LAMR,12131917824.0,11161364398.08
+713,"Catalyst Pharmaceuticals, Inc.",18.2,Low ESG Risk,Pharmaceuticals,NAS,CPRX,1996143488.0,1836452008.96
+714,"Bel Fuse, Inc.",18.2,Low ESG Risk,Technology Hardware,NAS,BELFB,906218304.0,833720839.6800001
+715,"Thoughtworks Holding, Inc.",18.2,Low ESG Risk,Commercial Services,NAS,TWKS,1001033344.0,920950676.48
+716,Modine Manufacturing Co.,18.2,Low ESG Risk,Auto Components,NYS,MOD,5579511296.0,5133150392.320001
+717,Whirlpool Corp.,18.2,Low ESG Risk,Consumer Durables,NYS,WHR,6096797696.0,5609053880.320001
+718,"Driven Brands Holdings, Inc.",18.2,Low ESG Risk,Consumer Services,NAS,DRVN,2215079936.0,2037873541.1200001
+719,"Dillard's, Inc.",18.2,Low ESG Risk,Retailing,NYS,DDS,6701109248.0,6165020508.16
+720,"The RMR Group, Inc.",18.2,Low ESG Risk,Real Estate,NAS,RMR,438341728.0,403274389.76
+721,monday.com Ltd.,18.2,Low ESG Risk,Software & Services,NAS,MNDY,11462808576.0,10545783889.92
+722,"Everi Holdings, Inc.",18.2,Low ESG Risk,Software & Services,NYS,EVRI,757523008.0,696921167.36
+723,"HealthStream, Inc.",18.2,Low ESG Risk,Healthcare,NAS,HSTM,937471232.0,862473533.44
+724,"Dun & Bradstreet Holdings, Inc.",18.2,Low ESG Risk,Software & Services,NYS,DNB,4493587456.0,4134100459.52
+725,American Express Co.,18.3,Low ESG Risk,Diversified Financials,NYS,AXP,179796983808.0,165413225103.36002
+726,"Orchid Island Capital, Inc.",18.3,Low ESG Risk,Real Estate,NYS,ORC,585600768.0,538752706.5600001
+727,"Array Technologies, Inc.",18.3,Low ESG Risk,Semiconductors,NAS,ARRY,1699812736.0,1563827717.1200001
+728,"Forestar Group, Inc.",18.3,Low ESG Risk,Real Estate,NYS,FOR,1821697152.0,1675961379.8400002
+729,"Greif, Inc.",18.3,Low ESG Risk,Containers & Packaging,NYS,GEF,3140388864.0,2889157754.88
+730,"eHealth, Inc.",18.3,Low ESG Risk,Insurance,NAS,EHTH,135133040.0,124322396.80000001
+731,"TPI Composites, Inc.",18.3,Low ESG Risk,Machinery,NAS,TPIC,228323488.0,210057608.96
+732,NetSTREIT Corp.,18.3,Low ESG Risk,Real Estate,NYS,NTST,1271500672.0,1169780618.24
+733,Packaging Corporation of America,18.3,Low ESG Risk,Containers & Packaging,NYS,PKG,17201704960.0,15825568563.2
+734,Owens Corning,18.3,Low ESG Risk,Building Products,NYS,OC,14996772864.0,13797031034.880001
+735,"ARMOUR Residential REIT, Inc.",18.3,Low ESG Risk,Real Estate,NYS,ARR,1127542784.0,1037339361.2800001
+736,IMAX Corp.,18.3,Low ESG Risk,Media,NYS,IMAX,913568320.0,840482854.4000001
+737,IHS Holding Ltd.,18.3,Low ESG Risk,Telecommunication Services,NYS,IHS,949260800.0,873319936.0
+738,TAL Education Group,18.3,Low ESG Risk,Consumer Services,NYS,TAL,6060958208.0,5576081551.360001
+739,PagSeguro Digital Ltd.,18.3,Low ESG Risk,Software & Services,NYS,PAGS,4265952512.0,3924676311.04
+740,"Allbirds, Inc.",18.3,Low ESG Risk,Textiles & Apparel,NAS,BIRD,107855296.0,99226872.32000001
+741,"Fulgent Genetics, Inc.",18.3,Low ESG Risk,Healthcare,NAS,FLGT,697535424.0,641732590.08
+742,"Warby Parker, Inc.",18.4,Low ESG Risk,Retailing,NYS,WRBY,1964788992.0,1807605872.64
+743,"Progyny, Inc.",18.4,Low ESG Risk,Commercial Services,NAS,PGNY,2816628480.0,2591298201.6
+744,"Universal Technical Institute, Inc.",18.4,Low ESG Risk,Consumer Services,NYS,UTI,976497216.0,898377438.72
+745,Brookfield Renewable Corp.,18.4,Low ESG Risk,Utilities,NYS,BEPC,5279795712.0,4857412055.04
+746,"DoubleVerify Holdings, Inc.",18.4,Low ESG Risk,Software & Services,NYS,DV,3439355904.0,3164207431.6800003
+747,Winmark Corp.,18.4,Low ESG Risk,Retailing,NAS,WINA,1433666560.0,1318973235.2
+748,Getty Realty Corp.,18.4,Low ESG Risk,Real Estate,NYS,GTY,1642758528.0,1511337845.76
+749,"Tyler Technologies, Inc.",18.4,Low ESG Risk,Software & Services,NYS,TYL,22417674240.0,20624260300.8
+750,"PROG Holdings, Inc.",18.4,Low ESG Risk,Diversified Financials,NYS,PRG,1511111040.0,1390222156.8
+751,"Advantage Solutions, Inc. (California)",18.4,Low ESG Risk,Media,NAS,ADV,1253280256.0,1153017835.52
+752,"BlackRock, Inc.",18.4,Low ESG Risk,Diversified Financials,NYS,BLK,124649545728.0,114677582069.76001
+753,"NetScout Systems, Inc.",18.4,Low ESG Risk,Software & Services,NAS,NTCT,1364039808.0,1254916623.3600001
+754,"Patterson Cos., Inc.",18.4,Low ESG Risk,Healthcare,NAS,PDCO,2315108608.0,2129899919.3600001
+755,"Paycom Software, Inc.",18.4,Low ESG Risk,Software & Services,NYS,PAYC,9337114624.0,8590145454.08
+756,"GoDaddy, Inc.",18.4,Low ESG Risk,Software & Services,NYS,GDDY,20333557760.0,18706873139.2
+757,"Rambus, Inc.",18.5,Low ESG Risk,Semiconductors,NAS,RMBS,6421592064.0,5907864698.88
+758,"Pacific Biosciences of California, Inc.",18.5,Low ESG Risk,Pharmaceuticals,NAS,PACB,558329792.0,513663408.64000005
+759,McGrath RentCorp,18.5,Low ESG Risk,Traders & Distributors,NAS,MGRC,2729446656.0,2511090923.52
+760,"DNOW, Inc.",18.5,Low ESG Risk,Traders & Distributors,NYS,DNOW,1540099328.0,1416891381.76
+761,"MSA Safety, Inc.",18.5,Low ESG Risk,Commercial Services,NYS,MSA,7676378112.0,7062267863.04
+762,Ready Capital Corp.,18.5,Low ESG Risk,Real Estate,NYS,RC,1602107648.0,1473939036.16
+763,"Elanco Animal Health, Inc.",18.5,Low ESG Risk,Pharmaceuticals,NYS,ELAN,6449075200.0,5933149184.0
+764,"Essential Utilities, Inc.",18.5,Low ESG Risk,Utilities,NYS,WTRG,11302011904.0,10397850951.68
+765,"Upwork, Inc.",18.5,Low ESG Risk,Software & Services,NAS,UPWK,1553872768.0,1429562946.5600002
+766,"KBR, Inc.",18.5,Low ESG Risk,Software & Services,NYS,KBR,9030061056.0,8307656171.52
+767,Addus HomeCare Corp.,18.5,Low ESG Risk,Healthcare,NAS,ADUS,2208531456.0,2031848939.52
+768,"Purple Innovation, Inc.",18.5,Low ESG Risk,Consumer Durables,NAS,PRPL,144574048.0,133008124.16000001
+769,"PowerSchool Holdings, Inc.",18.5,Low ESG Risk,Software & Services,NYS,PWSC,3730336256.0,3431909355.52
+770,"Republic Services, Inc.",18.5,Low ESG Risk,Commercial Services,NYS,RSG,64693329920.0,59517863526.4
+771,"PTC, Inc.",18.5,Low ESG Risk,Software & Services,NAS,PTC,21526378496.0,19804268216.32
+772,"Align Technology, Inc.",18.6,Low ESG Risk,Healthcare,NAS,ALGN,18864087040.0,17354960076.8
+773,CRH Plc,18.6,Low ESG Risk,Construction Materials,NYS,CRH,55206555648.0,50790031196.16
+774,"Prudential Financial, Inc.",18.6,Low ESG Risk,Insurance,NYS,PRU,45717557248.0,42060152668.16
+775,"Cinemark Holdings, Inc.",18.6,Low ESG Risk,Media,NYS,CNK,2542350080.0,2338962073.6
+776,Lincoln National Corp.,18.6,Low ESG Risk,Insurance,NYS,LNC,5573485056.0,5127606251.52
+777,"OUTFRONT Media, Inc.",18.6,Low ESG Risk,Real Estate,NYS,OUT,2649199360.0,2437263411.2000003
+778,Liberty Broadband Corp.,18.6,Low ESG Risk,Media,NAS,LBRDK,8311098880.0,7646210969.6
+779,"CTO Realty Growth, Inc.",18.6,Low ESG Risk,Real Estate,NYS,CTO,428868224.0,394558766.08000004
+780,"Intercontinental Exchange, Inc.",18.6,Low ESG Risk,Diversified Financials,NYS,ICE,85699338240.0,78843391180.8
+781,"Micron Technology, Inc.",18.6,Low ESG Risk,Semiconductors,NAS,MU,132506370048.0,121905860444.16
+782,"Rollins, Inc.",18.6,Low ESG Risk,Commercial Services,NYS,ROL,23906957312.0,21994400727.04
+783,Otis Worldwide Corp.,18.6,Low ESG Risk,Machinery,NYS,OTIS,39999676416.0,36799702302.72
+784,"Innovative Industrial Properties, Inc.",18.6,Low ESG Risk,Real Estate,NYS,IIPR,3404632320.0,3132261734.4
+785,FinVolution Group,18.7,Low ESG Risk,Diversified Financials,NYS,FINV,1392191360.0,1280816051.2
+786,Progress Software Corp.,18.7,Low ESG Risk,Software & Services,NAS,PRGS,2439116032.0,2243986749.44
+787,CVS Health Corp.,18.7,Low ESG Risk,Healthcare,NYS,CVS,77330792448.0,71144329052.16
+788,"Jack Henry & Associates, Inc.",18.7,Low ESG Risk,Software & Services,NAS,JKHY,12374046720.0,11384122982.4
+789,"Ameriprise Financial, Inc.",18.7,Low ESG Risk,Diversified Financials,NYS,AMP,41871400960.0,38521688883.200005
+790,"Pactiv Evergreen, Inc.",18.7,Low ESG Risk,Containers & Packaging,NAS,PTVE,2296689920.0,2112954726.4
+791,"ICU Medical, Inc.",18.7,Low ESG Risk,Healthcare,NAS,ICUI,3117142272.0,2867770890.2400002
+792,"Entegris, Inc.",18.7,Low ESG Risk,Semiconductors,NAS,ENTG,20177344512.0,18563156951.04
+793,"American Water Works Co., Inc.",18.7,Low ESG Risk,Utilities,NYS,AWK,27768123392.0,25546673520.64
+794,Bowlero Corp.,18.7,Low ESG Risk,Media,NYS,BOWL,2015848576.0,1854580689.92
+795,"NIKE, Inc.",18.7,Low ESG Risk,Textiles & Apparel,NYS,NKE,110288936960.0,101465822003.2
+796,"Quantum-Si, Inc.",18.7,Low ESG Risk,Pharmaceuticals,NAS,QSI,164506560.0,151346035.20000002
+797,"Mitek Systems, Inc.",18.8,Low ESG Risk,Software & Services,NAS,MITK,566166272.0,520872970.24
+798,"National Health Investors, Inc.",18.8,Low ESG Risk,Real Estate,NYS,NHI,3182169344.0,2927595796.48
+799,"Dollar Tree, Inc.",18.8,Low ESG Risk,Retailing,NAS,DLTR,22642200576.0,20830824529.920002
+800,"PROS Holdings, Inc.",18.8,Low ESG Risk,Software & Services,NYS,PRO,1176990208.0,1082830991.3600001
+801,"United Parcel Service, Inc.",18.8,Low ESG Risk,Transportation,NYS,UPS,126092288000.0,116004904960.0
+802,Exelon Corp.,18.8,Low ESG Risk,Utilities,NAS,EXC,36431093760.0,33516606259.2
+803,"FTI Consulting, Inc.",18.8,Low ESG Risk,Commercial Services,NYS,FCN,8079080960.0,7432754483.200001
+804,Jamf Holding Corp.,18.8,Low ESG Risk,Software & Services,NAS,JAMF,2383657984.0,2192965345.28
+805,"Verizon Communications, Inc.",18.8,Low ESG Risk,Telecommunication Services,NYS,VZ,176914776064.0,162761593978.88
+806,Gilat Satellite Networks Ltd.,18.8,Low ESG Risk,Technology Hardware,NAS,GILT,267975664.0,246537610.88000003
+807,"Toast, Inc.",18.8,Low ESG Risk,Software & Services,NYS,TOST,14778439680.0,13596164505.6
+808,Ares Management Corp.,18.8,Low ESG Risk,Diversified Financials,NYS,ARES,44970704896.0,41373048504.32
+809,"Waste Management, Inc.",18.8,Low ESG Risk,Commercial Services,NYS,WM,89569861632.0,82404272701.44
+810,"Cummins, Inc.",18.8,Low ESG Risk,Machinery,NYS,CMI,40363778048.0,37134675804.16
+811,"The Hackett Group, Inc.",18.8,Low ESG Risk,Software & Services,NAS,HCKT,672122304.0,618352519.6800001
+812,Peakstone Realty Trust,18.8,Low ESG Risk,Real Estate,NYS,PKST,521210240.0,479513420.8
+813,"Dropbox, Inc.",18.8,Low ESG Risk,Software & Services,NAS,DBX,7494094848.0,6894567260.16
+814,"Wolverine World Wide, Inc.",18.9,Low ESG Risk,Textiles & Apparel,NYS,WWW,1039071808.0,955946063.36
+815,"ViaSat, Inc.",18.9,Low ESG Risk,Technology Hardware,NAS,VSAT,2012517376.0,1851515985.92
+816,"Interface, Inc.",18.9,Low ESG Risk,Building Products,NAS,TILE,968577728.0,891091509.76
+817,"Belden, Inc.",18.9,Low ESG Risk,Technology Hardware,NYS,BDC,3890870016.0,3579600414.7200003
+818,"Hubbell, Inc.",18.9,Low ESG Risk,Electrical Equipment,NYS,HUBB,19681822720.0,18107276902.4
+819,"ADTRAN Holdings, Inc.",18.9,Low ESG Risk,Technology Hardware,NAS,ADTN,502389728.0,462198549.76
+820,"Reinsurance Group of America, Inc.",18.9,Low ESG Risk,Insurance,NYS,RGA,14165017600.0,13031816192.0
+821,Broadcom Inc.,18.9,Low ESG Risk,Semiconductors,NAS,AVGO,726068101120.0,667982653030.4
+822,Regional Management Corp.,18.9,Low ESG Risk,Diversified Financials,NYS,RM,298172512.0,274318711.04
+823,"Urban Outfitters, Inc.",18.9,Low ESG Risk,Retailing,NAS,URBN,4311307264.0,3966402682.88
+824,"Avanos Medical, Inc.",18.9,Low ESG Risk,Healthcare,NYS,AVNS,1039264256.0,956123115.5200001
+825,"Laureate Education, Inc.",18.9,Low ESG Risk,Consumer Services,NAS,LAUR,2406531584.0,2214009057.28
+826,"Energizer Holdings, Inc.",18.9,Low ESG Risk,Consumer Durables,NYS,ENR,2218323456.0,2040857579.52
+827,"Shoe Carnival, Inc.",18.9,Low ESG Risk,Retailing,NAS,SCVL,1083616256.0,996926955.5200001
+828,"Ironwood Pharmaceuticals, Inc.",18.9,Low ESG Risk,Pharmaceuticals,NAS,IRWD,1084086656.0,997359723.5200001
+829,Entravision Communications Corp.,18.9,Low ESG Risk,Media,NYS,EVC,177628528.0,163418245.76000002
+830,Adaptive Biotechnologies Corp.,18.9,Low ESG Risk,Pharmaceuticals,NAS,ADPT,641050816.0,589766750.72
+831,"Sonic Automotive, Inc.",18.9,Low ESG Risk,Retailing,NYS,SAH,2021112960.0,1859423923.2
+832,"Orion Office REIT, Inc.",19.0,Low ESG Risk,Real Estate,NYS,ONL,231300960.0,212796883.20000002
+833,"DigitalBridge Group, Inc.",19.0,Low ESG Risk,Real Estate,NYS,DBRG,2673854720.0,2459946342.4
+834,"GoPro, Inc.",19.0,Low ESG Risk,Consumer Durables,NAS,GPRO,254339344.0,233992196.48000002
+835,"Verint Systems, Inc.",19.0,Low ESG Risk,Software & Services,NAS,VRNT,2078534272.0,1912251530.24
+836,"Humana, Inc.",19.0,Low ESG Risk,Healthcare,NYS,HUM,48461889536.0,44584938373.12
+837,"Cargurus, Inc.",19.0,Low ESG Risk,Commercial Services,NAS,CARG,2742333440.0,2522946764.8
+838,ZIM Integrated Shipping Services Ltd.,19.0,Low ESG Risk,Transportation,NYS,ZIM,2154949120.0,1982553190.4
+839,Star Bulk Carriers Corp.,19.0,Low ESG Risk,Transportation,NAS,SBLK,2725858560.0,2507789875.2000003
+840,Tronox Holdings Plc,19.0,Low ESG Risk,Chemicals,NYS,TROX,2594873344.0,2387283476.48
+841,The Bank of New York Mellon Corp.,19.0,Low ESG Risk,Diversified Financials,NYS,BK,47295660032.0,43512007229.44
+842,"Monolithic Power Systems, Inc.",19.0,Low ESG Risk,Semiconductors,NAS,MPWR,39783518208.0,36600836751.36
+843,VOXX International Corp.,19.0,Low ESG Risk,Retailing,NAS,VOXX,59566704.0,54801367.68
+844,"Illumina, Inc.",19.0,Low ESG Risk,Pharmaceuticals,NAS,ILMN,19098476544.0,17570598420.48
+845,"PagerDuty, Inc.",19.0,Low ESG Risk,Software & Services,NYS,PD,2081212032.0,1914715069.44
+846,Amphenol Corp.,19.0,Low ESG Risk,Technology Hardware,NYS,APH,77141704704.0,70970368327.68001
+847,"MSC Industrial Direct Co., Inc.",19.0,Low ESG Risk,Traders & Distributors,NYS,MSM,4771577344.0,4389851156.4800005
+848,FedEx Corp.,19.0,Low ESG Risk,Transportation,NYS,FDX,75838668800.0,69771575296.0
+849,"Sportsman's Warehouse Holdings, Inc.",19.1,Low ESG Risk,Retailing,NAS,SPWH,97388808.0,89597703.36
+850,"Veeco Instruments, Inc.",19.1,Low ESG Risk,Semiconductors,NAS,VECO,2421261568.0,2227560642.56
+851,"MRC Global, Inc.",19.1,Low ESG Risk,Traders & Distributors,NYS,MRC,1228433920.0,1130159206.4
+852,Marten Transport Ltd.,19.1,Low ESG Risk,Transportation,NAS,MRTN,1493005696.0,1373565240.3200002
+853,"CRA International, Inc.",19.1,Low ESG Risk,Commercial Services,NAS,CRAI,1235471872.0,1136634122.24
+854,Glaukos Corp.,19.1,Low ESG Risk,Healthcare,NYS,GKOS,6781731328.0,6239192821.76
+855,"Kennametal, Inc.",19.1,Low ESG Risk,Machinery,NYS,KMT,1990247296.0,1831027512.3200002
+856,"Nutanix, Inc.",19.1,Low ESG Risk,Software & Services,NAS,NTNX,11900428288.0,10948394024.960001
+857,Cambium Networks Corp.,19.1,Low ESG Risk,Technology Hardware,NAS,CMBM,57186184.0,52611289.28
+858,"Gartner, Inc.",19.2,Low ESG Risk,Commercial Services,NYS,IT,35694501888.0,32838941736.960003
+859,Big 5 Sporting Goods Corp.,19.2,Low ESG Risk,Retailing,NAS,BGFV,64478968.0,59320650.56
+860,NXP Semiconductors NV,19.2,Low ESG Risk,Semiconductors,NAS,NXPI,70642933760.0,64991499059.200005
+861,"Reliance, Inc.",19.2,Low ESG Risk,Traders & Distributors,NYS,RS,17730463744.0,16312026644.480001
+862,Ituran Location & Control Ltd.,19.2,Low ESG Risk,Technology Hardware,NAS,ITRN,512857024.0,471828462.08000004
+863,AppLovin Corp.,19.2,Low ESG Risk,Software & Services,NAS,APP,26383634432.0,24272943677.440002
+864,"Aviat Networks, Inc.",19.2,Low ESG Risk,Technology Hardware,NAS,AVNW,372309824.0,342525038.08000004
+865,Applied Digital Corp.,19.2,Low ESG Risk,Real Estate,NAS,APLD,908628544.0,835938260.48
+866,Dole Plc,19.3,Low ESG Risk,Food Retailers,NYS,DOLE,1297682176.0,1193867601.92
+867,"Helix Energy Solutions Group, Inc.",19.3,Low ESG Risk,Energy Services,NYS,HLX,1910235904.0,1757417031.68
+868,"Hovnanian Enterprises, Inc.",19.3,Low ESG Risk,Homebuilders,NYS,HOV,1054735168.0,970356354.5600001
+869,"M/I Homes, Inc.",19.3,Low ESG Risk,Homebuilders,NYS,MHO,4177463296.0,3843266232.32
+870,"Landstar System, Inc.",19.3,Low ESG Risk,Transportation,NAS,LSTR,6652804608.0,6120580239.360001
+871,"Vertex Pharmaceuticals, Inc.",19.3,Low ESG Risk,Pharmaceuticals,NAS,VRTX,126025334784.0,115943308001.28
+872,nVent Electric Plc,19.3,Low ESG Risk,Electrical Equipment,NYS,NVT,12393319424.0,11401853870.08
+873,The Toro Co.,19.3,Low ESG Risk,Machinery,NYS,TTC,10329230336.0,9502891909.12
+874,"Cross Country Healthcare, Inc.",19.3,Low ESG Risk,Healthcare,NAS,CCRN,535868864.0,492999354.88
+875,"Corsair Gaming, Inc.",19.3,Low ESG Risk,Technology Hardware,NAS,CRSR,1063997440.0,978877644.8000001
+876,"Roper Technologies, Inc.",19.4,Low ESG Risk,Software & Services,NAS,ROP,61151600640.0,56259472588.8
+877,Baker Hughes Co.,19.4,Low ESG Risk,Energy Services,NAS,BKR,36323082240.0,33417235660.800003
+878,Royal Caribbean Group,19.4,Low ESG Risk,Consumer Services,NYS,RCL,42323615744.0,38937726484.48
+879,SLB NV,19.4,Low ESG Risk,Energy Services,NYS,SLB,69894733824.0,64303155118.08
+880,EHang Holdings Ltd.,19.4,Low ESG Risk,Software & Services,NAS,EH,927277696.0,853095480.32
+881,TransUnion,19.4,Low ESG Risk,Commercial Services,NYS,TRU,15396531200.0,14164808704.0
+882,"PetIQ, Inc.",19.4,Low ESG Risk,Healthcare,NAS,PETQ,663167680.0,610114265.6
+883,Enviri Corp.,19.4,Low ESG Risk,Commercial Services,NYS,NVRI,807440256.0,742845035.52
+884,GameStop Corp.,19.4,Low ESG Risk,Retailing,NYS,GME,11925578752.0,10971532451.84
+885,Albany International Corp.,19.4,Low ESG Risk,Machinery,NYS,AIN,2856568576.0,2628043089.92
+886,"CPI Card Group, Inc.",19.4,Low ESG Risk,Technology Hardware,NAS,PMTS,333118880.0,306469369.6
+887,"fuboTV, Inc.",19.4,Low ESG Risk,Media,NYS,FUBO,434826016.0,400039934.72
+888,"Clearfield, Inc.",19.4,Low ESG Risk,Technology Hardware,NAS,CLFD,584846272.0,538058570.24
+889,"MicroVision, Inc.",19.5,Low ESG Risk,Technology Hardware,NAS,MVIS,265558096.0,244313448.32000002
+890,"Vivid Seats, Inc.",19.5,Low ESG Risk,Media,NAS,SEAT,1131703424.0,1041167150.08
+891,"Super Micro Computer, Inc.",19.5,Low ESG Risk,Technology Hardware,NAS,SMCI,47800254464.0,43976234106.880005
+892,"Accel Entertainment, Inc.",19.5,Low ESG Risk,Media,NYS,ACEL,865723008.0,796465167.36
+893,"Schrödinger, Inc.",19.5,Low ESG Risk,Healthcare,NAS,SDGR,1683981696.0,1549263160.3200002
+894,3D Systems Corp.,19.5,Low ESG Risk,Technology Hardware,NYS,DDD,537148352.0,494176483.84000003
+895,"Intuitive Surgical, Inc.",19.5,Low ESG Risk,Healthcare,NAS,ISRG,151186341888.0,139091434536.96
+896,Visteon Corp.,19.5,Low ESG Risk,Auto Components,NAS,VC,3158155008.0,2905502607.36
+897,Bausch + Lomb Corp.,19.5,Low ESG Risk,Healthcare,NYS,BLCO,5887323136.0,5416337285.12
+898,"Global Medical REIT, Inc.",19.5,Low ESG Risk,Real Estate,NYS,GMRE,643467328.0,591989941.76
+899,Amalgamated Financial Corp.,19.5,Low ESG Risk,Banks,NAS,AMAL,962726976.0,885708817.9200001
+900,"Global Payments, Inc.",19.5,Low ESG Risk,Software & Services,NYS,GPN,26423478272.0,24309600010.24
+901,Bruker Corp.,19.5,Low ESG Risk,Pharmaceuticals,NAS,BRKR,9699123200.0,8923193344.0
+902,"Franklin Resources, Inc.",19.5,Low ESG Risk,Diversified Financials,NYS,BEN,12531487744.0,11528968724.480001
+903,"Stagwell, Inc.",19.6,Low ESG Risk,Commercial Services,NAS,STGW,1845338880.0,1697711769.6000001
+904,"Herc Holdings, Inc.",19.6,Low ESG Risk,Traders & Distributors,NYS,HRI,4290750720.0,3947490662.4
+905,"Qualys, Inc.",19.6,Low ESG Risk,Software & Services,NAS,QLYS,5417887232.0,4984456253.440001
+906,"Donnelley Financial Solutions, Inc.",19.6,Low ESG Risk,Diversified Financials,NYS,DFIN,1910224128.0,1757406197.76
+907,"XP, Inc.",19.6,Low ESG Risk,Software & Services,NAS,XP,10183695360.0,9368999731.2
+908,"Core & Main, Inc.",19.6,Low ESG Risk,Traders & Distributors,NYS,CNM,10296569856.0,9472844267.52
+909,"Onto Innovation, Inc.",19.6,Low ESG Risk,Semiconductors,NYS,ONTO,10202574848.0,9386368860.16
+910,On Holding AG,19.6,Low ESG Risk,Textiles & Apparel,NYS,ONON,12886987776.0,11856028753.92
+911,"Coursera, Inc.",19.6,Low ESG Risk,Software & Services,NYS,COUR,1186451200.0,1091535104.0
+912,AudioCodes Ltd.,19.6,Low ESG Risk,Technology Hardware,NAS,AUDC,339632160.0,312461587.2
+913,Liberty Media Corp.,19.6,Low ESG Risk,Media,NAS,FWONK,18082660352.0,16636047523.84
+914,ATRenew Inc.,19.6,Low ESG Risk,Retailing,NYS,RERE,494395456.0,454843819.52000004
+915,"Dow, Inc.",19.6,Low ESG Risk,Chemicals,NYS,DOW,38964645888.0,35847474216.96
+916,"Postal Realty Trust, Inc.",19.6,Low ESG Risk,Real Estate,NYS,PSTL,418518528.0,385037045.76
+917,"Darling Ingredients, Inc.",19.6,Low ESG Risk,Food Products,NYS,DAR,6068444160.0,5582968627.2
+918,"Affiliated Managers Group, Inc.",19.6,Low ESG Risk,Diversified Financials,NYS,AMG,5497263616.0,5057482526.72
+919,Flywire Corp.,19.6,Low ESG Risk,Software & Services,NAS,FLYW,2358576896.0,2169890744.32
+920,"Forrester Research, Inc.",19.6,Low ESG Risk,Software & Services,NAS,FORR,356918752.0,328365251.84000003
+921,"Big Lots, Inc.",19.7,Low ESG Risk,Retailing,NYS,BIG,36508860.0,33588151.2
+922,Unisys Corp.,19.7,Low ESG Risk,Software & Services,NYS,UIS,330912224.0,304439246.08000004
+923,"Samsara, Inc.",19.7,Low ESG Risk,Software & Services,NYS,IOT,20440412160.0,18805179187.2
+924,"Savers Value Village, Inc.",19.7,Low ESG Risk,Retailing,NYS,SVV,2024043008.0,1862119567.3600001
+925,Cerus Corp.,19.7,Low ESG Risk,Healthcare,NAS,CERS,436340384.0,401433153.28000003
+926,Apartment Investment & Management Co.,19.7,Low ESG Risk,Real Estate,NYS,AIV,1309236096.0,1204497208.32
+927,Brunswick Corp.,19.7,Low ESG Risk,Machinery,NYS,BC,5521591808.0,5079864463.360001
+928,WillScot Mobile Mini Holdings Corp.,19.7,Low ESG Risk,Commercial Services,NAS,WSC,7561965056.0,6957007851.52
+929,Wix.com Ltd.,19.7,Low ESG Risk,Software & Services,NAS,WIX,8975368192.0,8257338736.64
+930,"Liquidity Services, Inc.",19.7,Low ESG Risk,Software & Services,NAS,LQDT,635555968.0,584711490.5600001
+931,"Dril-Quip, Inc.",19.7,Low ESG Risk,Energy Services,NYS,DRQ,611258496.0,562357816.32
+932,LyondellBasell Industries NV,19.7,Low ESG Risk,Chemicals,NYS,LYB,32151916544.0,29579763220.48
+933,"Armstrong World Industries, Inc.",19.7,Low ESG Risk,Building Products,NYS,AWI,5249233408.0,4829294735.360001
+934,Acacia Research Corp.,19.7,Low ESG Risk,Commercial Services,NAS,ACTG,557122560.0,512552755.20000005
+935,Landsea Homes Corp.,19.7,Low ESG Risk,Homebuilders,NAS,LSEA,403364640.0,371095468.8
+936,"iQIYI, Inc.",19.7,Low ESG Risk,Media,NAS,IQ,3512366592.0,3231377264.6400003
+937,Clarivate Plc,19.7,Low ESG Risk,Software & Services,NYS,CLVT,4270040832.0,3928437565.44
+938,"Lennox International, Inc.",19.7,Low ESG Risk,Building Products,NYS,LII,19646197760.0,18074501939.2
+939,Progressive Corp.,19.8,Low ESG Risk,Insurance,NYS,PGR,129644691456.0,119273116139.52
+940,"Moderna, Inc.",19.8,Low ESG Risk,Pharmaceuticals,NAS,MRNA,47542837248.0,43739410268.16
+941,"Intevac, Inc.",19.8,Low ESG Risk,Technology Hardware,NAS,IVAC,107133928.0,98563213.76
+942,"Titan International, Inc.",19.8,Low ESG Risk,Machinery,NYS,TWI,607012928.0,558451893.76
+943,"Cricut, Inc.",19.8,Low ESG Risk,Retailing,NAS,CRCT,1308952576.0,1204236369.92
+944,Allegion Plc,19.8,Low ESG Risk,Building Products,NYS,ALLE,11097973760.0,10210135859.2
+945,VSE Corp.,19.8,Low ESG Risk,Commercial Services,NAS,VSEC,1628392704.0,1498121287.68
+946,"GXO Logistics, Inc.",19.8,Low ESG Risk,Transportation,NYS,GXO,6553233920.0,6028975206.400001
+947,"BGC Group, Inc.",19.8,Low ESG Risk,Banks,NAS,BGC,4749270016.0,4369328414.72
+948,"Penumbra, Inc.",19.8,Low ESG Risk,Healthcare,NYS,PEN,7877803008.0,7247578767.360001
+949,"Enphase Energy, Inc.",19.9,Low ESG Risk,Electrical Equipment,NAS,ENPH,15123403776.0,13913531473.92
+950,"Sunrun, Inc.",19.9,Low ESG Risk,Utilities,NAS,RUN,3803737088.0,3499438120.96
+951,"Superior Industries International, Inc.",19.9,Low ESG Risk,Auto Components,NYS,SUP,104676736.0,96302597.12
+952,"Matson, Inc.",19.9,Low ESG Risk,Transportation,NYS,MATX,4539928576.0,4176734289.92
+953,OrthoPediatrics Corp.,19.9,Low ESG Risk,Healthcare,NAS,KIDS,843304768.0,775840386.5600001
+954,"Halozyme Therapeutics, Inc.",19.9,Low ESG Risk,Pharmaceuticals,NAS,HALO,6968251392.0,6410791280.64
+955,Matthews International Corp.,20.0,Low ESG Risk,Commercial Services,NAS,MATW,851278400.0,783176128.0
+956,"KVH Industries, Inc. (Delaware)",20.0,Low ESG Risk,Technology Hardware,NAS,KVHI,91483168.0,84164514.56
+957,"NeoGenomics, Inc.",20.0,Low ESG Risk,Pharmaceuticals,NAS,NEO,1979536000.0,1821173120.0
+958,Union Pacific Corp.,20.0,Low ESG Risk,Transportation,NYS,UNP,148802650112.0,136898438103.04001
