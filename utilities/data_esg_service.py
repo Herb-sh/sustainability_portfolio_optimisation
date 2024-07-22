@@ -3,6 +3,7 @@ import utilities.variables as variables
 import utilities.parser as parser
 importlib.reload(parser)
 
+
 '''
 Create only one file containing all industries data_1_esg_raw.csv
 '''
@@ -17,7 +18,6 @@ def generate_esg_file():
             parser.create_csv(data, filename='data_1_esg_raw.csv')
     except RuntimeError:
         print('A runtime error occurred while generating csv files')
-
 
 '''
 Create a file for each industry (automobile.csv, banks.csv)
