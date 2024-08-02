@@ -35,8 +35,8 @@ def get_monthly_returns(tickers, start_date, end_date, interval='1mo'):
         if data.empty:
             continue
         # Resample to monthly data and calculate the monthly returns
-        data['Monthly Return'] = (data['Adj Close'].pct_change() * 100).round(2).dropna()
-        monthly_returns[ticker] = data['Monthly Return']
+        data['adj_close'] = data['Adj Close']
+        monthly_returns[ticker] = data['adj_close']
 
     # Convert the dictionary to a DataFrame
     monthly_returns_df = pd.DataFrame(monthly_returns)
