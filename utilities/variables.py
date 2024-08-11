@@ -21,3 +21,5 @@ industries = [
 selected_stock_exchange = ['NYS', 'NAS', 'TKS', 'LON',  'ETR']
 
 selected_ratings = [0, 1]  # Only Negligible ESG Risk & Low ESG Risk are included
+time_span_years = [1, 5, 10, 25]
+max_span_years = 25
