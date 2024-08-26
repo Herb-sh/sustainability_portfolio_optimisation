@@ -46,7 +46,7 @@ def get_returns_in_chunks(tickers, start_date, end_date, interval='1mo', chunk_s
     # Initialize an empty DataFrame to store the results
     all_data = pd.DataFrame()
 
-    # Download data in chunks
+    # Download data in chunks¨
     for chunk in chunks(tickers, chunk_size):
         print(f"Downloading data for tickers: {chunk}")
 
