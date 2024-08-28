@@ -19,9 +19,7 @@ def efficient_frontier(df):
     volatilities = df['volatility_5y'].values
     num_assets = len(returns)
     results = []
-
     target_returns = np.linspace(min(returns), max(returns), 100)
-
     for target_return in target_returns:
         constraints = (
             {'type': 'eq', 'fun': lambda x: np.sum(x) - 1},
