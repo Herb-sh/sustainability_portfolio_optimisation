@@ -19,7 +19,17 @@ def fetch_market_cap(tickers, batch_size=100, delay=2):
             for ticker in batch:
                 info = data.tickers[ticker].info
                 market_cap = info.get('marketCap', 'N/A')
-                market_caps.append({'stock_ticker_symbol': ticker, 'market_capital': market_cap})
+                trailing_pe = info.get('trailingPE', 'N/A')
+                beta = info.get('beta', 'N/A')
+                return_on_equity = info.get('returnOnEquity', 'N/A')
+                earnings_growth = info.get('earningsGrowth', 'N/A')
+                #
+                market_caps.append({'stock_ticker_symbol': ticker,
+                                    'market_capital': market_cap,
+                                    'trailing_pe': trailing_pe,
+                                    'beta': beta,
+                                    'return_on_equity': return_on_equity,
+                                    'earnings_growth': earnings_growth})
         except Exception as e:
             print(f"Error fetching data for batch starting at index {i}: {e}")
 
