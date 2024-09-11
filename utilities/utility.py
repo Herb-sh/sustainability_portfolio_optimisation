@@ -24,7 +24,7 @@ def set_yearly_return_rates_by_years(df_overview, df_monthly_return):
 
                     # Calculate the annualized average return
                     annualized_return = np.prod(monthly_return_list) ** (1/years)
-                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'return_rate' + '_' + str(years) + 'y_avg'] = annualized_return
+                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'return_rate_' + str(years) + 'y_avg'] = annualized_return
 
 def set_volatility_by_years(df_overview, df_monthly_adj_close):
     # 1, 5, 10, 25 year returns
@@ -39,7 +39,7 @@ def set_volatility_by_years(df_overview, df_monthly_adj_close):
                 std_deviation = adj_close_filtered.pct_change().std()
 
                 if len(adj_close_filtered) >= 2:
-                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'volatility' + '_' + str(years) + 'y'] = std_deviation
+                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'volatility_' + str(years) + 'y'] = std_deviation
 
 
 # Efficient-Frontier
