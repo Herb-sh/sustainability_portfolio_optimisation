@@ -12,35 +12,44 @@ def set_yearly_return_rates_by_years(df_overview, df_monthly_return):
     for i, years in enumerate(variables.time_span_years):
         # Loop through tickers/stock name
         for j, ticker in enumerate(df_overview['stock_ticker_symbol']):
+            # columns of df_monthly_return(returns dataframe) do not contain the suffix for stock_exchange,
+            # for that reason we have to remove it from stock_ticker_symbol when comparing tickers with returns dataframe
+            ticker_plain = ticker.split('.')[0]
+
             # if ticker is found in monthly adjacent columns, meaning there are available data to calculate
-            if ticker in df_monthly_return.columns:
+            if (ticker_plain in df_monthly_return.columns) or (ticker in df_monthly_return.columns):
+                ticker_column = ticker if ticker in df_monthly_return.columns else ticker_plain
                 # Get date "years" ago
                 date = pd.Timestamp.today() - pd.DateOffset(years=years)
                 # Pick only stocks that are after this date
-                monthly_return_list = df_monthly_return.loc[ pd.to_datetime(df_monthly_return['Date']) >= date, ticker].dropna().tolist()
-                if len(monthly_return_list) >= 2:
-                    # Calculate the i-years total return
-                    total_return = np.prod(monthly_return_list) - 1
-
+                monthly_return_list = df_monthly_return.loc[ pd.to_datetime(df_monthly_return['Date']) >= date, ticker_column].dropna().tolist()
+                if monthly_return_list and len(monthly_return_list) >= 2:
                     # Calculate the annualized average return
-                    annualized_return = np.prod(monthly_return_list) ** (1/years)
+                    return_prod = np.prod(monthly_return_list) ** (1/years) if np.prod(monthly_return_list) > 0 else 0
+                    annualized_return = return_prod ** (1/years)
                     df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'return_rate_' + str(years) + 'y_avg'] = annualized_return
+
 
 def set_volatility_by_years(df_overview, df_monthly_adj_close):
     # 1, 5, 10, 25 year returns
     # Loop through time spans
     for i, years in enumerate(variables.time_span_years):
         for i, ticker in enumerate(df_overview['stock_ticker_symbol']):
-            if ticker in df_monthly_adj_close.columns:
+            # columns of df_monthly_return(returns dataframe) do not contain the suffix for stock_exchange,
+            # for that reason we have to remove it from stock_ticker_symbol when comparing tickers with returns dataframe
+            ticker_plain = ticker.split('.')[0]
+            if (ticker_plain in df_monthly_adj_close.columns) or (ticker in df_monthly_adj_close.columns):
+                ticker_column = ticker if ticker in df_monthly_adj_close.columns else ticker_plain
                 # Get date "years" ago
                 date = pd.Timestamp.today() - pd.DateOffset(years=years)
                 # Pick only stocks that are after this date
-                adj_close_filtered = df_monthly_adj_close.loc[ pd.to_datetime(df_monthly_adj_close['Date']) >= date, ticker].dropna()
-                std_deviation = adj_close_filtered.pct_change().std()
+                adj_close_filtered = df_monthly_adj_close.loc[ pd.to_datetime(df_monthly_adj_close['Date']) >= date, ticker_column].dropna()
 
-                if len(adj_close_filtered) >= 2:
-                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'volatility_' + str(years) + 'y'] = std_deviation
-
+                if len(adj_close_filtered.tolist()) >= 2:
+                    std_deviation = adj_close_filtered.pct_change().std()
+                    df_overview.loc[df_overview['stock_ticker_symbol'] == ticker_column, 'volatility_' + str(years) + 'y'] = std_deviation
+                else:
+                    print(f"Ticket {ticker_column} is ignored.")
 
 # Efficient-Frontier
 def portfolio_performance(weights, returns, volatilities):

@@ -57,8 +57,9 @@ def get_returns_in_chunks(tickers, start_date, end_date, interval='1mo', chunk_s
     all_data = pd.DataFrame()
 
     # Download data in chunks¨
-    for chunk in chunks(tickers, chunk_size):
+    for i, chunk in enumerate(chunks(tickers, chunk_size)):
         print(f"Downloading data for tickers: {chunk}")
+        print(f"Chunk index: {i}")
 
         # Download data for the current chunk
         data = get_monthly_returns(chunk, start_date, end_date, interval)
