@@ -3,9 +3,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv('../data/10_monthly_returns_complete.csv')
-df_close = pd.read_csv('../data/10_monthly_adjacent_close.csv', index_col=0)
-df_overview = pd.read_csv('../data/data_10_overview.csv', index_col=0)
+df = pd.read_csv('../data/df_monthly_returns_complete.csv')
+df_close = pd.read_csv('../data/df_monthly_adjacent_close.csv', index_col=0)
+df_overview = pd.read_csv('../data/df_overview.csv', index_col=0)
 # Create a scatter plot
 fig = px.scatter(df_overview[['stock_ticker_symbol', 'return_rate_5y_avg', 'volatility_5y']],
                  x='volatility_5y',

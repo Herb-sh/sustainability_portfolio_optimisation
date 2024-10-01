@@ -29,7 +29,6 @@ def set_yearly_return_rates_by_years(df_overview, df_monthly_return):
                     annualized_return = return_prod ** (1/years)
                     df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'return_rate_' + str(years) + 'y_avg'] = annualized_return
 
-
 def set_volatility_by_years(df_overview, df_monthly_adj_close):
     # 1, 5, 10, 25 year returns
     # Loop through time spans
