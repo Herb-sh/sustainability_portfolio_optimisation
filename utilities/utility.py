@@ -26,7 +26,7 @@ def set_yearly_return_rates_by_years(df_overview, df_monthly_return):
                 if monthly_return_list and len(monthly_return_list) >= 2:
                     # Calculate the annualized average return
                     return_prod = np.prod(monthly_return_list) ** (1/years) if np.prod(monthly_return_list) > 0 else 0
-                    annualized_return = return_prod ** (1/years)
+                    annualized_return = return_prod # ** (1/years)
                     df_overview.loc[df_overview['stock_ticker_symbol'] == ticker, 'return_rate_' + str(years) + 'y_avg'] = annualized_return
 
 def set_volatility_by_years(df_overview, df_monthly_adj_close):
@@ -63,12 +63,12 @@ def negative_sharpe_ratio(weights, returns, volatilities, risk_free_rate=0):
 def minimize_volatility(weights, returns, volatilities):
     return portfolio_performance(weights, returns, volatilities)[1]
 
-def efficient_frontier(df):
+def efficient_frontier(df, line_point_nr=20):
     returns = df['return_rate_5y_avg'].values
     volatilities = df['volatility_5y'].values
     num_assets = len(returns)
     results = []
-    target_returns = np.linspace(min(returns), max(returns), 100)
+    target_returns = np.linspace(min(returns), max(returns), line_point_nr)
     for target_return in target_returns:
         constraints = (
             {'type': 'eq', 'fun': lambda x: np.sum(x) - 1},
