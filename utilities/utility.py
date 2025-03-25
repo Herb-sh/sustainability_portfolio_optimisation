@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize
 import utilities.variables as variables
-from pypfopt import EfficientFrontier
+from pypfopt import expected_returns, EfficientFrontier
 
 # Return & Volatility pro years
 # 1, 5, 10, 25 year returns
@@ -82,6 +82,47 @@ def efficient_frontier(df, line_point_nr=20):
         results.append(result['fun'])
 
     return target_returns, results
+
+def evenly_spaced_sample(lst, n):
+    """Returns `n` evenly spaced elements from a sorted list."""
+    indices = np.linspace(0, len(lst) - 1, n, dtype=int)
+    return [lst[i] for i in indices]
+def evenly_spaced_dataframe(data, n):
+    mu = expected_returns.mean_historical_return(data)
+
+    # Sort tickers by expected return
+    sorted_tickers = mu.sort_values().index.tolist()
+
+    # Select evenly spread tickers
+
+    # Choose x well-spread tickers
+    sampled_tickers = evenly_spaced_sample(sorted_tickers, n)
+
+    # Extract corresponding data from the original DataFrame
+    return data[sampled_tickers]
+
+def chunkify_df(df: pd.DataFrame, chunk_size: int):
+    start = 0
+    length = df.shape[0]
+
+    # If DF is smaller than the chunk, return the DF
+    if length <= chunk_size:
+        yield df[:]
+        return
+
+    # Yield individual chunks
+    while start + chunk_size <= length:
+        yield df[start:chunk_size + start]
+        start = start + chunk_size
+
+    # Yield the remainder chunk, if needed
+    if start < length:
+        yield df[start:]
+
+def chunkify_list(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i:i + n]
 
 def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
     """

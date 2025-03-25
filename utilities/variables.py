@@ -23,6 +23,13 @@ selected_stock_exchange = ['NYS', 'NAS', 'TKS', 'LON',  'ETR']
 ESG_WEIGHT = 0.25
 MARKET_CAPITAL_WEIGHT = 0.75
 
+#
 selected_ratings = [0, 1]  # Only Negligible ESG Risk & Low ESG Risk are included
 time_span_years = [1, 5, 10, 25]
 max_span_years = 25
+
+#
+ALL_YEARS_NR = max_span_years
+FIVE_YEARS_NR = 5
+FIFTEEN_YEARS_NR = 15
+MIN_AVG_RETURN = 0.05
