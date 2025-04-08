@@ -29,6 +29,18 @@ def get_dataframe_tabular(df):
     monthly_return_column_minus1 = []
     monthly_return_column = []
     monthly_return_column_plus1 = []
+    monthly_return_column_plus2 = []
+    monthly_return_column_plus3 = []
+    monthly_return_column_plus4 = []
+    monthly_return_column_plus5 = []
+    monthly_return_column_plus6 = []
+    monthly_return_column_plus7 = []
+    monthly_return_column_plus8 = []
+    monthly_return_column_plus9 = []
+    monthly_return_column_plus10 = []
+    monthly_return_column_plus11 = []
+    monthly_return_column_plus12 = []
+
 
     for i, ticker in enumerate(tickers):
         for j, date in enumerate(dates):
@@ -39,8 +51,7 @@ def get_dataframe_tabular(df):
             year_column.append(dt.year)
             # Date should refer to t or current month, t+1 is the predicted month, t-11 is a year ago
             date_column.append(date)
-            #
-            # monthly_return_column_minus12.append( getvalue(df, date, ticker, -12) )
+            # Input
             monthly_return_column_minus11.append( getvalue(df, date, ticker, -11) )
             monthly_return_column_minus10.append( getvalue(df, date, ticker, -10) )
             monthly_return_column_minus9.append( getvalue(df, date, ticker, -9) )
@@ -52,10 +63,21 @@ def get_dataframe_tabular(df):
             monthly_return_column_minus3.append( getvalue(df, date, ticker, -3) )
             monthly_return_column_minus2.append( getvalue(df, date, ticker, -2) )
             monthly_return_column_minus1.append( getvalue(df, date, ticker, -1) )
-            #
             monthly_return_column.append(df.loc[date, ticker])
-            #
+            # Future Output
             monthly_return_column_plus1.append( getvalue(df, date, ticker, 1) )
+            monthly_return_column_plus2.append( getvalue(df, date, ticker, 2) )
+            monthly_return_column_plus3.append( getvalue(df, date, ticker, 3) )
+            monthly_return_column_plus4.append( getvalue(df, date, ticker, 4) )
+            monthly_return_column_plus5.append( getvalue(df, date, ticker, 5) )
+            monthly_return_column_plus6.append( getvalue(df, date, ticker, 6) )
+            monthly_return_column_plus7.append( getvalue(df, date, ticker, 7) )
+            monthly_return_column_plus8.append( getvalue(df, date, ticker, 8) )
+            monthly_return_column_plus9.append( getvalue(df, date, ticker, 9) )
+            monthly_return_column_plus10.append( getvalue(df, date, ticker, 10) )
+            monthly_return_column_plus11.append( getvalue(df, date, ticker, 11) )
+            monthly_return_column_plus12.append( getvalue(df, date, ticker, 12) )
+
 
     df_tabular = pd.DataFrame(data={
         'ticker': ticker_column,
@@ -75,7 +97,18 @@ def get_dataframe_tabular(df):
         'm_return(t-2)': monthly_return_column_minus2,
         'm_return(t-1)': monthly_return_column_minus1,
         'm_return(t)': monthly_return_column,
-        'm_return_target(t+1)': monthly_return_column_plus1
+        'm_return_target(t+1)': monthly_return_column_plus1,
+        'm_return_target(t+2)': monthly_return_column_plus2,
+        'm_return_target(t+3)': monthly_return_column_plus3,
+        'm_return_target(t+4)': monthly_return_column_plus4,
+        'm_return_target(t+5)': monthly_return_column_plus5,
+        'm_return_target(t+6)': monthly_return_column_plus6,
+        'm_return_target(t+7)': monthly_return_column_plus7,
+        'm_return_target(t+8)': monthly_return_column_plus8,
+        'm_return_target(t+9)': monthly_return_column_plus9,
+        'm_return_target(t+10)': monthly_return_column_plus10,
+        'm_return_target(t+11)': monthly_return_column_plus11,
+        'm_return_target(t+12)': monthly_return_column_plus12
     })
 
     le = LabelEncoder()
@@ -94,7 +127,8 @@ def get_dataframe_tabular(df):
     max_datestr = max_date.strftime('%Y-%m-%d')
     #
     df_tabular = df_tabular.loc[(df_tabular['date'] >= min_datestr) & (df_tabular['date'] < max_datestr)]
-
+    # reorder index after filtering
+    df_tabular.reset_index(drop=True, inplace=True)
     return df_tabular
 
 def get_dataframe_tabular_multi(df):
@@ -120,23 +154,25 @@ def get_dataframe_tabular_multi(df):
 
     return X_train_multi, X_test_multi
 
-def get_train_test(df_tabular, months=12):
+def get_train_test(df_tabular, months=12, target_key='m_return_target(t+1)'):
     min_date = pd.to_datetime(df_tabular['date']).max() - pd.DateOffset(months=months)
     min_datestr = min_date.strftime('%Y-%m-%d')
 
-    train, test = df_tabular.loc[df_tabular['date'] <= min_datestr], df_tabular.loc[df_tabular['date'] > min_datestr]
+    df_train, df_test = df_tabular.loc[df_tabular['date'] <= min_datestr], df_tabular.loc[df_tabular['date'] > min_datestr]
 
-    target_key = 'm_return_target(t+1)'
-
-    columns = train.columns.to_list()
-    columns.remove(target_key)
-    columns.remove('date') # date column should not be part of training
+    columns = df_train.columns.to_list()
+    # Remove all future columns after train/test split, date column should not be part of training
+    for col in columns:
+        if col.find('t+') != -1 or col.find('date') != -1:
+            columns.remove(col)
+    #columns.remove(target_key)
     #
-    X_train = train[columns]
-    y_train = train[[target_key]]
+    X_train = df_train[columns]
+    y_train = df_train[[target_key]]
 
-    X_test = test[columns]
-    y_test = test[[target_key]]
+    X_test = df_test[columns]
+    y_test = df_test[[target_key]]
+
     return X_train, y_train, X_test, y_test
 
 def getvalue(df, date, ticker, months_add=1):
