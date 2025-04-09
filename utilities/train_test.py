@@ -136,36 +136,32 @@ def get_dataframe_tabular_multi(df):
     #
     df_tabular = get_dataframe_tabular(df)
     #
-    X_train, y_train, X_test, y_test = get_train_test(df_tabular)
-    X_train_multi = X_train.merge(df_overview, on='stock_ticker_label')
-    X_test_multi = X_test.merge(df_overview, on='stock_ticker_label')
+    df_tabular_multi = df_tabular.merge(df_overview, on='stock_ticker_label')
 
-    cols = X_train_multi.columns.tolist()
+    cols = df_tabular_multi.columns.tolist()
     #
     for col in ['return_rate_1y_avg', 'return_rate_5y_avg', 'return_rate_10y_avg', 'return_rate_25y_avg',
-                'volatility_1y', 'volatility_5y', 'volatility_10y', 'volatility_25y', 'score',
-                'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
+                'volatility_1y_avg', 'volatility_5y_avg', 'volatility_10y_avg', 'volatility_25y_avg',
+                'score', 'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
                 'industry', 'stock_exchange']:
         while col in cols:
             cols.remove(col)
-    #
-    X_train_multi = X_train_multi[cols]
-    X_test_multi = X_test_multi[cols]
 
-    return X_train_multi, X_test_multi
+    return df_tabular_multi[cols]
 
 def get_train_test(df_tabular, months=12, target_key='m_return_target(t+1)'):
     min_date = pd.to_datetime(df_tabular['date']).max() - pd.DateOffset(months=months)
     min_datestr = min_date.strftime('%Y-%m-%d')
+    # filter nan values out
+    df_tabular = df_tabular.loc[df_tabular[target_key].notna()]
 
     df_train, df_test = df_tabular.loc[df_tabular['date'] <= min_datestr], df_tabular.loc[df_tabular['date'] > min_datestr]
-
     columns = df_train.columns.to_list()
     # Remove all future columns after train/test split, date column should not be part of training
-    for col in columns:
-        if col.find('t+') != -1 or col.find('date') != -1:
+    for i, col in enumerate(df_train.columns):
+        if (col.find('t+') != -1) or (col.find('date') != -1):
             columns.remove(col)
-    #columns.remove(target_key)
+
     #
     X_train = df_train[columns]
     y_train = df_train[[target_key]]
@@ -173,7 +169,7 @@ def get_train_test(df_tabular, months=12, target_key='m_return_target(t+1)'):
     X_test = df_test[columns]
     y_test = df_test[[target_key]]
 
-    return X_train, y_train, X_test, y_test
+    return X_train, y_train, X_test, y_test, min_datestr
 
 def getvalue(df, date, ticker, months_add=1):
     dt = datetime.datetime.strptime(date, "%Y-%m-%d")

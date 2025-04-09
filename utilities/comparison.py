@@ -65,7 +65,12 @@ def get_train_test_mean_pred(y_train_pred_1m, y_test_pred_1m, columns_count):
 
     return y_train_pred, y_test_pred
 
-def get_df_to_evaluate(df, train_list, test_list):
+def get_df_from_pred_list(df, train_list, test_list):
+    '''
+    It gets true values or in other words training values and on top of them
+    it concats the predicted values (1m, 6m, 12m) to create the whole timeline
+    so that it can then be used to compare the last year (true + pred) with the known true values
+    '''
     train_time_steps = int(len(train_list) / len(df.columns))
     test_time_steps = int(len(test_list) / len(df.columns))
     #
