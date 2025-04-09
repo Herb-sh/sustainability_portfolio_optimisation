@@ -14,10 +14,11 @@ import utilities.variables as variables
 def generate_plot(df, df_tabular, y_train_pred, y_test_pred):
     # Create the plot
     fig = go.Figure()
-    indices = df_tabular['date'].unique()
+    skip = len(y_test_pred)
+    indices = df_tabular['date'].unique()[skip:]
     min_date = pd.to_datetime(df_tabular['date'].max()) - pd.DateOffset(months=len(y_test_pred))
     min_datestr = min_date.strftime('%Y-%m-%d')
-
+    print(len(indices), len(y_train_pred), len(y_test_pred))
     # Add the timeseries line
     fig.add_trace(go.Scatter(x=indices, y=df.mean(axis=1), mode='lines', name='Actual returns',
                              line=dict(color='#5c839f', width=2)))
