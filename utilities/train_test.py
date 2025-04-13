@@ -1,4 +1,7 @@
 import pandas as pd
+import torch
+import numpy as np
+#
 import datetime
 from sklearn.preprocessing import LabelEncoder
 
@@ -131,6 +134,14 @@ def get_dataframe_tabular(df):
     df_tabular.reset_index(drop=True, inplace=True)
     return df_tabular
 
+def getvalue(df, date, ticker, months_add=1):
+    dt = datetime.datetime.strptime(date, "%Y-%m-%d")
+    try:
+        offset = pd.DateOffset(months=months_add)
+        return df.loc[(dt + offset).strftime('%Y-%m-%d'), ticker]
+    except KeyError:
+        return None
+
 def get_dataframe_tabular_multi(df):
     df_overview = pd.read_csv('../../../data/df_overview.csv', index_col=0)
     #
@@ -149,7 +160,7 @@ def get_dataframe_tabular_multi(df):
 
     return df_tabular_multi[cols]
 
-def get_train_test(df_tabular, months=12, target_key='m_return_target(t+1)'):
+def split_train_test_tabular(df_tabular, months=12, target_key='m_return_target(t+1)'):
     min_date = pd.to_datetime(df_tabular['date']).max() - pd.DateOffset(months=months)
     min_datestr = min_date.strftime('%Y-%m-%d')
     # filter nan values out
@@ -171,10 +182,43 @@ def get_train_test(df_tabular, months=12, target_key='m_return_target(t+1)'):
 
     return X_train, y_train, X_test, y_test, min_datestr
 
-def getvalue(df, date, ticker, months_add=1):
-    dt = datetime.datetime.strptime(date, "%Y-%m-%d")
-    try:
-        offset = pd.DateOffset(months=months_add)
-        return df.loc[(dt + offset).strftime('%Y-%m-%d'), ticker]
-    except KeyError:
-        return None
+def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
+    """
+    Create sequences of data for LSTM model.
+    """
+    x_ts, x_static, y = [], [], []
+    for i in range(len(df_ts) - seq_length):
+        x_ts_data = df_ts.iloc[i:i+seq_length].values
+        x_ts_data_transposed = x_ts_data.transpose(1, 0)
+
+        #
+        if len(df_static) > 0:
+            x_static.append(df_static[i]) # Sequences are NOT added to
+        #
+        y_data = df_ts.iloc[i+seq_length: i + seq_length + out_seq_length].values
+        y_data_transposed = y_data.transpose(1, 0)
+
+        # y_data = fix_array_length(y_data, out_seq_length)
+        if len(y_data) == out_seq_length:
+            x_ts.append(x_ts_data_transposed)  # Sequence of `seq_length` time points
+            y.append(y_data_transposed)   # Target is the next time step
+
+    return (torch.tensor(x_ts, dtype=torch.float32),
+            torch.tensor(x_static, dtype=torch.float32),
+            torch.tensor(y, dtype=torch.float32))
+
+def fix_array_length(arr, length):
+    """
+    Ensures each row of the array has a fixed length. If shorter, fills with NaN; if longer, truncates.
+
+    Parameters:
+    - arr (numpy.ndarray): The input 2D array.
+    - length (int): The desired length of each row.
+
+    Returns:
+    - numpy.ndarray: A 2D array with the specified column length.
+    """
+    fixed_arr = np.full((arr.shape[0], length), np.nan)  # Initialize with NaN
+    num_cols = min(arr.shape[1], length)  # Determine how many columns to copy
+    fixed_arr[:, :num_cols] = arr[:, :num_cols]  # Copy existing data
+    return fixed_arr
