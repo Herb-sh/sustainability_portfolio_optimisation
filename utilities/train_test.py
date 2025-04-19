@@ -143,19 +143,36 @@ def getvalue(df, date, ticker, months_add=1):
         return None
 
 def get_dataframe_tabular_multi(df):
+    """
+    Enhances the given tabular DataFrame by merging it with an overview dataset and
+    removing a predefined set of informational columns.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The initial DataFrame containing financial data, typically indexed or keyed by 'stock_ticker_label'.
+
+    Returns
+    -------
+    pd.DataFrame
+        A refined DataFrame that merges the base tabular representation of `df` with
+        additional metadata from an overview CSV, excluding selected non-numerical or
+        descriptive columns for further modeling or analysis.
+    """
+
     df_overview = pd.read_csv('../../../data/df_overview.csv', index_col=0)
     #
     df_tabular = get_dataframe_tabular(df)
     #
     df_tabular_multi = df_tabular.merge(df_overview, on='stock_ticker_label')
-
+    #
     cols = df_tabular_multi.columns.tolist()
     #
     for col in ['return_rate_1y_avg', 'return_rate_5y_avg', 'return_rate_10y_avg', 'return_rate_25y_avg',
-                'volatility_1y_avg', 'volatility_5y_avg', 'volatility_10y_avg', 'volatility_25y_avg',
-                'score', 'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
-                'industry', 'stock_exchange']:
-        while col in cols:
+                    'volatility_1y_avg', 'volatility_5y_avg', 'volatility_10y_avg', 'volatility_25y_avg',
+                    'score', 'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
+                    'industry', 'stock_exchange']:
+         while col in cols:
             cols.remove(col)
 
     return df_tabular_multi[cols]
@@ -181,31 +198,6 @@ def split_train_test_tabular(df_tabular, months=12, target_key='m_return_target(
     y_test = df_test[[target_key]]
 
     return X_train, y_train, X_test, y_test, min_datestr
-
-def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
-    """
-    Create sequences of data for LSTM model.
-    """
-    x_ts, x_static, y = [], [], []
-    for i in range(len(df_ts) - seq_length):
-        x_ts_data = df_ts.iloc[i:i+seq_length].values
-        x_ts_data_transposed = x_ts_data.transpose(1, 0)
-
-        #
-        if len(df_static) > 0:
-            x_static.append(df_static[i]) # Sequences are NOT added to
-        #
-        y_data = df_ts.iloc[i+seq_length: i + seq_length + out_seq_length].values
-        y_data_transposed = y_data.transpose(1, 0)
-
-        # y_data = fix_array_length(y_data, out_seq_length)
-        if len(y_data) == out_seq_length:
-            x_ts.append(x_ts_data_transposed)  # Sequence of `seq_length` time points
-            y.append(y_data_transposed)   # Target is the next time step
-
-    return (torch.tensor(x_ts, dtype=torch.float32),
-            torch.tensor(x_static, dtype=torch.float32),
-            torch.tensor(y, dtype=torch.float32))
 
 def fix_array_length(arr, length):
     """
