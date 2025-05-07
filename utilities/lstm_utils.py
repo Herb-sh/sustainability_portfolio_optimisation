@@ -16,13 +16,12 @@ def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_l
     if df_static is None:
         df_static = []
     X, X_static, y = create_sequences(df_time_series, df_static, in_seq_length, out_seq_length)
-    print(X.shape, y.shape)
     # skip first item
-    X_train = X[:len(X) - validation_months]
-    X_test = X[(len(X) - validation_months):]
+    X_train = X[:len(X) - (validation_months - out_seq_length)]
+    X_test = X[(len(X) - (validation_months - out_seq_length)):]
 
-    y_train = y[:(len(X) - validation_months)]
-    y_test = y[(len(X) - validation_months):]
+    y_train = y[:(len(X) - (validation_months - out_seq_length))]
+    y_test = y[(len(X) - (validation_months - out_seq_length)):]
 
     return X_train, X_test, y_train, y_test
 

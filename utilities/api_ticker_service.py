@@ -7,7 +7,7 @@ import pandas as pd
 importlib.reload(parser)
 
 
-def fetch_market_cap(tickers, batch_size=100, delay=2):
+def fetch_company_data(tickers, batch_size=100, delay=2):
     market_caps = []
 
     for i in range(0, len(tickers), batch_size):
@@ -46,10 +46,7 @@ def get_monthly_returns(tickers, start_date, end_date, interval='1mo'):
             continue
         # Resample to monthly data and calculate the monthly returns
         data['adj_close'] = data['Adj Close']
-
         monthly_returns[ticker] = data['adj_close']
-        #monthly_returns[ticker] = data['adj_close']
-        #monthly_returns[ticker] = data['adj_close']
 
     # Convert the dictionary to a DataFrame
     monthly_returns_df = pd.DataFrame(monthly_returns)
