@@ -8,7 +8,10 @@ import torch.utils.data as data
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ''' LSTM '''
-
+'''
+Both train and test sequences are identical=12, but the lasts (x=1,3,12) months in the test
+data are ahead of training data
+'''
 def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_length=12, validation_months=5*12):
     # Set sequence length (e.g., 12 time points)
 
@@ -31,8 +34,9 @@ def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
     Create sequences of data for LSTM model.
     """
     x_ts, x_static, y = [], [], []
-    for i in range(len(df_ts) - seq_length):
-        x_ts_data = df_ts.iloc[i:i+seq_length].values
+    # starting from 0, input & output sequences should be excluded from total dataframe length
+    for i in range(len(df_ts) - seq_length - out_seq_length): # -1
+        x_ts_data = df_ts.iloc[i: i+seq_length].values
         x_ts_data_transposed = x_ts_data.transpose(1, 0)
 
         #
@@ -72,7 +76,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
         y_train_pred = torch.tensor([])
         y_test_pred = torch.tensor([])
 
-        model.train()
+        model.train_predict()
         total_loss = 0
 
         # Train

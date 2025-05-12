@@ -12,7 +12,6 @@ import utilities.utility as utility
 importlib.reload(utility)
 
 def plot_efficient_frontier(tickers, returns, volatility, mu, S):
-
     # Create a Plotly scatter plot
     fig = go.Figure()
 
@@ -37,7 +36,7 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
             mode='markers',
             text=ticker,
             textposition="top center",
-            marker=dict(size=6, color='blue'),
+            marker=dict(size=4, color='blue'),
             hovertemplate="<b>%{text}</b><br>Risk: %{x:.2f}<br>Return: %{y:.2f}<extra></extra>",
             showlegend=False
         ))
@@ -89,7 +88,7 @@ def plot_diff(tickers, average_returns, actual_returns):
         "Actual Return (Last Year) (%)": actual_returns
     })
 
-    tickers_spread = utility.evenly_spaced_sample(tickers, 10) #utility.evenly_spaced_sample(df.columns, 10)
+    tickers_spread = utility.evenly_spaced_sample(tickers, 10)
 
     df_spread = df.loc[df['Ticker'].isin(tickers_spread)]
 
@@ -104,9 +103,21 @@ def plot_diff(tickers, average_returns, actual_returns):
                  y="Return (%)",
                  color="Return Type",
                  barmode="group",
-                 title="Comparison of Average Returns vs Actual Returns (Last Year)",
+                 title="Comparison of average-returns (last 25 years) vs actual-returns (last year)",
                  labels={"Return (%)": "Return (%)"},
                  text_auto=True)
+
+    fig.update_layout(
+        template="plotly_white",
+        showlegend=False,
+        yaxis=dict(
+            title='Return rate (%)',
+            tickformat='.0%'
+        ),
+        xaxis=dict(
+            title='Company stock ticker'
+        )
+    )
 
     # Show the plot
     fig.show()
