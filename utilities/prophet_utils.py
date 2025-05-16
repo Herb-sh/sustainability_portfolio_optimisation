@@ -29,7 +29,6 @@ def train_predict(dataframe, months=12):
         forecast = model.predict(future)
 
         models[ticker] = model
-        #forecast['yhat'].round(2)
         forecasts[ticker] = forecast
 
     return forecasts
@@ -51,6 +50,7 @@ def forecast_to_df(dataframe, forecasts, months=12):
     y_pred = merged_forecast.tail(months)
     y_true = dataframe.loc[dataframe.index >= min_datestr].head(months)
 
+    # re
     return y_pred, y_true
 
 def plot(dataframe, forecasts, months=12):
