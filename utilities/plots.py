@@ -17,16 +17,16 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
 
     # Generate efficient frontier data @TODO check if correct!!!
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
-    target_returns = np.linspace(mu.min(), mu.max()-0.05, 50)
+    target_returns = np.linspace(mu.min(), mu.max(), 50)
     frontier_volatility = []
     frontier_returns = []
-
+    '''
     for r in target_returns:
         ab = ef.efficient_return(target_return=r)
         weights = ef.clean_weights()
         std = np.sqrt(np.dot(np.dot(list(weights.values()), S), list(weights.values())))  # Compute std dev
         frontier_volatility.append(std)
-        frontier_returns.append(r)
+        frontier_returns.append(r)'''
 
     # Marker: Add annotations for each point
     for i, (ret, vol, ticker) in enumerate(zip(returns, volatility, tickers)):
@@ -58,8 +58,9 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
         name='Efficient Frontier',
         line=dict(color='blue', width=3)
     ))
-
+    #
     fig.update_traces(hovertemplate=None)
+
     # Customize layout
     fig.update_layout(
         title='Efficient Frontier',
@@ -69,7 +70,7 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
             range=[min(volatility)-0.01, 0.8]
         ),
         yaxis=dict(
-            title='Investment Return Average (last 5 years)',
+            title='Investment Return Average (last 25 years)',
             tickformat='.0%',
             range=[-0.2, 0.6]
         ),
