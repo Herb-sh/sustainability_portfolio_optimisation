@@ -96,6 +96,7 @@ def get_df_from_pred_list(df, train_list, test_list):
 
 def get_portfolio_performance(df_pred, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
     '''
+    Constructs an optimized portfolio
     :param df_pred:
     :param file_name:
     :param min_avg_return:
@@ -123,6 +124,59 @@ def get_portfolio_performance(df_pred, file_name = "weights.csv", min_avg_return
     p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
 
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+def get_full_prices_from_returns(df_returns_complete, df_complete, months):
+    # Get the initial price for each ticker, first month of last time-horizon
+    df_initial_prices = df_complete.tail(months).head(1)
+    # Get last "time-horizon" return rates together with predicted value/s
+    df_returns = df_returns_complete.tail(months)
+
+    # Set indices
+    df_returns.index = df_complete.tail(months).index
+    # Create empty price DataFrame with same shape
+    df_prices = pd.DataFrame(index=df_returns.index, columns=df_returns.columns)
+
+    df_prices.iloc[0] = df_initial_prices.values[0]
+    # Set the first row as initial prices * (1 + first return)
+    first_date = df_prices.index[0]
+
+    for i, ticker in enumerate(df_returns.columns):
+        value = df_initial_prices[ticker][first_date] * (1 + df_returns.loc[first_date, ticker])
+        df_prices.loc[df_prices.index == first_date, ticker] = value
+
+    # Compute prices for all subsequent dates
+    for i in range(1, len(df_returns)):
+        current_date = df_returns.index[i]
+        previous_date = df_returns.index[i - 1]
+
+        for j, ticker in enumerate(df_returns.columns):
+            value = df_prices[ticker][previous_date] * (1 + df_returns[ticker][current_date])
+            df_prices.loc[df_prices.index == current_date, ticker] = value
+
+    return df_prices
+
+def get_full_prices_euro(df, df_overview):
+
+    exchange_rate = {
+        "yen_to_euro": 0.0062,
+        "us_to_euro": 0.88,
+        "pound_to_euro": 1.17
+    }
+    # Loop through all tickers, for each ticker we find its corresponding stock-exchange
+    # Based on stock-exchange we grab the corresponding exchange-rate and apply to the whole column of that ticker
+    for i, col in enumerate(df.columns):
+        stock_exchange = df_overview.loc[df_overview['stock_ticker_symbol'] == col, 'stock_exchange'].values[0]
+        # Yen
+        if stock_exchange == 'TKS':
+            df[col] = df[col] * exchange_rate['yen_to_euro']
+        # Dollar
+        if stock_exchange == 'NAS' or stock_exchange == 'NYS':
+            df[col] = df[col] * exchange_rate['us_to_euro']
+        # Pound
+        if stock_exchange == 'LON':
+            df[col] = df[col] * exchange_rate['pound_to_euro']
+
+    return df
 
 def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000, greedy=False):
     latest_prices = get_latest_prices(df)
