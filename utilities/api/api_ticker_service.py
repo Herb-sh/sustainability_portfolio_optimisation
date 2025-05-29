@@ -1,12 +1,14 @@
 import importlib
-import utilities.variables as variables
-import utilities.parser as parser
+import utilities.api.parser as parser
 import time
 import yfinance as yf
 import pandas as pd
 importlib.reload(parser)
 
-
+'''
+Fetch static data from Yahoo Finance in batches, with
+a delay for each batch of data
+'''
 def fetch_company_data(tickers, batch_size=100, delay=2):
     market_caps = []
 
@@ -37,6 +39,9 @@ def fetch_company_data(tickers, batch_size=100, delay=2):
 
     return pd.DataFrame(market_caps)
 
+'''
+Fetch monthly returns of all selected tickers given start-date and end-date
+'''
 def get_monthly_returns(tickers, start_date, end_date, interval='1mo'):
     monthly_returns = {}
     for ticker in tickers:
@@ -52,6 +57,9 @@ def get_monthly_returns(tickers, start_date, end_date, interval='1mo'):
     monthly_returns_df = pd.DataFrame(monthly_returns)
     return monthly_returns_df
 
+'''
+Apply a download in batches/chunks logic to not overload the API and prevent being black-listed
+'''
 def get_returns_in_chunks(tickers, start_date, end_date, interval='1mo', chunk_size=5, sleep_duration=5):
     # Initialize an empty DataFrame to store the results
     all_data = pd.DataFrame()
@@ -73,6 +81,9 @@ def get_returns_in_chunks(tickers, start_date, end_date, interval='1mo', chunk_s
     # Return the resulting DataFrame
     return all_data
 
+'''
+Generates chunk ranges given total-list length and chunk-list length
+'''
 def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]

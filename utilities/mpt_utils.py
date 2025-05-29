@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import torch
 import cvxpy as cp
 #
@@ -8,6 +9,7 @@ from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 from pypfopt import EfficientFrontier
 from pypfopt import risk_models
 from pypfopt import expected_returns
+from scipy.optimize import minimize
 import utilities.variables as variables
 
 # Methods
@@ -125,6 +127,54 @@ def get_portfolio_performance(df_pred, file_name = "weights.csv", min_avg_return
 
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
 
+
+
+# To create an allocation we keep a minimum of 12 months, for all 3 cases (1 month, 6 months, 12 months)
+def get_prediction_portfolio_performance(forecasts, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
+    # Create DataFrame of forecasted prices
+    # Collect 'ds' (date) and 'yhat' from each forecast
+    forecast_dfs = [item[['ds', 'yhat']].rename(columns={'yhat': stock}) for stock, item in forecasts.items()]
+
+    # Merge all forecasts on 'ds' (date)
+    merged_forecast = forecast_dfs[0]
+    for df in forecast_dfs[1:]:
+        merged_forecast = merged_forecast.merge(df, on='ds', how='outer')
+
+    merged_forecast = merged_forecast.set_index('ds')
+
+    # Calculate expected returns and sample covariance
+    mu_0 = expected_returns.mean_historical_return(merged_forecast)
+
+    # Get only tickers with a mean historical return of at least 5%
+    optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    df_optimal = merged_forecast[optimal_tickers].tail(months)
+
+    mu = expected_returns.mean_historical_return(df_optimal)
+    mu = round(mu)
+    S = risk_models.CovarianceShrinkage(df_optimal).ledoit_wolf()
+
+    # Optimize for maximal Sharpe ratio
+    ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
+    # ef_new = EfficientFrontier(mu, S, solver=cp.CLARABEL)
+
+    raw_weights = ef.max_sharpe()
+    cleaned_weights = ef.clean_weights()
+    # volatility = ef.min_volatility()
+    ef.save_weights_to_file(file_name)  # saves to file
+    #
+    p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
+
+    return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000):
+    latest_prices = get_latest_prices(df)
+
+    da = DiscreteAllocation(raw_weights, latest_prices, total_portfolio_value=total_portfolio_value)
+    allocation, leftover = da.greedy_portfolio()
+    print("Discrete allocation:", allocation)
+    print("Funds remaining: €{:.2f}".format(leftover))
+
+
 def get_full_prices_from_returns(df_returns_complete, df_complete, months):
     # Get the initial price for each ticker, first month of last time-horizon
     df_initial_prices = df_complete.tail(months).head(1)
@@ -190,3 +240,37 @@ def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000, g
     print("Discrete allocation:", allocation)
     print("Funds remaining: €{:.2f}".format(leftover))
     return allocation, leftover
+
+# Efficient-Frontier
+def portfolio_performance(weights, returns, volatilities):
+    portfolio_return = np.sum(returns * weights)
+    portfolio_volatility = np.sqrt(np.dot(weights.T, np.dot(np.cov(volatilities), weights)))
+    return portfolio_return, portfolio_volatility
+
+def minimize_volatility(weights, returns, volatilities):
+    return portfolio_performance(weights, returns, volatilities)[1]
+
+def efficient_frontier(df, line_point_nr=20):
+    returns = df['return_rate_5y_avg'].values
+    volatilities = df['volatility_5y'].values
+    num_assets = len(returns)
+    results = []
+    target_returns = np.linspace(min(returns), max(returns), line_point_nr)
+    for target_return in target_returns:
+        constraints = (
+            {'type': 'eq', 'fun': lambda x: np.sum(x) - 1},
+            {'type': 'eq', 'fun': lambda x: np.sum(x * returns) - target_return}
+        )
+        bounds = tuple((0, 1) for _ in range(num_assets))
+        initial_guess = num_assets * [1. / num_assets]
+
+        result = minimize(minimize_volatility, initial_guess, args=(returns, volatilities),
+                          method='SLSQP', bounds=bounds, constraints=constraints)
+        results.append(result['fun'])
+
+    return target_returns, results
+
+
+def negative_sharpe_ratio(weights, returns, volatilities, risk_free_rate=0):
+    p_return, p_volatility = portfolio_performance(weights, returns, volatilities)
+    return -(p_return - risk_free_rate) / p_volatility

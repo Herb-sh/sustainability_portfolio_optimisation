@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from scipy.optimize import minimize
 import utilities.variables as variables
 from pypfopt import expected_returns, EfficientFrontier
 
@@ -50,43 +49,11 @@ def set_volatility_by_years(df_overview, df_monthly_adj_close):
                 else:
                     print(f"Ticket {ticker_column} is ignored.")
 
-# Efficient-Frontier
-def portfolio_performance(weights, returns, volatilities):
-    portfolio_return = np.sum(returns * weights)
-    portfolio_volatility = np.sqrt(np.dot(weights.T, np.dot(np.cov(volatilities), weights)))
-    return portfolio_return, portfolio_volatility
-
-def negative_sharpe_ratio(weights, returns, volatilities, risk_free_rate=0):
-    p_return, p_volatility = portfolio_performance(weights, returns, volatilities)
-    return -(p_return - risk_free_rate) / p_volatility
-
-def minimize_volatility(weights, returns, volatilities):
-    return portfolio_performance(weights, returns, volatilities)[1]
-
-def efficient_frontier(df, line_point_nr=20):
-    returns = df['return_rate_5y_avg'].values
-    volatilities = df['volatility_5y'].values
-    num_assets = len(returns)
-    results = []
-    target_returns = np.linspace(min(returns), max(returns), line_point_nr)
-    for target_return in target_returns:
-        constraints = (
-            {'type': 'eq', 'fun': lambda x: np.sum(x) - 1},
-            {'type': 'eq', 'fun': lambda x: np.sum(x * returns) - target_return}
-        )
-        bounds = tuple((0, 1) for _ in range(num_assets))
-        initial_guess = num_assets * [1. / num_assets]
-
-        result = minimize(minimize_volatility, initial_guess, args=(returns, volatilities),
-                          method='SLSQP', bounds=bounds, constraints=constraints)
-        results.append(result['fun'])
-
-    return target_returns, results
-
 def evenly_spaced_sample(lst, n):
     """Returns `n` evenly spaced elements from a sorted list."""
     indices = np.linspace(0, len(lst) - 1, n, dtype=int)
     return [lst[i] for i in indices]
+
 def evenly_spaced_dataframe(data, n):
     mu = expected_returns.mean_historical_return(data)
 
@@ -119,7 +86,3 @@ def chunkify_df(df: pd.DataFrame, chunk_size: int):
     if start < length:
         yield df[start:]
 
-def chunkify_list(lst, n):
-    """Yield successive n-sized chunks from lst."""
-    for i in range(0, len(lst), n):
-        yield lst[i:i + n]

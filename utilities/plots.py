@@ -179,3 +179,84 @@ def plot_diff(tickers, average_returns, actual_returns):
 
     # Show the plot
     fig.show()
+
+'''
+Plots pie-chart given an allocation dictionary as input
+'''
+def plot_allocations(allocation):
+    fig = go.Figure(data=[go.Pie(labels=pd.Series(allocation).index, values=pd.Series(allocation).values, textinfo='label+percent', hole=.3)])
+    # Set background to white
+    fig.update_layout(
+        height=600,
+        width=600,
+        paper_bgcolor='white',
+        plot_bgcolor='white',
+        legend=dict(
+            font=dict(color='black')  # legend text color
+        )
+    )
+    fig.show()
+
+
+'''
+ PROPHET Plots
+'''
+
+def plot_lines_actual_vs_predicted(dataframe, forecasts, months=12):
+    # Allocate the last 5 years of data for testing
+    min_date = pd.to_datetime(dataframe.index[-1]).replace(day=1) - pd.DateOffset(months=12)
+    min_datestr = min_date.strftime('%Y-%m-%d')
+
+    X_train = dataframe.loc[dataframe.index < min_datestr]
+    # df_test = dataframe.loc[dataframe.index >= min_datestr]
+
+    # Collect 'ds' (date) and 'yhat' from each forecast
+    forecast_dfs = [item[['ds', 'yhat']].rename(columns={'yhat': stock}) for stock, item in forecasts.items()]
+
+    # Merge all forecasts on 'ds' (date)
+    merged_forecast = forecast_dfs[0]
+    for df in forecast_dfs[1:]:
+        merged_forecast = merged_forecast.merge(df, on='ds', how='outer')
+
+    # Compute the mean 'yhat' per time point
+    y_pred = merged_forecast.iloc[:, 1:].mean(axis=1)
+    y_true = dataframe.mean(axis=1)
+
+    #
+    train_true_list = y_pred[:len(X_train)]
+    test_true_list = y_pred[len(X_train):]
+
+    # Create the plot
+    fig = go.Figure()
+
+    # Add the timeseries line
+    fig.add_trace(go.Scatter(y=y_true, x=dataframe.index.tolist(), mode='lines', name='Actual returns',
+                             line=dict(color='#5c839f', width=2)))  #, line=dict(color='red'))
+    # Add the training plot in red
+    fig.add_trace(go.Scatter(y=train_true_list, x=dataframe.index.tolist()[:len(train_true_list)],
+                             mode='lines', name='Train returns',
+                             line=dict(color='red', width=2)))  #, line=dict(color='red')
+
+    # Add the testing plot in green
+    fig.add_trace(go.Scatter(y=test_true_list, x=dataframe.index.tolist()[len(train_true_list):],
+                             mode='lines', name='Test returns',
+                             line=dict(color='green', width=2)))  # , line=dict(color='green')
+
+    fig.add_vline(x=min_datestr, line_color='red', line_dash='dash', line_width=1)
+
+    # Update layout with labels
+    fig.update_layout(
+        title='1 Year Prediction vs Actual Plot',
+        xaxis=dict(
+            title='Date'
+        ),
+        yaxis=dict(
+            title='Day closing return (%)',
+            tickformat='.0%',
+            range=[0.75, 1.6]
+        ),
+        legend=dict(title="Legend"),
+        template="plotly_white"
+    )
+
+    fig.show()

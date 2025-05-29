@@ -1,6 +1,6 @@
 import importlib
 import utilities.variables as variables
-import utilities.parser as parser
+import utilities.api.parser as parser
 importlib.reload(parser)
 
 
