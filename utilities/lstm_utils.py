@@ -7,7 +7,7 @@ import torch.utils.data as data
 # Set device (GPU if available)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-''' LSTM '''
+''' 4.3. LSTM '''
 '''
 Both train and test sequences are identical=12, but the lasts (x=1,3,12) months in the test
 data are ahead of training data
@@ -31,7 +31,7 @@ def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_l
 
 def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
     """
-    Create sequences of data for LSTM model.
+    Create sequences of data for 4.3. LSTM model.
     """
     x_ts, x_static, y = [], [], []
     # starting from 0, input & output sequences should be excluded from total dataframe length
