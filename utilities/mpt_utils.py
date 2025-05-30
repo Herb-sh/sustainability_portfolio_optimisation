@@ -1,17 +1,20 @@
 import pandas as pd
 import numpy as np
+from collections import OrderedDict
 import torch
 import cvxpy as cp
 #
 import plotly.graph_objects as go
 #
 from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
-from pypfopt import EfficientFrontier
+from pypfopt import EfficientFrontier, EfficientSemivariance
+from pypfopt import objective_functions
 from pypfopt import risk_models
 from pypfopt import expected_returns
 from scipy.optimize import minimize
+import importlib
 import utilities.variables as variables
-
+import utilities.plots as plots
 # Methods
 def generate_plot(df, df_tabular, y_train_pred, y_test_pred):
     # Create the plot
@@ -96,41 +99,36 @@ def get_df_from_pred_list(df, train_list, test_list):
 
     return pd.DataFrame(data_dict, columns=df.columns)
 
-def get_portfolio_performance(df_pred, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
-    '''
-    Constructs an optimized portfolio
-    :param df_pred:
-    :param file_name:
-    :param min_avg_return:
-    :param months:
-    :return:
-    '''
-    # Create DataFrame of forecasted prices
+'''
+Post Modern Portfolio Theory
+'''
+def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
     # Calculate expected returns and sample covariance
-    mu_0 = expected_returns.mean_historical_return(df_pred, frequency=12, returns_data=True)
+    # mu_0 = expected_returns.mean_historical_return(df, frequency=12)
+
     # Get only tickers with a mean historical return of at least 5%
-    optimal_tickers = mu_0[mu_0 > min_avg_return].index
-    df_optimal = df_pred[optimal_tickers].tail(months)
-    #
-    mu = expected_returns.mean_historical_return(df_optimal, frequency=12, returns_data=True)
+    # optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    # df_optimal = df[optimal_tickers]
 
-    S = risk_models.CovarianceShrinkage(df_optimal, returns_data=True).ledoit_wolf()
+    mu = expected_returns.mean_historical_return(df, frequency=12)
+    historical_returns = expected_returns.returns_from_prices(df)
+
+    #mu = expected_returns.mean_historical_return(df)
+
     # Optimize for maximal Sharpe ratio
-    ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
+    es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL)
 
-    raw_weights = ef.max_sharpe()
-    cleaned_weights = ef.clean_weights()
+    #es.max_sharpe()
 
-    ef.save_weights_to_file(file_name)  # saves to file
+    cleaned_weights = es.clean_weights()
+
+    #es.save_weights_to_file(file_name)  # saves to file
     #
-    p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
-
-    return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
-
-
+    es.portfolio_performance(verbose=True)
+    return cleaned_weights
 
 # To create an allocation we keep a minimum of 12 months, for all 3 cases (1 month, 6 months, 12 months)
-def get_prediction_portfolio_performance(forecasts, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
+def get_prophet_portfolio_performance(forecasts, file_name ="weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
     # Create DataFrame of forecasted prices
     # Collect 'ds' (date) and 'yhat' from each forecast
     forecast_dfs = [item[['ds', 'yhat']].rename(columns={'yhat': stock}) for stock, item in forecasts.items()]
@@ -166,14 +164,64 @@ def get_prediction_portfolio_performance(forecasts, file_name = "weights.csv", m
 
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
 
-def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000):
+def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
+    # Calculate expected returns and sample covariance
+    mu_0 = expected_returns.mean_historical_return(df, frequency=12)
+
+    # Get only tickers with a mean historical return of at least 5%
+    optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    df_optimal = df[optimal_tickers]
+
+    mu = expected_returns.mean_historical_return(df_optimal, frequency=12)
+    S = risk_models.CovarianceShrinkage(df_optimal, frequency=12).ledoit_wolf() # Ledoit-Wolf shrinkage (df_optimal, frequency=12), # Exponential Covariance
+
+    # Optimize for maximal Sharpe ratio
+    ef = EfficientFrontier(mu, S, solver=cp.CLARABEL) # cp.ECOS
+    #ef.add_objective(objective_functions.L2_reg, gamma=0.1)
+
+    raw_weights = ef.max_sharpe()
+    cleaned_weights = ef.clean_weights()
+
+    ef.save_weights_to_file(file_name)  # saves to file
+    #
+    p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
+    return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+'''
+Constructs an optimized portfolio
+'''
+def get_returns_portfolio_performance(df_pred, file_name ="weights.csv", min_avg_return=variables.MIN_AVG_RETURN, opt_months=12):
+    # Create DataFrame of forecasted prices
+    # Calculate expected returns and sample covariance
+    mu_0 = expected_returns.mean_historical_return(df_pred, frequency=12, returns_data=True)
+    # Get only tickers with a mean historical return of at least 5%
+    optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    df_optimal = df_pred[optimal_tickers].tail(opt_months)
+    #
+    mu = expected_returns.mean_historical_return(df_optimal, frequency=12, returns_data=True)
+
+    S = risk_models.CovarianceShrinkage(df_optimal, returns_data=True).ledoit_wolf()
+    # Optimize for maximal Sharpe ratio
+    ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
+
+    raw_weights = ef.max_sharpe()
+    cleaned_weights = ef.clean_weights()
+
+    ef.save_weights_to_file(file_name)  # saves to file
+    #
+    p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
+
+    return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000, is_greedy=True):
     latest_prices = get_latest_prices(df)
 
     da = DiscreteAllocation(raw_weights, latest_prices, total_portfolio_value=total_portfolio_value)
-    allocation, leftover = da.greedy_portfolio()
+    allocation, leftover = da.greedy_portfolio() if is_greedy else da.lp_portfolio()
+
     print("Discrete allocation:", allocation)
     print("Funds remaining: €{:.2f}".format(leftover))
-
+    return allocation, leftover
 
 def get_full_prices_from_returns(df_returns_complete, df_complete, months):
     # Get the initial price for each ticker, first month of last time-horizon
@@ -206,7 +254,7 @@ def get_full_prices_from_returns(df_returns_complete, df_complete, months):
     return df_prices
 
 def get_full_prices_euro(df, df_overview):
-
+    df_euro = df.copy()
     exchange_rate = {
         "yen_to_euro": 0.0062,
         "us_to_euro": 0.88,
@@ -214,32 +262,43 @@ def get_full_prices_euro(df, df_overview):
     }
     # Loop through all tickers, for each ticker we find its corresponding stock-exchange
     # Based on stock-exchange we grab the corresponding exchange-rate and apply to the whole column of that ticker
-    for i, col in enumerate(df.columns):
+    for i, col in enumerate(df_euro.columns):
         stock_exchange = df_overview.loc[df_overview['stock_ticker_symbol'] == col, 'stock_exchange'].values[0]
         # Yen
         if stock_exchange == 'TKS':
-            df[col] = df[col] * exchange_rate['yen_to_euro']
+            df_euro[col] = df_euro[col] * exchange_rate['yen_to_euro']
         # Dollar
         if stock_exchange == 'NAS' or stock_exchange == 'NYS':
-            df[col] = df[col] * exchange_rate['us_to_euro']
+            df_euro[col] = df_euro[col] * exchange_rate['us_to_euro']
         # Pound
         if stock_exchange == 'LON':
-            df[col] = df[col] * exchange_rate['pound_to_euro']
+            df_euro[col] = df_euro[col] * exchange_rate['pound_to_euro']
 
-    return df
+    return df_euro
 
-def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000, greedy=False):
-    latest_prices = get_latest_prices(df)
+'''
+Important!
+Generalized method that constructs an optimized portfolio and plots it
+gets a dataframe with forecasted values attached to training values 
+and the equivalent in real prices (euro). 
 
-    da = DiscreteAllocation(raw_weights, latest_prices, total_portfolio_value=total_portfolio_value)
-    if greedy:
-        allocation, leftover = da.greedy_portfolio()
-    else:
-        allocation, leftover = da.lp_portfolio()
+df_forecast (DataFrame) in percentage values (0.02 for 2%), all training months + predicted months (e.g. 240 + 12 = 252 months)
+df (DataFrame) real euro prices of stocks (as read df_monthly_prices_complete_euro), all 300 months 
+opt_months (int) time-horizon of data that will be used to construct the portfolio (e.g. 60 months)
+'''
+def portfolio_and_plot(df_forecast, df, opt_months=60):
+    importlib.reload(plots)
 
-    print("Discrete allocation:", allocation)
-    print("Funds remaining: €{:.2f}".format(leftover))
-    return allocation, leftover
+    df_prices_train_and_forecast = get_full_prices_from_returns(df_forecast, df[df_forecast.columns], opt_months)
+    #
+    df_portfolio, raw_weights, mu, S, sigma, sharpe = get_returns_portfolio_performance(df_forecast, "prophet_weights_12m.csv", min_avg_return=0, opt_months=opt_months)
+    allocation, leftover = create_discrete_allocation(df_prices_train_and_forecast[df_portfolio.columns], raw_weights, is_greedy=True)
+    weights_filtered = OrderedDict((key, value) for key, value in raw_weights.items() if key in allocation)
+
+    #
+    plots.plot_allocations(weights_filtered)
+
+    return weights_filtered, mu, S
 
 # Efficient-Frontier
 def portfolio_performance(weights, returns, volatilities):
@@ -269,7 +328,6 @@ def efficient_frontier(df, line_point_nr=20):
         results.append(result['fun'])
 
     return target_returns, results
-
 
 def negative_sharpe_ratio(weights, returns, volatilities, risk_free_rate=0):
     p_return, p_volatility = portfolio_performance(weights, returns, volatilities)

@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from networkx.algorithms.bipartite.basic import color
 #
 from pypfopt import EfficientFrontier
 import cvxpy as cp
@@ -184,16 +185,21 @@ def plot_diff(tickers, average_returns, actual_returns):
 Plots pie-chart given an allocation dictionary as input
 '''
 def plot_allocations(allocation):
-    fig = go.Figure(data=[go.Pie(labels=pd.Series(allocation).index, values=pd.Series(allocation).values, textinfo='label+percent', hole=.3)])
+    fig = go.Figure(data=[go.Pie(labels=pd.Series(allocation).index,
+                                 values=pd.Series(allocation).values,
+                                 textposition="inside",
+                                 insidetextorientation="radial",
+                                 textinfo='label+percent',
+                                 hole=.3)])
     # Set background to white
     fig.update_layout(
         height=600,
         width=600,
+        margin=dict(l=20, r=20, t=20, b=20),
         paper_bgcolor='white',
         plot_bgcolor='white',
-        legend=dict(
-            font=dict(color='black')  # legend text color
-        )
+        font=dict(color='black'),
+        showlegend=False
     )
     fig.show()
 
@@ -202,12 +208,12 @@ def plot_allocations(allocation):
  PROPHET Plots
 '''
 
-def plot_lines_actual_vs_predicted(dataframe, forecasts, months=12):
+def plot_lines_actual_vs_predicted(df_pct, forecasts, months=12):
     # Allocate the last 5 years of data for testing
-    min_date = pd.to_datetime(dataframe.index[-1]).replace(day=1) - pd.DateOffset(months=12)
+    min_date = pd.to_datetime(df_pct.index[-1]).replace(day=1) - pd.DateOffset(months=12)
     min_datestr = min_date.strftime('%Y-%m-%d')
 
-    X_train = dataframe.loc[dataframe.index < min_datestr]
+    X_train = df_pct.loc[df_pct.index < min_datestr]
     # df_test = dataframe.loc[dataframe.index >= min_datestr]
 
     # Collect 'ds' (date) and 'yhat' from each forecast
@@ -220,7 +226,7 @@ def plot_lines_actual_vs_predicted(dataframe, forecasts, months=12):
 
     # Compute the mean 'yhat' per time point
     y_pred = merged_forecast.iloc[:, 1:].mean(axis=1)
-    y_true = dataframe.mean(axis=1)
+    y_true = df_pct.mean(axis=1)
 
     #
     train_true_list = y_pred[:len(X_train)]
@@ -230,15 +236,15 @@ def plot_lines_actual_vs_predicted(dataframe, forecasts, months=12):
     fig = go.Figure()
 
     # Add the timeseries line
-    fig.add_trace(go.Scatter(y=y_true, x=dataframe.index.tolist(), mode='lines', name='Actual returns',
+    fig.add_trace(go.Scatter(y=y_true, x=df_pct.index.tolist(), mode='lines', name='Actual returns',
                              line=dict(color='#5c839f', width=2)))  #, line=dict(color='red'))
     # Add the training plot in red
-    fig.add_trace(go.Scatter(y=train_true_list, x=dataframe.index.tolist()[:len(train_true_list)],
+    fig.add_trace(go.Scatter(y=train_true_list, x=df_pct.index.tolist()[:len(train_true_list)],
                              mode='lines', name='Train returns',
                              line=dict(color='red', width=2)))  #, line=dict(color='red')
 
     # Add the testing plot in green
-    fig.add_trace(go.Scatter(y=test_true_list, x=dataframe.index.tolist()[len(train_true_list):],
+    fig.add_trace(go.Scatter(y=test_true_list, x=df_pct.index.tolist()[len(train_true_list):],
                              mode='lines', name='Test returns',
                              line=dict(color='green', width=2)))  # , line=dict(color='green')
 
