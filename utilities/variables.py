@@ -30,6 +30,7 @@ max_span_years = 25
 
 #
 ALL_YEARS_NR = max_span_years
+TEST_YEARS_NR = 5
 FIVE_YEARS_NR = 5
 FIFTEEN_YEARS_NR = 15
 MIN_AVG_RETURN = 0.05

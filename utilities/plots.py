@@ -69,6 +69,7 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
     # Customize layout
     fig.update_layout(
         title='Efficient Frontier',
+        margin=dict(l=20, r=20, t=20, b=20),
         xaxis=dict(
             title='Risk (Standard Deviation)',
             tickformat='.0%',
@@ -144,7 +145,7 @@ def plot_diff(tickers, average_returns, actual_returns):
     df = pd.DataFrame({
         "Ticker": tickers,
         "Average Return (%)": average_returns,
-        "Actual Return (Last Year) (%)": actual_returns
+        "Actual Return (Next Year) (%)": actual_returns
     })
 
     tickers_spread = utility.evenly_spaced_sample(tickers, 10)
@@ -162,12 +163,13 @@ def plot_diff(tickers, average_returns, actual_returns):
                  y="Return (%)",
                  color="Return Type",
                  barmode="group",
-                 title="Comparison of average-returns (last 25 years) vs actual-returns (last year)",
+                 title="Comparison of average-returns (last 25 years) vs actual-returns (next test year)",
                  labels={"Return (%)": "Return (%)"},
                  text_auto=True)
 
     fig.update_layout(
         template="plotly_white",
+        margin=dict(l=20, r=20, t=20, b=20),
         showlegend=False,
         yaxis=dict(
             title='Return rate (%)',
@@ -253,6 +255,7 @@ def plot_lines_actual_vs_predicted(df_pct, forecasts, months=12):
     # Update layout with labels
     fig.update_layout(
         title='1 Year Prediction vs Actual Plot',
+        margin=dict(l=20, r=20, t=20, b=20),
         xaxis=dict(
             title='Date'
         ),
