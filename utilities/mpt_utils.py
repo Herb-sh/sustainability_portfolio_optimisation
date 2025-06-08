@@ -403,7 +403,7 @@ def generate_overview_table(weights, mu, S, df_pct, format_nr=True):
 
     tickers = [k for k, v in weights.items()]
     # 1. Create overview with Weight
-    df_view = pd.DataFrame.from_dict(weights, orient='index', columns=['Weight'])
+    df_view = pd.DataFrame.from_dict(weights, orient='index', columns=['Share Count'])
     # 2. Set average covariance
     S_f = round(S.loc[S.index.isin(tickers), tickers], 2)
     S_avg = {}

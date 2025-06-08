@@ -19,6 +19,7 @@ def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_l
     if df_static is None:
         df_static = []
     X, X_static, y = create_sequences(df_time_series, df_static, in_seq_length, out_seq_length)
+
     # skip first item
     X_train = X[:len(X) - (validation_months - out_seq_length)]
     X_test = X[(len(X) - (validation_months - out_seq_length)):]
@@ -28,11 +29,10 @@ def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_l
 
     return X_train, X_test, y_train, y_test
 
-
+"""
+    Create sequences of data for LSTM model.
+"""
 def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
-    """
-    Create sequences of data for 4.3. LSTM model.
-    """
     x_ts, x_static, y = [], [], []
     # starting from 0, input & output sequences should be excluded from total dataframe length
     for i in range(len(df_ts) - seq_length - out_seq_length): # -1
@@ -76,7 +76,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
         y_train_pred = torch.tensor([])
         y_test_pred = torch.tensor([])
 
-        model.train_predict()
+        model.train()
         total_loss = 0
 
         # Train
@@ -136,3 +136,19 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
     print("Model training complete and saved.")
 
     return model, y_train_pred, y_test_pred
+
+'''
+Convert Prophet forecast to a dataframe
+'''
+def get_df_from_forecast(forecast):
+    # Collect 'ds' (date) and 'yhat' from each forecast
+    forecast_dfs = [item[['ds', 'yhat']].rename(columns={'yhat': stock}) for stock, item in forecast.items()]
+
+    # Merge all forecasts on 'ds' (date)
+    merged_forecast = forecast_dfs[0]
+    for df in forecast_dfs[1:]:
+        merged_forecast = merged_forecast.merge(df, on='ds', how='outer')
+
+    merged_forecast = merged_forecast.set_index('ds')
+
+    return merged_forecast

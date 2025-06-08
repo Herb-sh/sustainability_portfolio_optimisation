@@ -48,8 +48,8 @@ from publicly available sources, and evaluates three models across different con
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/sustainable-portfolio-optimization.git
-   cd sustainable-portfolio-optimization
+   git clone https://github.com/Herb-sh/sustainability_portfolio_optimisation.git
+   cd sustainability_portfolio_optimisation
    ```
 
 2. Install the required libraries:
