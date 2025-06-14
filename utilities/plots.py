@@ -1,15 +1,14 @@
 import numpy as np
 import pandas as pd
-from networkx.algorithms.bipartite.basic import color
 #
 from pypfopt import EfficientFrontier
 import cvxpy as cp
 import cvxopt as opt
 from cvxopt import blas, solvers
 #
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
+import matplotlib.pyplot as pyplot
 #
 import importlib
 import utilities.utility as utility
@@ -237,6 +236,10 @@ def plot_lines_actual_vs_predicted(df_pct, forecasts, months=12):
     # Create the plot
     fig = go.Figure()
 
+    y_true = y_true - 1
+    train_true_list = train_true_list - 1
+    test_true_list = test_true_list - 1
+
     # Add the timeseries line
     fig.add_trace(go.Scatter(y=y_true, x=df_pct.index.tolist(), mode='lines', name='Actual returns',
                              line=dict(color='#5c839f', width=2)))  #, line=dict(color='red'))
@@ -262,10 +265,75 @@ def plot_lines_actual_vs_predicted(df_pct, forecasts, months=12):
         yaxis=dict(
             title='Day closing return (%)',
             tickformat='.0%',
-            range=[0.75, 1.6]
+            range=[-0.25, 0.6]#[0.75, 1.6]
         ),
         legend=dict(title="Legend"),
         template="plotly_white"
     )
 
     fig.show()
+
+def generate_timeseries_plot(df, df_tabular, y_train_pred, y_test_pred):
+    # Create the plot
+    fig = go.Figure()
+    skip = len(y_test_pred)
+    indices = df_tabular['date'].unique()[skip:]
+    min_date = pd.to_datetime(df_tabular['date'].max()) - pd.DateOffset(months=len(y_test_pred))
+    min_datestr = min_date.strftime('%Y-%m-%d')
+
+
+    # switch from multiplying percentage to decimal percentage
+    y_mean = df.mean(axis=1)
+    y_mean = y_mean - 1
+    y_train_pred = y_train_pred - 1
+    y_test_pred = y_test_pred - 1
+
+    # Add the timeseries line
+    fig.add_trace(go.Scatter(x=indices, y=y_mean, mode='lines', name='Actual returns',
+                             line=dict(color='#5c839f', width=2)))
+    # Add the training plot in red
+    fig.add_trace(go.Scatter(x=indices[:len(y_train_pred)], y=y_train_pred,
+                             mode='lines', name='Train returns',
+                             line=dict(color='red', width=2)))
+
+    # Add the testing plot in green
+    fig.add_trace(go.Scatter(x=indices[len(y_train_pred) -1:],
+                             y=[y_train_pred[len(y_train_pred)-1], *y_test_pred],
+                             mode='lines', name='Test returns',
+                             line=dict(color='green', width=2)))
+
+    fig.add_vline(x=min_datestr, line_color='red', line_dash='dash', line_width=1)
+
+    # Update layout with labels
+    fig.update_layout(
+        title='{0} Month Prediction vs Actual Plot'.format(len(y_test_pred)),
+        xaxis=dict(
+            title='Date'
+        ),
+        yaxis=dict(
+            title='Day closing return (%)',
+            tickformat='.0%',
+            range=[-0.25, 0.6]#[0.75, 1.6]
+        ),
+        legend=dict(title="Legend"),
+        template="plotly_white"
+    )
+
+    fig.show()
+
+'''
+ Plot Root-Mean-Squared-Error for
+'''
+def plot_xgboost_error(model):
+    #
+    results = model.evals_result()
+    epochs = len(results['validation_0']['rmse'])
+    x_axis = range(0, epochs)
+
+    fig, ax = pyplot.subplots()
+    ax.plot(x_axis, results['validation_0']['rmse'], label='Train')
+    ax.plot(x_axis, results['validation_1']['rmse'], label='Test')
+    ax.legend()
+    pyplot.ylabel('RMSE')
+    pyplot.title('XGBoost RMSE')
+    pyplot.show()

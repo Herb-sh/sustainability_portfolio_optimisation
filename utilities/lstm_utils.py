@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import pandas as pd
 import numpy as np
 import torch.utils.data as data
 
@@ -57,10 +56,11 @@ def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
 
 
 def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
-    EPOCHS = 1 # 100
+    EPOCHS = 100 # 5 # 100
     batch_size = 32
 
     loss_fn = nn.MSELoss()
+
     train_loader = data.DataLoader(data.TensorDataset(X_train, y_train), shuffle=False, batch_size=batch_size)
     test_loader = data.DataLoader(data.TensorDataset(X_test, y_test), shuffle=False, batch_size=batch_size)
 
@@ -101,7 +101,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
             # Backward pass
             loss.backward()
             optimizer.step()
-            # Join all batch predictions together - only last epoch where model is fully trained
+            # Join all batch predictions together, only last epoch where model is fully trained
             y_train_pred = torch.cat([y_train_pred, y_train_pred_batch], dim=0)
 
         # Validation - Root-mean-square-error

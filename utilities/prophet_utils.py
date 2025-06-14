@@ -1,17 +1,6 @@
-#
 from prophet import Prophet
-import plotly.graph_objects as go
 import pandas as pd
-import numpy as np
-#
-from pypfopt import EfficientFrontier
-from pypfopt import risk_models
-from pypfopt import expected_returns
-from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
-#
-import utilities.variables as variables
-#
-import cvxpy as cp
+
 
 def train_predict(dataframe, months=12):
     df_train_long = dataframe.reset_index().melt(id_vars=['Date'], var_name='ticker', value_name='y')

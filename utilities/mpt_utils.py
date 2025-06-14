@@ -16,46 +16,7 @@ import importlib
 import utilities.variables as variables
 import utilities.plots as plots
 # Methods
-def generate_plot(df, df_tabular, y_train_pred, y_test_pred):
-    # Create the plot
-    fig = go.Figure()
-    skip = len(y_test_pred)
-    indices = df_tabular['date'].unique()[skip:]
-    min_date = pd.to_datetime(df_tabular['date'].max()) - pd.DateOffset(months=len(y_test_pred))
-    min_datestr = min_date.strftime('%Y-%m-%d')
 
-    # Add the timeseries line
-    fig.add_trace(go.Scatter(x=indices, y=df.mean(axis=1), mode='lines', name='Actual returns',
-                             line=dict(color='#5c839f', width=2)))
-    # Add the training plot in red
-    fig.add_trace(go.Scatter(x=indices[:len(y_train_pred)], y=y_train_pred,
-                             mode='lines', name='Train returns',
-                             line=dict(color='red', width=2)))
-
-    # Add the testing plot in green
-    fig.add_trace(go.Scatter(x=indices[len(y_train_pred) -1:],
-                             y=[y_train_pred[len(y_train_pred)-1], *y_test_pred],
-                             mode='lines', name='Test returns',
-                             line=dict(color='green', width=2)))
-
-    fig.add_vline(x=min_datestr, line_color='red', line_dash='dash', line_width=1)
-
-    # Update layout with labels
-    fig.update_layout(
-        title='{0} Month Prediction vs Actual Plot'.format(len(y_test_pred)),
-        xaxis=dict(
-            title='Date'
-        ),
-        yaxis=dict(
-            title='Day closing return (%)',
-            tickformat='.0%',
-            range=[0.75, 1.6]
-        ),
-        legend=dict(title="Legend"),
-        template="plotly_white"
-    )
-
-    fig.show()
 
 def get_train_test_mean_pred(y_train_pred_1m, y_test_pred_1m, columns_count):
     train_pred_torch_list = torch.from_numpy(y_train_pred_1m)
@@ -98,34 +59,6 @@ def get_df_from_pred_list(df, train_list, test_list):
         data_dict[ticker] = ticker_data
 
     return pd.DataFrame(data_dict, columns=df.columns)
-
-'''
-Post Modern Portfolio Theory
-'''
-def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
-    # Calculate expected returns and sample covariance
-    # mu_0 = expected_returns.mean_historical_return(df, frequency=12)
-
-    # Get only tickers with a mean historical return of at least 5%
-    # optimal_tickers = mu_0[mu_0 > min_avg_return].index
-    # df_optimal = df[optimal_tickers]
-
-    mu = expected_returns.mean_historical_return(df, frequency=12)
-    historical_returns = expected_returns.returns_from_prices(df)
-
-    #mu = expected_returns.mean_historical_return(df)
-
-    # Optimize for maximal Sharpe ratio
-    es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL)
-
-    #es.max_sharpe()
-
-    cleaned_weights = es.clean_weights()
-
-    #es.save_weights_to_file(file_name)  # saves to file
-    #
-    es.portfolio_performance(verbose=True)
-    return cleaned_weights
 
 # To create an allocation we keep a minimum of 12 months, for all 3 cases (1 month, 6 months, 12 months)
 def get_prophet_portfolio_performance(forecasts, file_name ="weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
@@ -177,6 +110,7 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
 
     # Optimize for maximal Sharpe ratio
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL) # cp.ECOS
+
     #ef.add_objective(objective_functions.L2_reg, gamma=0.1)
 
     raw_weights = ef.max_sharpe()
@@ -186,6 +120,35 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
     #
     p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+
+'''
+Post Modern Portfolio Theory
+'''
+def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
+    # Calculate expected returns and sample covariance
+    mu_0 = expected_returns.mean_historical_return(df, frequency=12)
+
+    # Get only tickers with a mean historical return of at least 5%
+    optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    df_optimal = df[optimal_tickers]
+
+    mu = expected_returns.mean_historical_return(df_optimal, frequency=12)
+    historical_returns = expected_returns.returns_from_prices(df)
+
+    #mu = expected_returns.mean_historical_return(df)
+
+    # Optimize for maximal Sharpe ratio
+    es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL, frequency=12)
+    es.max_quadratic_utility()
+
+    cleaned_weights = es.clean_weights()
+
+    #es.save_weights_to_file(file_name)  # saves to file
+    #
+    p_mu, p_sigma, p_sortino = es.portfolio_performance(verbose=True)
+    return df_optimal, cleaned_weights, S, mu, p_sigma, p_sortino
+
 
 '''
 Constructs an optimized portfolio
@@ -205,7 +168,7 @@ def get_returns_portfolio_performance(df_pred, file_name ="weights.csv", min_avg
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
     ef.add_constraint(lambda w: w <= 0.05)
 
-    raw_weights = ef.max_sharpe()
+    raw_weights = ef.max_sharpe() # ef.min_volatility()
     cleaned_weights = ef.clean_weights()
 
     ef.save_weights_to_file(file_name)  # saves to file
@@ -288,7 +251,7 @@ df (DataFrame) real euro prices of stocks (as read df_monthly_prices_complete_eu
 opt_months (int) time-horizon of data that will be used to construct the portfolio (e.g. 60 months)
 other_threshold (decimal) a minimum percentage value for a stock to be shown, otherwise they are grouped into "other"
 '''
-def portfolio_and_plot(df_forecast, df, opt_months=60, plot_threshold=0.02, file_name="weights.csv"):
+def portfolio_and_plot(df_forecast, df, opt_months=(variables.TEST_YEARS_NR * 12), plot_threshold=0.02, file_name="weights.csv"):
     importlib.reload(plots)
 
     df_prices_train_and_forecast = get_full_prices_from_returns(df_forecast, df[df_forecast.columns], opt_months)
@@ -318,11 +281,11 @@ df (DataFrame) real euro prices of stocks (as read df_monthly_prices_complete_eu
 opt_months (int) time-horizon of data that will be used to construct the portfolio (e.g. 60 months)
 other_threshold (decimal) a minimum percentage value for a stock to be shown, otherwise they are grouped into "other"
 '''
-def benchmark_portfolio_and_plot(df, opt_months=60, plot_threshold=0.02, file_name="weights.csv"):
+def benchmark_portfolio_and_plot(df, opt_months=60, plot_threshold=0.02, file_name="weights.csv", semivariance=False):
     importlib.reload(plots)
 
     #
-    df_portfolio, raw_weights, mu, S, sigma, sharpe = get_portfolio_performance(df, file_name=file_name, min_avg_return=0)
+    df_portfolio, raw_weights, mu, S, sigma, sharpe = get_semivariance_portfolio_performance(df, file_name=file_name, min_avg_return=0) if semivariance else get_portfolio_performance(df, file_name=file_name, min_avg_return=0)
     allocation, leftover = create_discrete_allocation(df_portfolio, raw_weights, is_greedy=True)
     #
     weights_grouped, weights_pct_grouped = get_grouped_weights(raw_weights, allocation, plot_threshold)
@@ -397,25 +360,45 @@ def negative_sharpe_ratio(weights, returns, volatilities, risk_free_rate=0):
     p_return, p_volatility = portfolio_performance(weights, returns, volatilities)
     return -(p_return - risk_free_rate) / p_volatility
 
+'''
+This method is used to get the actual return-rate of a portfolio
+given a dataframe of prices and the allocation dictionary of a portfolio
+'''
+def get_allocation_return_rate(df_prices, allocation):
+    tickers = allocation.keys()
+    df_subset = df_prices[list(tickers)]
+
+    # get the first and last price row
+    first_prices = df_subset.iloc[0]
+    last_prices = df_subset.iloc[-1]
+
+    # compute portfolio value at start and end
+    initial_value = sum(allocation[ticker] * first_prices[ticker] for ticker in allocation)
+    final_value = sum(allocation[ticker] * last_prices[ticker] for ticker in allocation)
+
+    # calculate return rate
+    return_rate = (final_value - initial_value) / initial_value
+    return return_rate
+
 def generate_overview_table(weights, mu, S, df_pct, format_nr=True):
     df_pct_train = df_pct.head(int(variables.ALL_YEARS_NR - variables.TEST_YEARS_NR) * 12)
     df_pct_test = df_pct.tail(variables.TEST_YEARS_NR * 12)
 
     tickers = [k for k, v in weights.items()]
-    # 1. Create overview with Weight
+    # 1. cCreate overview with Weight
     df_view = pd.DataFrame.from_dict(weights, orient='index', columns=['Share Count'])
-    # 2. Set average covariance
+    # 2. set average covariance
     S_f = round(S.loc[S.index.isin(tickers), tickers], 2)
     S_avg = {}
     for ticker in S_f.columns:
         cov_with_others = S_f.loc[ticker].drop(ticker)  # remove self-covariance
         S_avg[ticker] = cov_with_others.mean()
     df_view['Average Covariance'] = S_avg
-    # 3. Set annual returns
+    # 3. set annual average returns
     df_view['Average Returns'] = round(mu.loc[mu.index.isin(tickers)], 4).values
-    # 4.
+    # 4. set predicted last year return rate
     df_view['Return Last 12 Months'] = round((df_pct_train[tickers].tail(12).prod() - 1), 4).values
-    # 5.
+    # 5. set actual last year return rate
     df_view['Return (Actual) Next 12 Months'] = round((df_pct_test[tickers].head(12).prod() - 1), 4).values
 
     if format_nr:
