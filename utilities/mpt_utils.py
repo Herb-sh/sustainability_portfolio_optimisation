@@ -20,6 +20,7 @@ import utilities.plots as plots
 
 def get_train_test_mean_pred(y_train_pred_1m, y_test_pred_1m, columns_count):
     train_pred_torch_list = torch.from_numpy(y_train_pred_1m)
+    print(len(train_pred_torch_list)/columns_count)
     # Reshape to (num_samples, num_features) for normalization
     train_rows = int(len(train_pred_torch_list)/columns_count)
     train_pred_torch_view = train_pred_torch_list.view(train_rows, columns_count)
@@ -110,7 +111,7 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
 
     # Optimize for maximal Sharpe ratio
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL) # cp.ECOS
-
+    ef.min_volatility()
     #ef.add_objective(objective_functions.L2_reg, gamma=0.1)
 
     raw_weights = ef.max_sharpe()
@@ -147,7 +148,7 @@ def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_av
     #es.save_weights_to_file(file_name)  # saves to file
     #
     p_mu, p_sigma, p_sortino = es.portfolio_performance(verbose=True)
-    return df_optimal, cleaned_weights, S, mu, p_sigma, p_sortino
+    return df_optimal, cleaned_weights, np.NaN, mu, p_sigma, p_sortino
 
 
 '''
@@ -284,7 +285,7 @@ other_threshold (decimal) a minimum percentage value for a stock to be shown, ot
 def benchmark_portfolio_and_plot(df, opt_months=60, plot_threshold=0.02, file_name="weights.csv", semivariance=False):
     importlib.reload(plots)
 
-    #
+    # is semivariance flag is set SemivarianceFrontier willbe used, other EfficientFrontier
     df_portfolio, raw_weights, mu, S, sigma, sharpe = get_semivariance_portfolio_performance(df, file_name=file_name, min_avg_return=0) if semivariance else get_portfolio_performance(df, file_name=file_name, min_avg_return=0)
     allocation, leftover = create_discrete_allocation(df_portfolio, raw_weights, is_greedy=True)
     #

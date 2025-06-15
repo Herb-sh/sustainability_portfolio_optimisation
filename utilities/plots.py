@@ -324,7 +324,7 @@ def generate_timeseries_plot(df, df_tabular, y_train_pred, y_test_pred):
 '''
  Plot Root-Mean-Squared-Error for
 '''
-def plot_xgboost_error(model):
+def plot_xgboost_error(model, months=12):
     #
     results = model.evals_result()
     epochs = len(results['validation_0']['rmse'])
@@ -335,5 +335,35 @@ def plot_xgboost_error(model):
     ax.plot(x_axis, results['validation_1']['rmse'], label='Test')
     ax.legend()
     pyplot.ylabel('RMSE')
-    pyplot.title('XGBoost RMSE')
+    pyplot.title('XGBoost RMSE ' + (str(months))+'-mo')
     pyplot.show()
+
+'''
+Plot XGBoost feature importance
+'''
+def plot_feature_importance(model):
+    # extracting feature importances from the model
+    feature_important = model.get_booster().get_score(importance_type='weight')
+    keys = list(feature_important.keys())
+    values = list(feature_important.values())
+
+    # create a DataFrame and sort it
+    data = pd.DataFrame(data=values, index=keys, columns=["score"]).sort_values(by="score", ascending=False)
+
+    # select top 40 features
+    top_features = data.nlargest(20, columns="score").reset_index()
+    top_features.columns = ["feature", "score"]
+
+    # plot using Plotly
+    fig = px.bar(
+        top_features,
+        x="score",
+        y="feature",
+        orientation='h',
+        title="Top 20 Feature Importances (by Weight)",
+        width=1000,
+        height=800
+    )
+
+    fig.update_layout(yaxis={'categoryorder':'total ascending'})
+    fig.show()

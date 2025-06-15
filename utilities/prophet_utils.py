@@ -20,7 +20,7 @@ def train_predict(dataframe, months=12):
         models[ticker] = model
         forecasts[ticker] = forecast
 
-    return forecasts
+    return forecasts, models
 
 '''
 Merges a train dataframe with the forecast dataframe

@@ -7,7 +7,16 @@ from sklearn.model_selection import TimeSeriesSplit, cross_val_score
 def get_xgboost_trained_model(X_train, y_train, X_test, y_test):
     # Cross validation
     # defining model
-    model = XGBRegressor()
+    model = XGBRegressor(
+        n_estimators=200,
+        learning_rate=0.05,
+        max_depth=4,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        random_state=42,
+        objective='reg:squarederror',
+        tree_method='hist'
+    )
     # defining time-aware CV method - no shuffling
     cv = TimeSeriesSplit(n_splits=2)
 

@@ -9,8 +9,6 @@ from utilities import variables
 
 
 def get_dataframe_tabular(df):
-    df_tabular = pd.DataFrame(columns=['ticker', 'month', 'year', 'monthly_return'])
-
     tickers = df.columns
     dates = df.index
 
@@ -138,44 +136,35 @@ def getvalue(df, date, ticker, months_add=1):
     dt = datetime.datetime.strptime(date, "%Y-%m-%d")
     try:
         offset = pd.DateOffset(months=months_add)
-        return df.loc[(dt + offset).strftime('%Y-%m-%d'), ticker]
+        value = df.loc[(dt + offset).strftime('%Y-%m-%d'), ticker]
+        if value < 0:
+            print('smaller than zero', date, ticker, months_add)
+        return value
     except KeyError:
         return None
 
+"""
+Created time-series tabular DataFrame by merging it with the overview dataset and
+unnecessary columns
+"""
 def get_dataframe_tabular_multi(df):
-    """
-    Enhances the given tabular DataFrame by merging it with an overview dataset and
-    removing a predefined set of informational columns.
-
-    Parameters
-    ----------
-    df : pd.DataFrame
-        The initial DataFrame containing financial data, typically indexed or keyed by 'stock_ticker_label'.
-
-    Returns
-    -------
-    pd.DataFrame
-        A refined DataFrame that merges the base tabular representation of `df` with
-        additional metadata from an overview CSV, excluding selected non-numerical or
-        descriptive columns for further modeling or analysis.
-    """
 
     df_overview = pd.read_csv('../../../data/df_overview.csv', index_col=0)
     #
     df_tabular = get_dataframe_tabular(df)
     #
-    df_tabular_multi = df_tabular.merge(df_overview, on='stock_ticker_label')
+    df_tabular_multi = df_tabular.merge(df_overview, on='stock_ticker_label', how='left')
     #
     cols = df_tabular_multi.columns.tolist()
     #
-    for col in ['return_rate_1y_avg', 'return_rate_5y_avg', 'return_rate_10y_avg', 'return_rate_25y_avg',
-                    'volatility_1y_avg', 'volatility_5y_avg', 'volatility_10y_avg', 'volatility_25y_avg',
-                    'score', 'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
-                    'industry', 'stock_exchange']:
+    for col in [ 'return_rate_1y_avg', 'return_rate_5y_avg', 'return_rate_10y_avg', 'return_rate_25y_avg',
+                 'volatility_1y_avg', 'volatility_5y_avg', 'volatility_10y_avg', 'volatility_25y_avg', 'volatility_1y', 'volatility_5y', 'volatility_10y', 'volatility_25y',
+                 'score', 'company_name', 'company_esg_score_group', 'stock_ticker_symbol',
+                 'industry', 'stock_exchange', 'market_capital', 'market_capital_euro']:
          while col in cols:
             cols.remove(col)
 
-    return df_tabular_multi[cols]
+    return round(df_tabular_multi[cols], 4)
 
 def split_train_test_tabular(df_tabular, months=12, target_key='m_return_target(t+1)'):
     min_date = pd.to_datetime(df_tabular['date']).max() - pd.DateOffset(months=months)
