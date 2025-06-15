@@ -87,6 +87,7 @@ def get_prophet_portfolio_performance(forecasts, file_name ="weights.csv", min_a
 
     # Optimize for maximal Sharpe ratio
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL)
+    ef.add_constraint(lambda w: w <= 0.05)
     # ef_new = EfficientFrontier(mu, S, solver=cp.CLARABEL)
 
     raw_weights = ef.max_sharpe()
@@ -111,7 +112,7 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
 
     # Optimize for maximal Sharpe ratio
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL) # cp.ECOS
-    ef.min_volatility()
+    ef.add_constraint(lambda w: w <= 0.05)
     #ef.add_objective(objective_functions.L2_reg, gamma=0.1)
 
     raw_weights = ef.max_sharpe()
@@ -124,7 +125,7 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
 
 
 '''
-Post Modern Portfolio Theory
+Post Modern Portfolio Theory (Used by Benchmark PMPT)
 '''
 def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
     # Calculate expected returns and sample covariance
@@ -152,7 +153,7 @@ def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_av
 
 
 '''
-Constructs an optimized portfolio
+Constructs an optimized portfolio, used by XGBoost, LSTM
 '''
 def get_returns_portfolio_performance(df_pred, file_name ="weights.csv", min_avg_return=variables.MIN_AVG_RETURN, opt_months=12):
     # Create DataFrame of forecasted prices
@@ -285,7 +286,7 @@ other_threshold (decimal) a minimum percentage value for a stock to be shown, ot
 def benchmark_portfolio_and_plot(df, opt_months=60, plot_threshold=0.02, file_name="weights.csv", semivariance=False):
     importlib.reload(plots)
 
-    # is semivariance flag is set SemivarianceFrontier willbe used, other EfficientFrontier
+    # is semivariance flag is set SemivarianceFrontier will be used, other EfficientFrontier
     df_portfolio, raw_weights, mu, S, sigma, sharpe = get_semivariance_portfolio_performance(df, file_name=file_name, min_avg_return=0) if semivariance else get_portfolio_performance(df, file_name=file_name, min_avg_return=0)
     allocation, leftover = create_discrete_allocation(df_portfolio, raw_weights, is_greedy=True)
     #

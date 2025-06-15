@@ -162,7 +162,7 @@ def plot_diff(tickers, average_returns, actual_returns):
                  y="Return (%)",
                  color="Return Type",
                  barmode="group",
-                 title="Comparison of average-returns (last 25 years) vs actual-returns (next test year)",
+                 title="Comparison of average-returns (last 20 years) vs actual-returns (next test year)",
                  labels={"Return (%)": "Return (%)"},
                  text_auto=True)
 
