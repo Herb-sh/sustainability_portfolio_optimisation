@@ -42,7 +42,7 @@ def get_df_from_pred_list(df, train_list, test_list):
     train_time_steps = int(len(train_list) / len(df.columns))
     test_time_steps = int(len(test_list) / len(df.columns))
     #
-    # Create an empty dictionary to hold each ticker's data
+    # creating an empty dictionary to hold each ticker's data
     data_dict = {}
 
     for i, ticker in enumerate(df.columns):
@@ -59,7 +59,7 @@ def get_df_from_pred_list(df, train_list, test_list):
         #
         data_dict[ticker] = ticker_data
 
-    return pd.DataFrame(data_dict, columns=df.columns)
+    return pd.DataFrame(data_dict, columns=df.columns, index= pd.to_datetime(df.index[: len(ticker_data)]))
 
 # To create an allocation we keep a minimum of 12 months, for all 3 cases (1 month, 6 months, 12 months)
 def get_prophet_portfolio_performance(forecasts, file_name ="weights.csv", min_avg_return=variables.MIN_AVG_RETURN, months=12):
@@ -112,7 +112,7 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
 
     # Optimize for maximal Sharpe ratio
     ef = EfficientFrontier(mu, S, solver=cp.CLARABEL) # cp.ECOS
-    ef.add_constraint(lambda w: w <= 0.05)
+    ef.add_constraint(lambda w: w <= 0.02)
     #ef.add_objective(objective_functions.L2_reg, gamma=0.1)
 
     raw_weights = ef.max_sharpe()
@@ -122,34 +122,6 @@ def get_portfolio_performance(df, file_name = "weights.csv", min_avg_return=vari
     #
     p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
-
-
-'''
-Post Modern Portfolio Theory (Used by Benchmark PMPT)
-'''
-def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
-    # Calculate expected returns and sample covariance
-    mu_0 = expected_returns.mean_historical_return(df, frequency=12)
-
-    # Get only tickers with a mean historical return of at least 5%
-    optimal_tickers = mu_0[mu_0 > min_avg_return].index
-    df_optimal = df[optimal_tickers]
-
-    mu = expected_returns.mean_historical_return(df_optimal, frequency=12)
-    historical_returns = expected_returns.returns_from_prices(df)
-
-    #mu = expected_returns.mean_historical_return(df)
-
-    # Optimize for maximal Sharpe ratio
-    es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL, frequency=12)
-    es.max_quadratic_utility()
-
-    cleaned_weights = es.clean_weights()
-
-    #es.save_weights_to_file(file_name)  # saves to file
-    #
-    p_mu, p_sigma, p_sortino = es.portfolio_performance(verbose=True)
-    return df_optimal, cleaned_weights, np.NaN, mu, p_sigma, p_sortino
 
 
 '''
@@ -178,6 +150,34 @@ def get_returns_portfolio_performance(df_pred, file_name ="weights.csv", min_avg
     p_mu, p_sigma, p_sharpe = ef.portfolio_performance(verbose=True)
 
     return df_optimal, cleaned_weights, mu, S, p_sigma, p_sharpe
+
+'''
+Post Modern Portfolio Theory (Used by Benchmark PMPT)
+'''
+def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_avg_return=variables.MIN_AVG_RETURN):
+    # Calculate expected returns and sample covariance
+    mu_0 = expected_returns.mean_historical_return(df, frequency=12)
+
+    # Get only tickers with a mean historical return of at least 5%
+    optimal_tickers = mu_0[mu_0 > min_avg_return].index
+    df_optimal = df[optimal_tickers]
+
+    mu = expected_returns.mean_historical_return(df_optimal, frequency=12)
+    historical_returns = expected_returns.returns_from_prices(df)
+
+    #mu = expected_returns.mean_historical_return(df)
+
+    # Optimize for maximal Sharpe ratio
+    es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL, frequency=12)
+    es.max_quadratic_utility()
+
+    cleaned_weights = es.clean_weights()
+
+    #es.save_weights_to_file(file_name)  # saves to file
+    #
+    p_mu, p_sigma, p_sortino = es.portfolio_performance(verbose=True)
+    return df_optimal, cleaned_weights, np.NaN, mu, p_sigma, p_sortino
+
 
 def create_discrete_allocation(df, raw_weights, total_portfolio_value = 10000, is_greedy=True):
     latest_prices = get_latest_prices(df)
@@ -250,10 +250,10 @@ and the equivalent in real prices (euro).
 
 df_forecast (DataFrame) in percentage values (0.02 for 2%), all training months + predicted months (e.g. 240 + 12 = 252 months)
 df (DataFrame) real euro prices of stocks (as read df_monthly_prices_complete_euro), all 300 months 
-opt_months (int) time-horizon of data that will be used to construct the portfolio (e.g. 60 months)
+opt_months (int) time-horizon of data that will be used to construct the portfolio (e.g. PORTF_ALLOC_YEARS_NR=60 months)
 other_threshold (decimal) a minimum percentage value for a stock to be shown, otherwise they are grouped into "other"
 '''
-def portfolio_and_plot(df_forecast, df, opt_months=(variables.TEST_YEARS_NR * 12), plot_threshold=0.02, file_name="weights.csv"):
+def portfolio_and_plot(df_forecast, df, opt_months=(variables.PORTF_ALLOC_YEARS_NR * 12), plot_threshold=0.02, file_name="weights.csv"):
     importlib.reload(plots)
 
     df_prices_train_and_forecast = get_full_prices_from_returns(df_forecast, df[df_forecast.columns], opt_months)
@@ -270,7 +270,7 @@ def portfolio_and_plot(df_forecast, df, opt_months=(variables.TEST_YEARS_NR * 12
 
     plots.plot_allocations(weights_grouped)
 
-    return weights_grouped, mu, S, allocation
+    return weights_grouped, mu, S, allocation, raw_weights
 
 '''
 Important!
@@ -299,35 +299,7 @@ def benchmark_portfolio_and_plot(df, opt_months=60, plot_threshold=0.02, file_na
 
     plots.plot_allocations(weights_grouped)
 
-    return weights_grouped, mu, S, allocation
-
-'''
-Given weights and allocation as parameter
-It will return the percentage equivalent for each allocated item
-Values under threshold are summed in "Other"
-'''
-def get_grouped_weights(weights, allocation, threshold):
-    weights_filtered = OrderedDict((key, round(value, 4)) for key, value in weights.items() if key in allocation)
-    sum_val = round(sum(weights_filtered.values()), 4)
-
-    # Group all weights that pass threshold, mark the rest as other
-    weights_grouped = {
-        k: v for k, v in weights_filtered.items() if v/sum_val >= threshold
-    }
-    other_weights_list = [v for k, v in weights_filtered.items() if v/sum_val < threshold]
-    other_total = round(sum(other_weights_list), 4)
-    if other_total > 0:
-        weights_grouped["Other("+str(len(other_weights_list))+")"] = other_total
-
-    # Group all weights that pass threshold, mark the rest as other
-    weights_pct_grouped = {
-        k: round(v/sum_val, 4) for k, v in weights_filtered.items() if v/sum_val >= threshold
-    }
-    other_pct_total = round(sum(v/sum_val for k, v in weights_filtered.items() if v/sum_val < threshold), 4)
-    if other_pct_total > 0:
-        weights_pct_grouped["Other("+str(len(other_weights_list))+")"] = other_pct_total
-
-    return weights_grouped, weights_pct_grouped
+    return weights_grouped, mu, S, allocation, raw_weights
 
 # Efficient-Frontier
 def portfolio_performance(weights, returns, volatilities):
@@ -409,3 +381,50 @@ def generate_overview_table(weights, mu, S, df_pct, format_nr=True):
         df_view['Return (Actual) Next 12 Months'] = df_view['Return (Actual) Next 12 Months'].map('{:.2%}'.format)
 
     return df_view
+
+'''
+Given weights and allocation as parameter
+It will return the percentage equivalent for each allocated item
+Values under threshold are summed in "Other"
+'''
+def get_grouped_weights(weights, allocation, threshold):
+    weights_filtered = OrderedDict((key, round(value, 4)) for key, value in weights.items() if key in allocation)
+    sum_val = round(sum(weights_filtered.values()), 4)
+
+    # Group all weights that pass threshold, mark the rest as other
+    weights_grouped = {
+        k: v for k, v in weights_filtered.items() if v/sum_val >= threshold
+    }
+    other_weights_list = [v for k, v in weights_filtered.items() if v/sum_val < threshold]
+    other_total = round(sum(other_weights_list), 4)
+    if other_total > 0:
+        weights_grouped["Other("+str(len(other_weights_list))+")"] = other_total
+
+    # Group all weights that pass threshold, mark the rest as other
+    weights_pct_grouped = {
+        k: round(v/sum_val, 4) for k, v in weights_filtered.items() if v/sum_val >= threshold
+    }
+    other_pct_total = round(sum(v/sum_val for k, v in weights_filtered.items() if v/sum_val < threshold), 4)
+    if other_pct_total > 0:
+        weights_pct_grouped["Other("+str(len(other_weights_list))+")"] = other_pct_total
+
+    return weights_grouped, weights_pct_grouped
+
+'''
+Calculate portfolio's real return rate from dataframe of prices
+and allocation percentages (raw weights)
+'''
+def get_portfolio_real_return_rate(df_pct, df_pred, weights, months=12):
+    tickers = list(weights.keys())
+    #print('pred index', df_pred.index)
+    df_true = df_pct.copy() - 1
+    df_true = df_true[tickers].loc[(df_true.index >= (df_pred.index.min() - pd.DateOffset(days=1)).strftime('%Y-%m-%d')) & (df_true.index <= (df_pred.index.max() + pd.DateOffset(days=1)).strftime('%Y-%m-%d'))]
+    #print('true index', df_pred.index)
+    df_alloc = df_true[tickers].tail(months)
+
+    cumulative_returns = (1 + df_alloc).prod() - 1
+
+    portfolio_return = round(sum(cumulative_returns[t] * weights[t] for t in tickers), 2)/(months/12)
+    portfolio_return_str = str(portfolio_return)+'%'
+    print('Portfolio real return rate: ', portfolio_return_str)
+    #return portfolio_return

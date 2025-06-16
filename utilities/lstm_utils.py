@@ -20,11 +20,18 @@ def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_l
     X, X_static, y = create_sequences(df_time_series, df_static, in_seq_length, out_seq_length)
 
     # skip first item
+    '''
     X_train = X[:len(X) - (validation_months - out_seq_length)]
     X_test = X[(len(X) - (validation_months - out_seq_length)):]
 
     y_train = y[:(len(X) - (validation_months - out_seq_length))]
     y_test = y[(len(X) - (validation_months - out_seq_length)):]
+    '''
+    X_train = X[:len(X) - (validation_months)]
+    X_test = X[(len(X) - (validation_months)):]
+
+    y_train = y[:(len(X) - (validation_months))]
+    y_test = y[(len(X) - (validation_months)):]
 
     return X_train, X_test, y_train, y_test
 
@@ -56,7 +63,7 @@ def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
 
 
 def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
-    EPOCHS = 100 # 5 # 100
+    EPOCHS = 10 # 5 # 100
     batch_size = 32
 
     loss_fn = nn.MSELoss()

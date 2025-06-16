@@ -31,9 +31,10 @@ max_span_years = 25
 #
 ALL_YEARS_NR = max_span_years
 TRAIN_MONTH_NR = 12 * 20
-TEST_YEARS_NR = 1 # 3
+LSTM_TEST_YEARS_NR = 5
+TEST_YEARS_NR = 1
 TEST_MONTHS_NR = TEST_YEARS_NR * 12
-PORTF_ALLOC_YEARS_NR = 5
+PORTF_ALLOC_YEARS_NR = 1 # keep it to one, to be able to properly test the impact of models
 FIVE_YEARS_NR = 5
 FIFTEEN_YEARS_NR = 15
 MIN_AVG_RETURN = 0.05

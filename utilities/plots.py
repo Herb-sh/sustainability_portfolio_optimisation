@@ -365,5 +365,8 @@ def plot_feature_importance(model):
         height=800
     )
 
-    fig.update_layout(yaxis={'categoryorder':'total ascending'})
+    fig.update_layout(
+        yaxis={'categoryorder':'total ascending'},
+        template="plotly_white"
+        )
     fig.show()
