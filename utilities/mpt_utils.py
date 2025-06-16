@@ -416,10 +416,9 @@ and allocation percentages (raw weights)
 '''
 def get_portfolio_real_return_rate(df_pct, df_pred, weights, months=12):
     tickers = list(weights.keys())
-    #print('pred index', df_pred.index)
     df_true = df_pct.copy() - 1
     df_true = df_true[tickers].loc[(df_true.index >= (df_pred.index.min() - pd.DateOffset(days=1)).strftime('%Y-%m-%d')) & (df_true.index <= (df_pred.index.max() + pd.DateOffset(days=1)).strftime('%Y-%m-%d'))]
-    #print('true index', df_pred.index)
+
     df_alloc = df_true[tickers].tail(months)
 
     cumulative_returns = (1 + df_alloc).prod() - 1
@@ -427,4 +426,14 @@ def get_portfolio_real_return_rate(df_pct, df_pred, weights, months=12):
     portfolio_return = round(sum(cumulative_returns[t] * weights[t] for t in tickers), 2)/(months/12)
     portfolio_return_str = str(portfolio_return)+'%'
     print('Portfolio real return rate: ', portfolio_return_str)
-    #return portfolio_return
+
+def get_benchmark_portfolio_real_return_rate(df_pct, weights, months=12):
+    tickers = list(weights.keys())
+    df_true = df_pct.copy() - 1
+    df_alloc = df_true[tickers].tail(months)
+
+    cumulative_returns = (1 + df_alloc).prod() - 1
+
+    portfolio_return = round(sum(cumulative_returns[t] * weights[t] for t in tickers), 2)/(months/12)
+    portfolio_return_str = str(portfolio_return)+'%'
+    print('Portfolio real return rate: ', portfolio_return_str)
