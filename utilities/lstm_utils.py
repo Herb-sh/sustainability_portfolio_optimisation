@@ -62,8 +62,7 @@ def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
             torch.tensor(y, dtype=torch.float32))
 
 
-def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
-    EPOCHS = 10 # 5 # 100
+def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test, epochs=100):
     batch_size = 32
 
     loss_fn = nn.MSELoss()
@@ -78,7 +77,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
     y_test_pred_batch = torch.tensor([])
 
     # Training & Test Loop
-    for epoch in range(EPOCHS):
+    for epoch in range(epochs):
         # reset all predictions on each epoch
         y_train_pred = torch.tensor([])
         y_test_pred = torch.tensor([])
@@ -136,7 +135,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test):
             train_rmse = np.sqrt(loss_fn(y_train_pred, y_train))
             test_rmse = np.sqrt(loss_fn(y_test_pred, y_test))
         # Print epoch loss
-        print(f"Epoch {epoch+1}/{EPOCHS}, Loss: {total_loss / len(train_loader):.4f}, Train RMSE: {train_rmse:.4f}, Test RMSE: {test_rmse:.4f}. ")
+        print(f"Epoch {epoch+1}/{epochs}, Loss: {total_loss / len(train_loader):.4f}, Train RMSE: {train_rmse:.4f}, Test RMSE: {test_rmse:.4f}. ")
 
     # Save the trained model
     torch.save(model.state_dict(), "lstm_univariate.pth")

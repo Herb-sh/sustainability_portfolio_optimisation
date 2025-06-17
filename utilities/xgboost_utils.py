@@ -18,7 +18,7 @@ def get_xgboost_trained_model(X_train, y_train, X_test, y_test):
         tree_method='hist'
     )
     # defining time-aware CV method - no shuffling
-    cv = TimeSeriesSplit(n_splits=2)
+    cv = TimeSeriesSplit(n_splits=5)
 
     rmse_scorer = make_scorer(lambda y_true, y_pred: -np.sqrt(mean_squared_error(y_true, y_pred)))
 
