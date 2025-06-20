@@ -24,13 +24,6 @@ def plot_efficient_frontier(tickers, returns, volatility, mu, S):
     target_returns = np.linspace(mu.min(), mu.max(), 50)
     frontier_volatility = []
     frontier_returns = []
-    '''
-    for r in target_returns:
-        ab = ef.efficient_return(target_return=r)
-        weights = ef.clean_weights()
-        std = np.sqrt(np.dot(np.dot(list(weights.values()), S), list(weights.values())))  # Compute std dev
-        frontier_volatility.append(std)
-        frontier_returns.append(r)'''
 
     # Marker: Add annotations for each point
     for i, (ret, vol, ticker) in enumerate(zip(returns, volatility, tickers)):
@@ -107,21 +100,20 @@ def optimal_portfolio(returns): # @TODO check if useful!!
     # Calculate efficient frontier weights using quadratic programming
     portfolios = [solvers.qp(mu*S, -pbar, G, h, A, b)['x']
                   for mu in mus]
-    ## CALCULATE RISKS AND RETURNS FOR FRONTIER
+    # Calculate risk and return for frontier
     returns = [blas.dot(pbar, x) for x in portfolios]
     risks = [np.sqrt(blas.dot(x, S*x)) for x in portfolios]
-    ## CALCULATE THE 2ND DEGREE POLYNOMIAL OF THE FRONTIER CURVE
+    # Calculate the 2nd degree polynomial of the frontier curve
     m1 = np.polyfit(returns, risks, 2)
     x1 = np.sqrt(m1[2] / m1[0])
     # CALCULATE THE OPTIMAL PORTFOLIO
     wt = solvers.qp(opt.matrix(x1 * S), -pbar, G, h, A, b)['x']
     return np.asarray(wt), returns, risks
 
-def random_portfolio(returns):
-    '''
+'''
     Returns the mean and standard deviation of returns for a random portfolio
-    '''
-
+'''
+def random_portfolio(returns):
     p = np.asmatrix(np.mean(returns, axis=1))
     w = np.asmatrix(rand_weights(returns.shape[0]))
     C = np.asmatrix(np.cov(returns))

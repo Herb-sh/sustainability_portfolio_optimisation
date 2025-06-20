@@ -1,12 +1,8 @@
 import pandas as pd
-import torch
 import numpy as np
 #
 import datetime
 from sklearn.preprocessing import LabelEncoder
-
-from utilities import variables
-
 
 def get_dataframe_tabular(df):
     tickers = df.columns
@@ -85,7 +81,6 @@ def get_dataframe_tabular(df):
         'month': month_column,
         'year': year_column,
         'date': date_column,
-        # 'm_return(t-12)': monthly_return_column_minus12,
         'm_return(t-11)': monthly_return_column_minus11,
         'm_return(t-10)': monthly_return_column_minus10,
         'm_return(t-9)': monthly_return_column_minus9,
@@ -144,8 +139,8 @@ def getvalue(df, date, ticker, months_add=1):
         return None
 
 """
-Created time-series tabular DataFrame by merging it with the overview dataset and
-unnecessary columns
+    Created time-series tabular DataFrame by merging it with the overview dataset and
+    unnecessary columns
 """
 def get_dataframe_tabular_multi(df):
 
@@ -188,8 +183,7 @@ def split_train_test_tabular(df_tabular, months=12, target_key='m_return_target(
 
     return X_train, y_train, X_test, y_test, min_datestr
 
-def fix_array_length(arr, length):
-    """
+"""
     Ensures each row of the array has a fixed length. If shorter, fills with NaN; if longer, truncates.
 
     Parameters:
@@ -198,16 +192,14 @@ def fix_array_length(arr, length):
 
     Returns:
     - numpy.ndarray: A 2D array with the specified column length.
-    """
+"""
+def fix_array_length(arr, length):
     fixed_arr = np.full((arr.shape[0], length), np.nan)  # Initialize with NaN
     num_cols = min(arr.shape[1], length)  # Determine how many columns to copy
     fixed_arr[:, :num_cols] = arr[:, :num_cols]  # Copy existing data
     return fixed_arr
 
-
-# @Deprecated
-def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
-    """
+"""
     Frame a time series as a supervised learning dataset.
     Arguments:
         data: Sequence of observations as a list or NumPy array.
@@ -216,7 +208,10 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
         dropnan: Boolean whether or not to drop rows with NaN values.
     Returns:
         Pandas DataFrame of series framed for supervised learning.
-    """
+"""
+# @Deprecated
+def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
+
     n_vars = 1 if type(data) is list else data.shape[1]
     df = pd.DataFrame(data)
     cols, names = list(), list()

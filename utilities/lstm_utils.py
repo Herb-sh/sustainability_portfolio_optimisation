@@ -8,8 +8,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ''' 4.3. LSTM '''
 '''
-Both train and test sequences are identical=12, but the lasts (x=1,3,12) months in the test
-data are ahead of training data
+    Both train and test sequences are identical=12, but the lasts (x=1,3,12) months in the test
+    data are ahead of training data
 '''
 def split_train_test(df_time_series, df_static=None, in_seq_length=12, out_seq_length=12, validation_months=5*12):
     # Set sequence length (e.g., 12 time points)
@@ -62,7 +62,7 @@ def create_sequences(df_ts, df_static, seq_length, out_seq_length=1):
             torch.tensor(y, dtype=torch.float32))
 
 
-def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test, epochs=100):
+def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test, epochs=1):
     batch_size = 32
 
     loss_fn = nn.MSELoss()
@@ -144,7 +144,7 @@ def lstm_train_validate(model, optimizer, X_train, X_test, y_train, y_test, epoc
     return model, y_train_pred, y_test_pred
 
 '''
-Convert Prophet forecast to a dataframe
+    Convert Prophet forecast to a dataframe
 '''
 def get_df_from_forecast(forecast):
     # Collect 'ds' (date) and 'yhat' from each forecast

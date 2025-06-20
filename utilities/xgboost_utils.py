@@ -4,6 +4,9 @@ from xgboost import XGBRegressor
 from sklearn.metrics import make_scorer, mean_absolute_error, mean_squared_error
 from sklearn.model_selection import TimeSeriesSplit, cross_val_score
 
+'''
+    Used initialize and train XGBoost model
+'''
 def get_xgboost_trained_model(X_train, y_train, X_test, y_test):
     # Cross validation
     # defining model

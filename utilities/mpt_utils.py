@@ -4,8 +4,6 @@ from collections import OrderedDict
 import torch
 import cvxpy as cp
 #
-import plotly.graph_objects as go
-#
 from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
 from pypfopt import EfficientFrontier, EfficientSemivariance
 from pypfopt import objective_functions
@@ -33,12 +31,12 @@ def get_train_test_mean_pred(y_train_pred_1m, y_test_pred_1m, columns_count):
 
     return y_train_pred, y_test_pred
 
-def get_df_from_pred_list(df, train_list, test_list):
-    '''
+'''
     It gets true values or in other words training values and on top of them
     it concats the predicted values (1m, 6m, 12m) to create the whole timeline
     so that it can then be used to compare the last year (true + pred) with the known true values
-    '''
+'''
+def get_df_from_pred_list(df, train_list, test_list):
     train_time_steps = int(len(train_list) / len(df.columns))
     test_time_steps = int(len(test_list) / len(df.columns))
     #
@@ -165,15 +163,13 @@ def get_semivariance_portfolio_performance(df, file_name = "weights.csv", min_av
     mu = expected_returns.mean_historical_return(df_optimal, frequency=12)
     historical_returns = expected_returns.returns_from_prices(df)
 
-    #mu = expected_returns.mean_historical_return(df)
-
     # Optimize for maximal Sharpe ratio
     es = EfficientSemivariance(mu, historical_returns, solver=cp.CLARABEL, frequency=12)
     es.max_quadratic_utility()
 
     cleaned_weights = es.clean_weights()
 
-    #es.save_weights_to_file(file_name)  # saves to file
+    # es.save_weights_to_file(file_name)  # saves to file
     #
     p_mu, p_sigma, p_sortino = es.portfolio_performance(verbose=True)
     return df_optimal, cleaned_weights, np.NaN, mu, p_sigma, p_sortino
